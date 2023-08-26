@@ -1,0 +1,23 @@
+.header {
+	&__logo {
+		width: 70%;
+	}
+	&__line {
+		display: block;
+		position: relative;
+		top: 1px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		border-radius: 5px;
+
+		&_two {
+			top: 6px;
+		}
+
+		&_three {
+			top: 11px;
+		}
+	}
+}

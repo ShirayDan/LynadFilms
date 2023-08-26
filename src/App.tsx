@@ -1,9 +1,15 @@
-import styles from './App.module.scss'
+import './App.scss'
+
+import { Header } from './modules/Header'
+import { Footer } from './modules/Footer'
+import { MainPage } from './pages/MainPage'
 
 function App() {
 	return (
 		<>
-			<div className={`text-3xl font-bold underline ${styles.rrrr}`}>Test</div>
+			<Header />
+			<MainPage />
+			<Footer />
 		</>
 	)
 }
