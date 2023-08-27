@@ -25,7 +25,7 @@ const news = [
 
 export const NewsBlock: FC = () => {
 	return (
-		<div className='px-4 py-10'>
+		<div className='px-4 py-10 mx-auto max-w-screen-sm'>
 			<div className='px-4'>
 				<h2 className='text-xl mb-6 text-white font-bold uppercase'>
 					Latest News
@@ -33,17 +33,17 @@ export const NewsBlock: FC = () => {
 				<div>
 					<ul className='flex '>
 						<li className='mr-2'>
-							<a href='' className='text-white text-sm text-grey'>
+							<a href='' className='text-white text-sm text-grey font-bold'>
 								#MOVIES
 							</a>
 						</li>
 						<li className='mr-2'>
-							<a href='' className='text-white text-sm text-grey'>
+							<a href='' className='text-white text-sm text-grey font-bold'>
 								#TV SHOWS
 							</a>
 						</li>
 						<li>
-							<a href='' className='text-white text-sm text-grey'>
+							<a href='' className='text-white text-sm text-grey font-bold'>
 								#CELEBS
 							</a>
 						</li>
@@ -51,8 +51,9 @@ export const NewsBlock: FC = () => {
 				</div>
 
 				<div className='flex flex-col py-5'>
-					<img src={img} alt='' className='rounded' />
-					<h3 className='text-blue text-lg mb-5'>Tab 3</h3>
+					<img src={img} alt='' className='rounded max-w-sm flex self-center' />
+
+					<h3 className='text-blue text-lg mb-5 mt-7'>Tab 3</h3>
 					<p className='text-sm text-grey'>13 hours ago</p>
 					<p className='text-sm text-grey mt-5'>
 						Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar
@@ -63,8 +64,8 @@ export const NewsBlock: FC = () => {
 					</p>
 				</div>
 
-				<div>
-					<div className='flex'>
+				<div className='mt-10'>
+					<div className='flex justify-between mb-6'>
 						<h3 className='text-white font-bold text-lg'>
 							More news on Blockbuster
 						</h3>
@@ -73,7 +74,7 @@ export const NewsBlock: FC = () => {
 					{news.map((item) => {
 						return (
 							<div className='flex flex-col mb-7 pr-4'>
-								<h6 className='text-blue text-sm'>{item.text}</h6>
+								<h6 className='text-blue text-sm font-bold'>{item.text}</h6>
 								<span className='text-grey text-xs'>{item.data}</span>
 							</div>
 						)

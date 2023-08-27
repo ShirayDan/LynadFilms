@@ -1,0 +1,23 @@
+.mainPage {
+	&__img {
+		width: 100%;
+		max-width: 300px;
+	}
+}
+
+.swiper-pagination {
+	bottom: -2px !important;
+}
+.swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	color: #000;
+	opacity: 1;
+	background: #fff;
+}
+.swiper-pagination-bullet-active {
+	background: #dcf836;
+}

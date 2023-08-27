@@ -39,7 +39,7 @@ const actors = [
 
 export const SideBar: FC = () => {
 	return (
-		<aside className='px-4'>
+		<aside className='px-4 mx-auto max-w-screen-sm'>
 			<div className='px-4'>
 				{/* <div className='mb-10'>
 					<img src={img} alt='' />

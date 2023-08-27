@@ -52,7 +52,7 @@ const data = [
 
 export const TrailerBlock: FC = () => {
 	return (
-		<div className='py-20 px-4'>
+		<div className='py-20 px-4 mx-auto max-w-screen-sm'>
 			<div className='px-4'>
 				<div className='flex justify-between mb-7'>
 					<h2 className='text-white uppercase text-2xl font-bold'>
@@ -60,7 +60,7 @@ export const TrailerBlock: FC = () => {
 					</h2>
 					<ViewAll link='' text='VIEW ALL' />
 				</div>
-				<div className=''>
+				<div className='flex justify-center'>
 					<img src={img} alt='' />
 				</div>
 				<div className='bg-[#0b1a2a] mt-2'>

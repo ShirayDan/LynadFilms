@@ -1,11 +1,19 @@
 import { FC } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 import { ViewAll } from '../../../../../../components/ViewAll'
 
-import { TPlaceFilmItem, TFilmItems } from '../../types'
+import { TFilms } from '../../../../../../data'
 
 interface IPlaceItem {
-	data: TPlaceFilmItem
+	data: {
+		title: string
+		link: string
+		items: TFilms[]
+	}
 }
 
 export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
@@ -18,19 +26,53 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
 				<ViewAll link={data.link} text={'View All'} />
 			</div>
 			<ul>
-				<li className='text-grey uppercase mb-4 text-sm'>#Popular</li>
-				<li className='text-grey uppercase mb-4 text-sm'>#Coming soon</li>
-				<li className='text-grey uppercase mb-4 text-sm'>#Top rated</li>
-				<li className='text-grey uppercase mb-4 text-sm'>#Most reviewed</li>
+				<li className='text-grey uppercase mb-4 text-sm font-bold'>#Popular</li>
+				<li className='text-grey uppercase mb-4 text-sm font-bold'>
+					#Coming soon
+				</li>
+				<li className='text-grey uppercase mb-4 text-sm font-bold'>
+					#Top rated
+				</li>
+				<li className='text-grey uppercase mb-4 text-sm font-bold'>
+					#Most reviewed
+				</li>
 			</ul>
 
-			{data.items.map((item: TFilmItems) => {
-				return (
-					<div className='flex item-center justify-center mt-7'>
-						<img src={item.image} alt='' className='rounded' />
-					</div>
-				)
-			})}
+			<Swiper
+				pagination={{
+					clickable: true,
+				}}
+				loop={true}
+				slidesPerView={1}
+				breakpoints={{
+					600: {
+						slidesPerView: 2,
+					},
+					768: {
+						slidesPerView: 3,
+					},
+					992: {
+						slidesPerView: 4,
+					},
+				}}
+				// autoplay={{
+				// 	delay: 2500,
+				// 	disableOnInteraction: false,
+				// }}
+
+				spaceBetween={10}
+				modules={[Pagination, Autoplay]}
+				className='mySwiper'>
+				{data.items.map((item: TFilms) => {
+					return (
+						<SwiperSlide>
+							<div className='flex item-center justify-center mt-7'>
+								<img src={item.img} alt='' className='rounded' />
+							</div>
+						</SwiperSlide>
+					)
+				})}{' '}
+			</Swiper>
 		</div>
 	)
 }

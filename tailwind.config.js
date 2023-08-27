@@ -15,6 +15,12 @@ export default {
 			backgroundImage: {
 				slider: "url('./src/i/slider-bg.jpg')",
 			},
+			screens: {
+				sm: '600px',
+				md: '768px',
+				lg: '992px',
+				xl: '1200px',
+			},
 		},
 	},
 	plugins: [],
