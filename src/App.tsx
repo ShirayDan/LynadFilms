@@ -2,14 +2,17 @@ import './App.scss'
 
 import { Header } from './modules/Header'
 import { Footer } from './modules/Footer'
+
 import { MainPage } from './pages/MainPage'
+import { ErrorPage } from './pages/ErrorPage'
 
 function App() {
 	return (
 		<>
-			<Header />
-			<MainPage />
-			<Footer />
+			{/* <Header /> */}
+			{/* <MainPage /> */}
+			<ErrorPage />
+			{/* <Footer /> */}
 		</>
 	)
 }
