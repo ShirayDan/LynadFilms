@@ -10,12 +10,17 @@ export const MainPage: FC = () => {
 	return (
 		<>
 			<MainPageSlider />
-			<div className='bg-[#020d18]'>
-				<PlaceFilms />
-				<SideBar />
+
+			<div className='bg-[#020d18] pt-20'>
+				<div className='container lg:grid lg:grid-cols-trailer mx-auto'>
+					<PlaceFilms />
+					<SideBar />
+				</div>
 			</div>
 			<div className='bg-[#06121e]'>
-				<TrailerBlock />
+				<div className='container mx-auto'>
+					<TrailerBlock />
+				</div>
 			</div>
 			<div className='bg-[#020d18]'>
 				<NewsBlock />

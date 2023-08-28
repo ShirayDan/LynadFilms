@@ -13,8 +13,8 @@ import { films } from '../../../../data'
 
 export const MainPageSlider: FC = () => {
 	return (
-		<div className='mx-auto px-4 pt-36 bg-slider pb-10'>
-			<div className='mx-auto max-w-screen-sm'>
+		<div className='pt-36 bg-slider pb-10'>
+			<div className='mx-auto px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl'>
 				<div className='flex justify-end items-center font-bold text-sm text-white'>
 					Follow us: <SocialBlock />
 				</div>
@@ -25,12 +25,14 @@ export const MainPageSlider: FC = () => {
 						}}
 						loop={true}
 						slidesPerView={1}
+						spaceBetween={10}
 						breakpoints={{
 							600: {
 								slidesPerView: 2,
 							},
 							768: {
 								slidesPerView: 3,
+								spaceBetween: 20,
 							},
 							992: {
 								slidesPerView: 4,
@@ -41,7 +43,6 @@ export const MainPageSlider: FC = () => {
 						// 	disableOnInteraction: false,
 						// }}
 
-						spaceBetween={10}
 						modules={[Pagination, Autoplay]}
 						className='mySwiper'>
 						{films.map((item) => {

@@ -8,10 +8,12 @@ export default {
 				grey: '#abb7c4',
 				blue: '#4280bf',
 				red: '#dd003f',
+				'dark-blue': '#233a50',
 			},
 			borderWidth: {
 				small: '1px',
 			},
+
 			backgroundImage: {
 				slider: "url('./src/i/slider-bg.jpg')",
 			},
@@ -20,6 +22,13 @@ export default {
 				md: '768px',
 				lg: '992px',
 				xl: '1200px',
+				'2xl': '1200px',
+			},
+			gridTemplateColumns: {
+				trailer: '1fr 280px',
+			},
+			maxWidth: {
+				992: '650px',
 			},
 		},
 	},

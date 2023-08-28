@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import './PlaceItem.scss'
 
 import { ViewAll } from '../../../../../../components/ViewAll'
 
@@ -25,12 +26,14 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
 				</h2>
 				<ViewAll link={data.link} text={'View All'} />
 			</div>
-			<ul>
-				<li className='text-grey uppercase mb-4 text-sm font-bold'>#Popular</li>
-				<li className='text-grey uppercase mb-4 text-sm font-bold'>
+			<ul className='md:flex'>
+				<li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2'>
+					#Popular
+				</li>
+				<li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2'>
 					#Coming soon
 				</li>
-				<li className='text-grey uppercase mb-4 text-sm font-bold'>
+				<li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2'>
 					#Top rated
 				</li>
 				<li className='text-grey uppercase mb-4 text-sm font-bold'>
@@ -51,7 +54,7 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
 					768: {
 						slidesPerView: 3,
 					},
-					992: {
+					1200: {
 						slidesPerView: 4,
 					},
 				}}
@@ -67,7 +70,11 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
 					return (
 						<SwiperSlide>
 							<div className='flex item-center justify-center mt-7'>
-								<img src={item.img} alt='' className='rounded' />
+								<img
+									src={item.img}
+									alt=''
+									className='rounded mainPage__img placeItem__img'
+								/>
 							</div>
 						</SwiperSlide>
 					)

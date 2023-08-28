@@ -38,9 +38,9 @@ const data = [
 export const Footer: FC = () => {
 	return (
 		<div className='bg-slider px-5 py-20'>
-			<div className='mx-auto max-w-screen-sm'>
-				<div className='min-[600px]:grid grid-cols-2'>
-					<div className='mb-4 flex flex-col items-center'>
+			<div className='mx-auto max-w-screen-sm lg:max-w-screen-lg lg:px-5 xl:max-w-screen-xl'>
+				<div className='sm:grid grid-cols-2 lg:grid-cols-4'>
+					<div className='mb-4 flex flex-col items-center lg:items-start'>
 						<img src={logo} alt='' className='mb-10' />
 						<p className='text-grey text-sm mb-5'>
 							5th Avenue st, manhattan

@@ -17,7 +17,7 @@ export const SmallCard: FC<ISmallCard> = ({ data, trailer }) => {
 		<div className={`flex mb-7 ${trailer && 'p-2 mb-0'}`}>
 			<div className='mr-5'>
 				{trailer ? (
-					<img src={data.image} alt='' className='rounded' />
+					<img src={data.image} alt='' className='rounded w-20' />
 				) : (
 					<a href={data.link} className='smallCard__img-cont'>
 						<img src={data.image} alt='' className='rounded w-100' />
