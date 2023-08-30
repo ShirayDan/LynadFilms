@@ -29,6 +29,8 @@ export default {
 			},
 			maxWidth: {
 				992: '650px',
+				'2xs': '250px',
+				'3xs': '170px',
 			},
 		},
 	},

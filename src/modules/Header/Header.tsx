@@ -33,7 +33,7 @@ export const Header: FC = () => {
 							<span className={'header__line header__line_three'}></span>
 						</div>
 
-						<ul className='hidden lg:flex items-center'>
+						<ul className='hidden lg:flex items-center '>
 							<li className='ml-3 text-grey font-bold uppercase text-sm'>
 								Log in
 							</li>
@@ -43,7 +43,9 @@ export const Header: FC = () => {
 						</ul>
 					</div>
 				</nav>
-				<div className=' hidden border-solid border-black border-4 md:block'>
+
+				{/* added hidden for films page */}
+				<div className=' hidden border-solid border-black border-4 md:block md:hidden'>
 					<form action='' className='flex '>
 						<input
 							type='text'

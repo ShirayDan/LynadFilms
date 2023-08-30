@@ -5,14 +5,16 @@ import { Footer } from './modules/Footer'
 
 import { MainPage } from './pages/MainPage'
 import { ErrorPage } from './pages/ErrorPage'
+import { FilmPage } from './pages/FilmsPage'
 
 function App() {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			{/* <MainPage /> */}
-			<ErrorPage />
-			{/* <Footer /> */}
+			{/* <ErrorPage /> */}
+			<FilmPage />
+			<Footer />
 		</>
 	)
 }
