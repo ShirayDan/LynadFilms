@@ -6,6 +6,7 @@ import { Footer } from './modules/Footer'
 import { MainPage } from './pages/MainPage'
 import { ErrorPage } from './pages/ErrorPage'
 import { FilmPage } from './pages/FilmsPage'
+import { SingleFilm } from './pages/SingleFilm'
 
 function App() {
 	return (
@@ -13,7 +14,8 @@ function App() {
 			<Header />
 			{/* <MainPage /> */}
 			{/* <ErrorPage /> */}
-			<FilmPage />
+			{/* <FilmPage /> */}
+			<SingleFilm />
 			<Footer />
 		</>
 	)

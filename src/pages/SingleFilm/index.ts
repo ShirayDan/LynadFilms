@@ -1,0 +1,1 @@
+export { SingleFilm } from './SingleFilm'
