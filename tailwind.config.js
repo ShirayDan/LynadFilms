@@ -9,7 +9,7 @@ export default {
 				blue: '#4280bf',
 				red: '#dd003f',
 				'dark-blue': '#233a50',
-				yellow: '##dcf836',
+				yellow: '#dcf836',
 			},
 			borderWidth: {
 				small: '1px',

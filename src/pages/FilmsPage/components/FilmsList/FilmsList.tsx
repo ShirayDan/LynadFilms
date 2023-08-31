@@ -13,7 +13,6 @@ export const FilmsList: FC = () => {
 			<div className='pb-4'>
 				<div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between pt-2'>
 					<p className='text-grey text-sm mb-2 '>Found 1608 movies in total</p>
-					{/* flex justify-between items-center */}
 					<div className=' flex justify-between items-center wrap pb-2'>
 						<label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
 							Sort by:
@@ -22,8 +21,6 @@ export const FilmsList: FC = () => {
 							name='filmSorting'
 							id=''
 							className='text-grey bg-[#233a50] text-sm font-light py-1.5 px-3'>
-							{/* <option value=''>Popularity Descending</option>
-						<option value=''>Popularity Ascending</option> */}
 							<option value=''>Rating Descending</option>
 							<option value=''>Rating Ascending</option>
 							<option value=''>Release date Descending</option>

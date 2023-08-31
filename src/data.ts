@@ -1,7 +1,26 @@
-export type TActor = {
+export type TCrew = {
 	name: string
 	role: string
 	photo: string
+}
+
+export type TUser = {
+	userPhoto: string
+	userName: string
+}
+
+export type TComment = {
+	date: string
+	user: TUser
+	rating: number
+	text: string
+	title: string
+}
+
+export type TFilmSmall = {
+	rating: number
+	title: string
+	image: string
 }
 
 export type TFilms = {
@@ -9,16 +28,19 @@ export type TFilms = {
 	rating: number
 	tags: Array<string>
 	duration: string
-	director: Array<string>
-	stars: Array<TActor>
+	director: Array<TCrew>
+	stars: Array<TCrew>
 	desc: string
 	date: string
 	mmpa: string
 	img: string
 	link: string
 	photos: Array<string>
-	writer: Array<string>
+	writer: Array<TCrew>
 	country: string
+	filmCrew: Array<TCrew>
+	comments: Array<TComment>
+	similarFilms: Array<TFilmSmall>
 }
 
 // release date, duration, mmpa, desc check
@@ -35,13 +57,15 @@ import photo3 from './i/image31.jpg'
 
 import cast1 from './i/cast1.jpg'
 
+import userAva from './i/userava1.jpg'
+
 export const films: TFilms[] = [
 	{
 		name: 'Interstellar',
 		rating: 8.1,
 		tags: ['Sci-Fi'],
 		duration: '2:21',
-		director: ['Joss Whedon'],
+		director: [{ name: 'Joss Whedon', role: 'Director', photo: cast1 }],
 		stars: [
 			{ name: 'Robert Downey Jr.', role: 'Robert Downey Jr.', photo: cast1 },
 			{
@@ -57,8 +81,31 @@ export const films: TFilms[] = [
 		img: Interstellar,
 		link: '',
 		photos: [photo1, photo2, photo3],
-		writer: ['writer'],
+		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
+		filmCrew: [
+			{ name: 'Victoria Alonso', photo: cast1, role: 'executive producer' },
+			{ name: 'Mitchel Bell', photo: cast1, role: 'co-producer' },
+			{ name: 'Jamie Christopher', photo: cast1, role: 'associate producer' },
+		],
+		comments: [
+			{
+				title: 'Best Marvel movie in my opinion',
+				rating: 9,
+				date: '17 December 2016',
+				user: {
+					userName: 'hawaiipierson',
+					userPhoto: userAva,
+				},
+
+				text: 'This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.',
+			},
+		],
+		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+		],
 	},
 
 	{
@@ -67,7 +114,10 @@ export const films: TFilms[] = [
 		tags: [],
 		desc: 'As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat...',
 		duration: '2:21',
-		director: ['Anthony Russo', 'Joe Russo'],
+		director: [
+			{ name: 'Joe Russo', role: 'Director', photo: cast1 },
+			{ name: 'Anthony Russo', role: 'Director', photo: cast1 },
+		],
 		stars: [
 			{ name: 'Robert Downey Jr.', role: 'Robert Downey Jr.', photo: cast1 },
 			{
@@ -82,8 +132,30 @@ export const films: TFilms[] = [
 		img: IntoTheWild,
 		link: '',
 		photos: [photo1, photo2, photo3],
-		writer: ['writer'],
+		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
+		filmCrew: [
+			{ name: 'Victoria Alonso', photo: cast1, role: 'executive producer' },
+			{ name: 'Mitchel Bell', photo: cast1, role: 'co-producer' },
+			{ name: 'Jamie Christopher', photo: cast1, role: 'associate producer' },
+		],
+		comments: [
+			{
+				title: 'Best Marvel movie in my opinion',
+				rating: 9,
+				date: '17 December 2016',
+				user: {
+					userName: 'hawaiipierson',
+					userPhoto: userAva,
+				},
+				text: 'This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.',
+			},
+		],
+		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+		],
 	},
 	{
 		name: 'Blade runner',
@@ -91,7 +163,7 @@ export const films: TFilms[] = [
 		tags: [],
 		desc: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help...',
 		duration: '2:21',
-		director: ['Peyton Reed'],
+		director: [{ name: 'Peyton Reed', role: 'Director', photo: cast1 }],
 		stars: [
 			{ name: 'Robert Downey Jr.', role: 'Robert Downey Jr.', photo: cast1 },
 			{
@@ -106,8 +178,30 @@ export const films: TFilms[] = [
 		img: BladeRunner,
 		link: '',
 		photos: [photo1, photo2, photo3],
-		writer: ['writer'],
+		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
+		filmCrew: [
+			{ name: 'Victoria Alonso', photo: cast1, role: 'executive producer' },
+			{ name: 'Mitchel Bell', photo: cast1, role: 'co-producer' },
+			{ name: 'Jamie Christopher', photo: cast1, role: 'associate producer' },
+		],
+		comments: [
+			{
+				title: 'Best Marvel movie in my opinion',
+				rating: 9,
+				date: '17 December 2016',
+				user: {
+					userName: 'hawaiipierson',
+					userPhoto: userAva,
+				},
+				text: 'This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.',
+			},
+		],
+		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+		],
 	},
 	{
 		name: 'Mulholland pride',
@@ -115,7 +209,7 @@ export const films: TFilms[] = [
 		tags: [],
 		desc: "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
 		duration: '2:21',
-		director: ['Shane Black'],
+		director: [{ name: 'Shane Black', role: 'Director', photo: cast1 }],
 		stars: [
 			{ name: 'Robert Downey Jr.', role: 'Robert Downey Jr.', photo: cast1 },
 			{
@@ -130,8 +224,30 @@ export const films: TFilms[] = [
 		img: MulhollandPride,
 		link: '',
 		photos: [photo1, photo2, photo3],
-		writer: ['writer'],
+		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
+		filmCrew: [
+			{ name: 'Victoria Alonso', photo: cast1, role: 'executive producer' },
+			{ name: 'Mitchel Bell', photo: cast1, role: 'co-producer' },
+			{ name: 'Jamie Christopher', photo: cast1, role: 'associate producer' },
+		],
+		comments: [
+			{
+				title: 'Best Marvel movie in my opinion',
+				rating: 9,
+				date: '17 December 2016',
+				user: {
+					userName: 'hawaiipierson',
+					userPhoto: userAva,
+				},
+				text: 'This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.',
+			},
+		],
+		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+		],
 	},
 	{
 		name: 'Skyfall: Evil of boss',
@@ -139,7 +255,7 @@ export const films: TFilms[] = [
 		tags: [],
 		desc: "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
 		duration: '2:21',
-		director: ['Alan Taylor'],
+		director: [{ name: 'Alan Taylor', role: 'Director', photo: cast1 }],
 		stars: [
 			{ name: 'Robert Downey Jr.', role: 'Robert Downey Jr.', photo: cast1 },
 			{
@@ -154,8 +270,30 @@ export const films: TFilms[] = [
 		img: SkyFall,
 		link: '',
 		photos: [photo1, photo2, photo3],
-		writer: ['writer'],
+		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
+		filmCrew: [
+			{ name: 'Victoria Alonso', photo: cast1, role: 'executive producer' },
+			{ name: 'Mitchel Bell', photo: cast1, role: 'co-producer' },
+			{ name: 'Jamie Christopher', photo: cast1, role: 'associate producer' },
+		],
+		comments: [
+			{
+				title: 'Best Marvel movie in my opinion',
+				rating: 9,
+				date: '17 December 2016',
+				user: {
+					userName: 'hawaiipierson',
+					userPhoto: userAva,
+				},
+				text: 'This is by far one of my favorite movies from the MCU. The introduction of new Characters both good and bad also makes the movie more exciting. giving the characters more of a back story can also help audiences relate more to different characters better, and it connects a bond between the audience and actors or characters. Having seen the movie three times does not bother me here as it is as thrilling and exciting every time I am watching it. In other words, the movie is by far better than previous movies (and I do love everything Marvel), the plotting is splendid (they really do out do themselves in each film, there are no problems watching it more than once.',
+			},
+		],
+		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+		],
 	},
 
 	// {

@@ -1,6 +1,11 @@
 import { FC } from 'react'
 
 import { Overview } from './components/Overview'
+import { Cast } from './components/Cast'
+import { PhotosVideos } from './components/PhotosVideos'
+import { Reviews } from './components/Reviews'
+import { SimilarMovies } from './components/SimilarMovies'
+import { Tab } from '../../components/Tab'
 
 import { FaPlay, FaCreditCard, FaHeart, FaStar } from 'react-icons/fa'
 import { ImShare2 } from 'react-icons/im'
@@ -70,7 +75,27 @@ export const SingleFilm: FC = () => {
 						</ul>
 					</p>
 				</div>
-				<Overview data={film} />
+				<Tab
+					buttons={[
+						'Overview',
+						'Reviews',
+						'Cast and Crew',
+						'Media',
+						'Related movies',
+					]}
+					components={[
+						<Overview data={film} />,
+						<Reviews data={film} />,
+						<PhotosVideos data={film} />,
+						<Cast data={film} />,
+						<SimilarMovies data={film} />,
+					]}
+				/>
+				{/* <Overview data={film} />
+				 <Cast data={film} /> 
+				 <PhotosVideos data={film} /> 
+				 <Reviews data={film} />
+				<SimilarMovies data={film} /> */}
 			</div>
 		</div>
 	)

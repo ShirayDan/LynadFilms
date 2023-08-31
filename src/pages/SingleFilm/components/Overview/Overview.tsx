@@ -4,6 +4,9 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import { PersonList } from '../../../../components/PersonList'
+import { MoreInfoItem } from './components/MoreInfoItem'
+
 import { FaChevronDown } from 'react-icons/fa'
 
 import { TFilms } from '../../../../data'
@@ -76,21 +79,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
 						<FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
 					</a>
 				</div>
-				<ul>
-					{data.stars.map((item) => {
-						return (
-							<li className='flex items-center justify-between py-3'>
-								<div className='flex items-center justify-center text-sm text-blue'>
-									<img src={item.photo} alt='' className='rounded' />
-									<a href='' className='ml-2'>
-										{item.name}
-									</a>
-								</div>
-								<p className='text-sm'>{item.role}</p>
-							</li>
-						)
-					})}
-				</ul>
+				<PersonList data={data.stars} />
 			</div>
 			<div className='pb-4'>
 				<div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 '>
@@ -99,46 +88,9 @@ export const Overview: FC<IOverview> = ({ data }) => {
 					</h4>
 				</div>
 				<ul className='pl-4'>
-					<li className='flex justify-between font-bold text-sm py-3'>
-						Director:{' '}
-						<div className='text-blue font-normal'>
-							{' '}
-							{data.director.map((item, i, arr) => {
-								return arr.length - 1 === i ? (
-									<a href=''>{item}</a>
-								) : (
-									<a href=''>{item}</a> + ' '
-								)
-							})}
-						</div>
-					</li>
-					<li className='flex justify-between font-bold text-sm py-3'>
-						Writer:{' '}
-						<div className='text-blue font-normal'>
-							{' '}
-							{data.writer.map((item, i, arr) => {
-								return arr.length - 1 === i ? (
-									<a href=''>{item}</a>
-								) : (
-									<a href=''>{item}</a> + ' '
-								)
-							})}
-						</div>
-					</li>
-
-					<li className='flex justify-between font-bold text-sm py-3'>
-						Genres:{' '}
-						<div className='text-blue font-normal'>
-							{' '}
-							{data.tags.map((item, i, arr) => {
-								return arr.length - 1 === i ? (
-									<a href=''>{item}</a>
-								) : (
-									<a href=''>{item}</a> + ' '
-								)
-							})}
-						</div>
-					</li>
+					<MoreInfoItem text={'Director:'} data={data.director} />
+					<MoreInfoItem text={'Writer:'} data={data.writer} />
+					<MoreInfoItem text={'Genres:'} data={data.tags} />
 					<li className='flex justify-between font-bold text-sm py-3'>
 						Release Date:{' '}
 						<span className='font-normal'>

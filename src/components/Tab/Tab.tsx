@@ -7,15 +7,14 @@ interface ITab {
 
 export const Tab: FC<ITab> = ({ buttons, components }) => {
 	const [page, setPage] = useState(0)
-
 	return (
 		<div>
-			<div className=''>
+			<div className='flex flex-col items-start mb-3 px-4'>
 				{buttons.map((item, i) => {
 					return (
 						<button
 							onClick={() => setPage(i)}
-							className={`text-lg border-0 border-solid border-b-3 border-transparent ${
+							className={`text-lg border-0 border-solid border-b-2 border-transparent ${
 								page === i && 'border-yellow text-yellow'
 							}  `}>
 							{item}

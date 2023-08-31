@@ -33,14 +33,14 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
 						{' '}
 						Director:{' '}
 						{data.director.map((item) => {
-							return <span className='text-blue'>{item} </span>
+							return <span className='text-blue'>{item.name} </span>
 						})}
 					</li>
 					<li>
 						{' '}
 						Stars:{' '}
 						{data.stars.map((item) => {
-							return <span className='text-blue'>{item} </span>
+							return <span className='text-blue'>{item.name} </span>
 						})}
 					</li>
 				</ul>
