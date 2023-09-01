@@ -12,7 +12,7 @@ export const Comment: FC<IComment> = ({ data }) => {
 	return (
 		<div className='p-3 border-0 border-solid border-b border-grey'>
 			<div className='flex mb-3'>
-				<img src={data.user.userPhoto} alt='' />
+				<img src={data.user.userPhoto} alt='' className='w-10 h-10 rounded' />
 				<div className='ml-3'>
 					<div className='flex'>
 						<h5 className='text-grey font-bold'>{data.title}</h5>

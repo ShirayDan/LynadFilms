@@ -17,7 +17,7 @@ interface IOverview {
 
 export const Overview: FC<IOverview> = ({ data }) => {
 	return (
-		<div className='px-3'>
+		<>
 			<p className='mb-3'>
 				Tony Stark creates the Ultron Program to protect the world, but when the
 				peacekeeping program becomes hostile, The Avengers go into action to try
@@ -34,7 +34,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
 						View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
 					</a>
 				</div>
-				<div className='mt-5'>
+				<div className='mt-5 lg:max-w-slider-lg xl:max-w-slider-xl'>
 					<Swiper
 						pagination={{
 							clickable: true,
@@ -48,9 +48,9 @@ export const Overview: FC<IOverview> = ({ data }) => {
 							},
 							768: {
 								slidesPerView: 3,
-								spaceBetween: 20,
+								spaceBetween: 10,
 							},
-							992: {
+							1200: {
 								slidesPerView: 4,
 							},
 						}}
@@ -105,6 +105,6 @@ export const Overview: FC<IOverview> = ({ data }) => {
 					</li>
 				</ul>
 			</div>
-		</div>
+		</>
 	)
 }

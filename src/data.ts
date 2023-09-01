@@ -54,6 +54,11 @@ import SkyFall from './i/slider5.jpg'
 import photo1 from './i/image11.jpg'
 import photo2 from './i/image21.jpg'
 import photo3 from './i/image31.jpg'
+import photo4 from './i/image41.jpg'
+import photo5 from './i/image51.jpg'
+import photo6 from './i/image61.jpg'
+import photo7 from './i/image71.jpg'
+import photo8 from './i/image81.jpg'
 
 import cast1 from './i/cast1.jpg'
 
@@ -80,7 +85,7 @@ export const films: TFilms[] = [
 		mmpa: 'PG-13',
 		img: Interstellar,
 		link: '',
-		photos: [photo1, photo2, photo3],
+		photos: [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8],
 		writer: [{ name: 'Writer', photo: cast1, role: 'writer' }],
 		country: 'USA',
 		filmCrew: [
@@ -102,6 +107,12 @@ export const films: TFilms[] = [
 			},
 		],
 		similarFilms: [
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
+			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
+			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
+			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },
 			{ rating: 7.0, title: 'Skyfall: Evil of boss', image: SkyFall },
 			{ rating: 7.2, title: 'Mulholland pride', image: MulhollandPride },
 			{ rating: 7.3, title: 'Blade runner', image: BladeRunner },

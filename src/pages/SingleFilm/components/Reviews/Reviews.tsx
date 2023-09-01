@@ -10,13 +10,15 @@ interface IReviews {
 
 export const Reviews: FC<IReviews> = ({ data }) => {
 	return (
-		<div className='pb-10 px-4'>
-			<h3 className='text-grey text-lg font-bold mb-4'>Related Movies To</h3>
-			<h2 className='text-2xl text-blue font-bold mb-8'>{data.name}</h2>
+		<div className='pb-10'>
+			<h3 className='text-grey text-lg font-bold mb-1'>Reviews of </h3>
+			<div className='md:flex justify-between items-center'>
+				<h2 className='text-2xl text-blue font-bold mb-8'>{data.name}</h2>
 
-			<button className='rounded-3xl text-white bg-red py-4 px-6 uppercase font-bold mb-7 text-sm'>
-				Write review
-			</button>
+				<button className='rounded-3xl text-white bg-red py-4 px-6 uppercase font-bold mb-7 text-sm'>
+					Write review
+				</button>
+			</div>
 			<div className='pb-4'>
 				<div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between pt-2'>
 					<p className='text-grey text-sm mb-2 '>Found 1608 reviews in total</p>

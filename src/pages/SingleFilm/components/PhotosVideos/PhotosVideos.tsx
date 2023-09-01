@@ -12,8 +12,8 @@ interface IOverview {
 
 export const PhotosVideos: FC<IOverview> = ({ data }) => {
 	return (
-		<div className='pb-10 px-4'>
-			<h3 className='text-grey text-lg font-bold mb-4'>Videos and Photos of</h3>
+		<div className='pb-10'>
+			<h3 className='text-grey text-lg font-bold mb-1'>Videos and Photos of</h3>
 			<h2 className='text-2xl text-blue font-bold mb-8'>{data.name}</h2>
 
 			<div>
@@ -22,7 +22,7 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
 						Photos ({data.photos.length})
 					</h4>
 				</div>
-				<div className=''>
+				<div className='lg:max-w-slider-lg xl:max-w-slider-xl'>
 					<Swiper
 						pagination={{
 							clickable: true,
@@ -36,9 +36,9 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
 							},
 							768: {
 								slidesPerView: 3,
-								spaceBetween: 20,
+								spaceBetween: 10,
 							},
-							992: {
+							1200: {
 								slidesPerView: 4,
 							},
 						}}
@@ -52,7 +52,9 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
 						{data.photos.map((item) => {
 							return (
 								<SwiperSlide>
-									<img src={item} alt='' />
+									<div>
+										<img src={item} alt='' />
+									</div>
 								</SwiperSlide>
 							)
 						})}
@@ -66,7 +68,7 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
 						Videos ({data.photos.length})
 					</h4>
 				</div>
-				<div className=''>
+				<div className='lg:max-w-slider-lg xl:max-w-slider-xl'>
 					<Swiper
 						pagination={{
 							clickable: true,
@@ -80,9 +82,9 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
 							},
 							768: {
 								slidesPerView: 3,
-								spaceBetween: 20,
+								spaceBetween: 10,
 							},
-							992: {
+							1200: {
 								slidesPerView: 4,
 							},
 						}}

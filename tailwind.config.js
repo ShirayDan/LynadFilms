@@ -32,6 +32,11 @@ export default {
 				992: '650px',
 				'2xs': '250px',
 				'3xs': '170px',
+				'slider-lg': '628px',
+				'slider-xl': '836px',
+			},
+			width: {
+				200: '200px',
 			},
 		},
 	},
