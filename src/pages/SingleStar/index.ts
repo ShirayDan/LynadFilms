@@ -1,0 +1,1 @@
+export { SingleStar } from './Singlestar'

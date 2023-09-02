@@ -8,6 +8,7 @@ import { ErrorPage } from './pages/ErrorPage'
 import { FilmPage } from './pages/FilmsPage'
 import { SingleFilm } from './pages/SingleFilm'
 import { StarPage } from './pages/StarPage'
+import { SingleStar } from './pages/SingleStar'
 
 function App() {
 	return (
@@ -17,7 +18,8 @@ function App() {
 			{/* <ErrorPage /> */}
 			{/* <FilmPage /> */}
 			{/* <SingleFilm /> */}
-			<StarPage />
+			{/* <StarPage /> */}
+			<SingleStar />
 			<Footer />
 		</>
 	)

@@ -19,7 +19,7 @@ const data = [
 
 export const SocialBlock: FC = () => {
 	return (
-		<ul className='flex flex-row ml-2'>
+		<ul className='flex flex-row'>
 			{data.map((item) => {
 				return (
 					<li className='mr-2'>
