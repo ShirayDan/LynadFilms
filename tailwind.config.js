@@ -9,6 +9,7 @@ export default {
 				blue: '#4280bf',
 				red: '#dd003f',
 				'dark-blue': '#233a50',
+				card: '#091a2c',
 				yellow: '#dcf836',
 			},
 			borderWidth: {
