@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import { StarCardGrid } from '../../../../components/StarCardGrid'
 import { StarCard } from '../../../../components/StarCard'
@@ -8,6 +8,8 @@ import { BsFillGrid3X3GapFill, BsListUl } from 'react-icons/bs'
 import { actors } from '../../../../data'
 
 export const StarList: FC = () => {
+  const [typeCard, setTypeCard] = useState('grid')
+
   return (
     <div className='pb-20'>
       <div className='pb-4'>
@@ -25,21 +27,24 @@ export const StarList: FC = () => {
             </select>
           </div>
           <div className='flex pb-2'>
-            <BsFillGrid3X3GapFill className='mr-2 text-grey' />
-            <BsListUl size={'18px'} className='text-grey' />
+            <BsFillGrid3X3GapFill className='mr-2 text-grey cursor-pointer' onClick={() => setTypeCard('grid')} />
+            <BsListUl size={'18px'} className='text-grey cursor-pointer' onClick={() => setTypeCard('list')} />
           </div>
         </div>
       </div>
 
-      {/* {actors.map((item) => {
-				return <StarCard data={item} />
-			})} */}
-
-      <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-        {actors.map((item) => {
-          return <StarCardGrid data={item} />
+      {typeCard === 'list' &&
+        actors.map((item) => {
+          return <StarCard data={item} />
         })}
-      </div>
+
+      {typeCard === 'grid' && (
+        <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
+          {actors.map((item) => {
+            return <StarCardGrid data={item} />
+          })}
+        </div>
+      )}
     </div>
   )
 }
