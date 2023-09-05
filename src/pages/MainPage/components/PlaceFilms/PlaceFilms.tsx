@@ -6,8 +6,8 @@ import { PlaceItem } from './components/PlaceItem'
 import { films } from '../../../../data'
 
 const data = [
-	{ title: 'In theater', link: '', items: films },
-	{ title: 'On tv', link: '', items: films },
+	{ title: 'Films', link: '', items: films },
+	{ title: 'Serial', link: '', items: films },
 ]
 
 export const PlaceFilms: FC = () => {

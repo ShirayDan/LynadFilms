@@ -55,9 +55,7 @@ export const TrailerBlock: FC = () => {
 		<div className='py-20 px-4 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'>
 			<div className='px-4'>
 				<div className='flex justify-between mb-7'>
-					<h2 className='text-white uppercase text-2xl font-bold'>
-						In theater
-					</h2>
+					<h2 className='text-white uppercase text-2xl font-bold'>Trailers</h2>
 					<ViewAll link='' text='VIEW ALL' />
 				</div>
 				<div className='lg:grid lg:grid-cols-trailer '>
