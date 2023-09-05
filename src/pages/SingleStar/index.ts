@@ -1,1 +1,1 @@
-export { SingleStar } from './Singlestar'
+export { SingleStar } from './SingleStar'

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import './Header.scss'
 
 import { Link } from 'react-router-dom'
@@ -6,8 +6,13 @@ import { Link } from 'react-router-dom'
 import logo from '../../i/logo1.png'
 
 import { FaSearch } from 'react-icons/fa'
+import { Modal } from '../../components/Modal'
+import { SignInModal } from '../SignInModal'
 
 export const Header: FC = () => {
+  const [signInModal, setSignInModal] = useState(false)
+  const [signUpModal, setSignUpModal] = useState(false)
+
   return (
     <header className='header bg-[#0f2133] absolute w-full lg:bg-transparent'>
       <div className='container px-4 mx-auto'>
@@ -38,8 +43,18 @@ export const Header: FC = () => {
             </div>
 
             <ul className='hidden lg:flex items-center '>
-              <li className='ml-3 text-grey font-bold uppercase text-sm'>Log in</li>
-              <li className='ml-3 text-white font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5'>Sign up</li>
+              <li
+                className='ml-3 text-grey font-bold uppercase text-sm'
+                onClick={() => setSignInModal((state) => !state)}
+              >
+                Log in
+              </li>
+              <li
+                className='ml-3 text-white font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5'
+                onClick={() => setSignUpModal((state) => !state)}
+              >
+                Sign up
+              </li>
             </ul>
           </div>
         </nav>
@@ -58,6 +73,8 @@ export const Header: FC = () => {
           </form>
         </div>
       </div>
+
+      {signInModal && <Modal children={<SignInModal />} handleClick={() => setSignInModal((state) => !state)} />}
     </header>
   )
 }

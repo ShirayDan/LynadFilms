@@ -1,8 +1,5 @@
-// import { motion } from 'framer-motion'
 import { FC, ReactNode, MouseEvent } from 'react'
-import styles from './Modal.module.css'
-
-// import { Cross } from '../Cross'
+import './Modal.scss'
 
 interface IModal {
   children: ReactNode
@@ -12,12 +9,9 @@ interface IModal {
 
 export const Modal: FC<IModal> = ({ children, handleClick, guns }) => {
   return (
-    <div className={styles.modal}>
-      <div className={styles.overlay} onClick={(e) => handleClick(e)}></div>
-      <div className={`${styles['modal-content']} ${guns && styles['modal-guns']}`}>
-        {children}
-        {/* <Cross cl={styles['close-modal']} onClick={(e) => handleClick(e)} /> */}
-      </div>
+    <div className='modal'>
+      <div className='overlay' onClick={(e) => handleClick(e)}></div>
+      <div className={`modal-content ${guns && 'modal-guns'}`}>{children}</div>
     </div>
   )
 }
