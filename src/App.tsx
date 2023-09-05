@@ -3,11 +3,12 @@ import './App.scss'
 import { MainLayout } from './routes'
 
 function App() {
-	return (
-		<>
-			<MainLayout />
-		</>
-	)
+  return (
+    <>
+      <MainLayout />
+    </>
+  )
 }
 
 export default App
+

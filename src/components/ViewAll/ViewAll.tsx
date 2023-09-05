@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom'
 import { FaChevronDown } from 'react-icons/fa'
 
 interface IViewAll {
-	link: string
-	text: string
+  link: string
+  text: string
 }
 
 export const ViewAll: FC<IViewAll> = ({ link, text }) => {
-	return (
-		<Link
-			to={link}
-			className='uppercase text-grey inline text-sm flex items-center'>
-			{text} <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
-		</Link>
-	)
+  return (
+    <Link to={link} className='uppercase text-grey inline text-sm flex items-center'>
+      {text} <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
+    </Link>
+  )
 }

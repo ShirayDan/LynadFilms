@@ -1,9 +1,9 @@
 .singleStar {
-	&__photo {
-		width: 270px;
-		height: 410px;
-	}
-	&__container {
-		grid-template-columns: 270px 1fr;
-	}
+  &__photo {
+    width: 270px;
+    height: 410px;
+  }
+  &__container {
+    grid-template-columns: 270px 1fr;
+  }
 }

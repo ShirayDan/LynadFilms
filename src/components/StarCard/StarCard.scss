@@ -1,15 +1,15 @@
 .star-card {
-	&__photo {
-		width: 100px;
-		height: 130px;
-	}
+  &__photo {
+    width: 100px;
+    height: 130px;
+  }
 }
 
 @media (min-width: 600px) {
-	.star-card {
-		&__photo {
-			width: 108px;
-			height: 140px;
-		}
-	}
+  .star-card {
+    &__photo {
+      width: 108px;
+      height: 140px;
+    }
+  }
 }

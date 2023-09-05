@@ -10,19 +10,19 @@ import { SingleStar } from '../pages/SingleStar'
 import { StarPage } from '../pages/StarPage'
 
 export const MainLayout: FC = () => {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<Layout />}>
-					<Route index element={<MainPage />} />
-					<Route path='stars' element={<StarPage />} />
-					<Route path='stars/:id' element={<SingleStar />} />
-					<Route path='films' element={<FilmPage />} />
-					<Route path='films/:id' element={<SingleFilm />} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path='stars' element={<StarPage />} />
+          <Route path='stars/:id' element={<SingleStar />} />
+          <Route path='films' element={<FilmPage />} />
+          <Route path='films/:id' element={<SingleFilm />} />
 
-					<Route path='*' element={<ErrorPage />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	)
+          <Route path='*' element={<ErrorPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
