@@ -14,9 +14,9 @@ export const SingleStar: FC = () => {
 	const actor = actors[0]
 	return (
 		<div className='pt-32 bg-[#020d18] text-grey'>
-			<div className='container px-4 mx-auto lg:grid singleFilm__container'>
+			<div className='container px-4 mx-auto lg:grid singleStar__container'>
 				<div className='px-4 mb-10 lg:px-0'>
-					<div className='flex justify-center mb-4'>
+					<div className='flex justify-center mb-4 lg:justify-start '>
 						<img
 							src={actor.photo}
 							alt=''
@@ -27,7 +27,7 @@ export const SingleStar: FC = () => {
 				<div className='px-4'>
 					<h1 className='text-white font-bold text-3xl mb-6'>{actor.name}</h1>
 					<h2 className='capitalize text-grey mb-3'>{actor.role}</h2>
-					<div className='mb-20'>
+					<div className='mb-10'>
 						<SocialBlock />
 					</div>
 
