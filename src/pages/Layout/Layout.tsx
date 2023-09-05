@@ -8,7 +8,9 @@ export const Layout: FC = () => {
 	return (
 		<>
 			<Header />
-			<Outlet />
+			<main>
+				<Outlet />
+			</main>
 			<Footer />
 		</>
 	)

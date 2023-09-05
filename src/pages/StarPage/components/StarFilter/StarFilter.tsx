@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 export const StarFilter: FC = () => {
 	return (
-		<div className='border-3 border-solid border-[#0f2133] bg-[#0b1a2a] p-4 mb-10'>
+		<div className='border-3 border-solid border-[#0f2133] bg-[#0b1a2a] p-4 mb-10 w-64'>
 			<form action='' className='flex flex-col '>
 				<label
 					htmlFor='starName'

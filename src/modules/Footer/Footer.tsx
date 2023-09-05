@@ -37,7 +37,7 @@ const data = [
 
 export const Footer: FC = () => {
 	return (
-		<div className='bg-slider px-5 py-20'>
+		<footer className='bg-slider px-5 py-20'>
 			<div className='mx-auto max-w-screen-sm lg:max-w-screen-lg lg:px-5 xl:max-w-screen-xl'>
 				<div className='sm:grid grid-cols-2 lg:grid-cols-4'>
 					<div className='mb-4 flex flex-col items-center lg:items-start'>
@@ -96,6 +96,6 @@ export const Footer: FC = () => {
 					</form>
 				</div>
 			</div>
-		</div>
+		</footer>
 	)
 }

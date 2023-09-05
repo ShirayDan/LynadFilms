@@ -10,7 +10,7 @@ interface IFilmCard {
 
 export const FilmCard: FC<IFilmCard> = ({ data }) => {
 	return (
-		<div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-3 sm:max-w-none'>
+		<div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'>
 			<img src={data.img} alt='' className='rounded mb-4 sm:max-w-3xs' />
 			<div className='sm:ml-5'>
 				<div className=''>

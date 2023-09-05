@@ -73,7 +73,7 @@ export const NewsBlock: FC = () => {
 							<h3 className='text-white font-bold text-lg'>
 								More news on Blockbuster
 							</h3>
-							<ViewAll text='See all Movies news' link='' />
+							<ViewAll text='See all Movies news' link='/news' />
 						</div>
 						{news.map((item) => {
 							return (

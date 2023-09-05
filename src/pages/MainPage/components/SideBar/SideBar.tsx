@@ -41,9 +41,9 @@ export const SideBar: FC = () => {
 	return (
 		<aside className='px-4 mx-auto max-w-screen-sm lg:mx-0 lg:max-w-none'>
 			<div className='px-4'>
-				{/* <div className='mb-10'>
+				<div className='mb-10'>
 					<img src={img} alt='' />
-				</div> */}
+				</div>
 
 				<h4 className='text-lg text-white uppercase font-bold mb-7 actor__title'>
 					Spotlight celebrities
@@ -51,7 +51,7 @@ export const SideBar: FC = () => {
 				{actors.map((item) => {
 					return <SmallCard data={item} />
 				})}
-				<ViewAll link='' text='See all celebrities' />
+				<ViewAll link='/stars' text='See all celebrities' />
 			</div>
 		</aside>
 	)

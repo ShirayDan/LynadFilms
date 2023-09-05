@@ -10,7 +10,6 @@ export const MainPage: FC = () => {
 	return (
 		<>
 			<MainPageSlider />
-
 			<div className='bg-[#020d18] pt-20'>
 				<div className='container lg:grid lg:grid-cols-trailer mx-auto'>
 					<PlaceFilms />

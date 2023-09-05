@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import './Header.scss'
 
+import { Link } from 'react-router-dom'
+
 import logo from '../../i/logo1.png'
 
 import { FaSearch } from 'react-icons/fa'
@@ -12,17 +14,23 @@ export const Header: FC = () => {
 				<nav className='py-3 flex justify-between md:py-5'>
 					<div className='flex items-center'>
 						<div className='header_img-container'>
-							<img src={logo} alt='logo' className={`mt-1 ${'header__logo'}`} />
+							<Link to={'/'}>
+								<img
+									src={logo}
+									alt='logo'
+									className={`mt-1 ${'header__logo'}`}
+								/>
+							</Link>
 						</div>
 						<ul className='hidden lg:flex'>
 							<li className='ml-3 text-grey font-bold uppercase text-sm'>
-								<a href=''>Movies</a>
+								<Link to={'/films'}>Movies</Link>
 							</li>
 							<li className='ml-3 text-grey font-bold uppercase text-sm'>
-								<a href=''>Celebrities</a>
+								<Link to={'/stars'}>Celebrities</Link>
 							</li>
 							<li className='ml-3 text-grey font-bold uppercase text-sm'>
-								<a href=''>News</a>
+								<Link to={'/blog'}>News</Link>
 							</li>
 						</ul>
 					</div>

@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import './ViewAll.scss'
+import { Link } from 'react-router-dom'
 
 import { FaChevronDown } from 'react-icons/fa'
 
@@ -10,10 +11,10 @@ interface IViewAll {
 
 export const ViewAll: FC<IViewAll> = ({ link, text }) => {
 	return (
-		<a
-			href={link}
+		<Link
+			to={link}
 			className='uppercase text-grey inline text-sm flex items-center'>
 			{text} <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
-		</a>
+		</Link>
 	)
 }
