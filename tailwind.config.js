@@ -30,13 +30,12 @@ export default {
       },
       gridTemplateColumns: {
         trailer: '1fr 280px',
-        // tabs: '530px 1fr',
         tabs: ' 1fr 140px'
       },
       maxWidth: {
         992: '650px',
         '2xs': '250px',
-        '3xs': '170px',
+        '3xs': '165px',
         'slider-lg': '520px',
         'slider-xl': '730px'
       },
