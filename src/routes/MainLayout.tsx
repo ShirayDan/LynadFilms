@@ -8,6 +8,7 @@ import { MainPage } from '../pages/MainPage'
 import { SingleFilm } from '../pages/SingleFilm'
 import { SingleStar } from '../pages/SingleStar'
 import { StarPage } from '../pages/StarPage'
+import { NewsPage } from '../pages/NewsPage'
 
 export const MainLayout: FC = () => {
   return (
@@ -19,6 +20,7 @@ export const MainLayout: FC = () => {
           <Route path='stars/:id' element={<SingleStar />} />
           <Route path='films' element={<FilmPage />} />
           <Route path='films/:id' element={<SingleFilm />} />
+          <Route path='news' element={<NewsPage />} />
 
           <Route path='*' element={<ErrorPage />} />
         </Route>

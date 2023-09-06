@@ -1,20 +1,20 @@
 import { FC, useState } from 'react'
 
-import { StarCardGrid } from '../../../../components/StarCardGrid'
-import { StarCard } from '../../../../components/StarCard'
+import { NewsCard } from '../../../../components/NewsCard'
+import { NewsCardGrid } from '../../../../components/NewsCardGrid'
 
 import { BsFillGrid3X3GapFill, BsListUl } from 'react-icons/bs'
 
-import { actors } from '../../../../data'
+import { news } from '../../../../data'
 
-export const StarList: FC = () => {
-  const [typeCard, setTypeCard] = useState('grid')
+export const NewsList: FC = () => {
+  const [typeCard, setTypeCard] = useState('list')
 
   return (
-    <div className='pb-20'>
+    <div className='text-white'>
       <div className='pb-4'>
-        <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
-          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {actors.length} stars in total</p>
+        <div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between py-2'>
+          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {news.length} news in total</p>
           <div className='flex justify-between items-center'>
             <div className=' flex justify-between items-center wrap'>
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
@@ -27,7 +27,6 @@ export const StarList: FC = () => {
                 <option value=''>Release date Ascending</option>
               </select>
             </div>
-
             <div className='flex px-2'>
               <BsFillGrid3X3GapFill className='mr-2 text-grey cursor-pointer' onClick={() => setTypeCard('grid')} />
               <BsListUl size={'18px'} className='text-grey cursor-pointer' onClick={() => setTypeCard('list')} />
@@ -35,16 +34,14 @@ export const StarList: FC = () => {
           </div>
         </div>
       </div>
-
       {typeCard === 'list' &&
-        actors.map((item) => {
-          return <StarCard data={item} />
+        news.map((item) => {
+          return <NewsCard data={item} />
         })}
-
       {typeCard === 'grid' && (
-        <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          {actors.map((item) => {
-            return <StarCardGrid data={item} />
+        <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 '>
+          {news.map((item) => {
+            return <NewsCardGrid data={item} />
           })}
         </div>
       )}

@@ -32,7 +32,7 @@ export const Header: FC = () => {
                 <Link to={'/stars'}>Celebrities</Link>
               </li>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/blog'}>News</Link>
+                <Link to={'/news'}>News</Link>
               </li>
             </ul>
           </div>

@@ -13,8 +13,8 @@ export const FilmsList: FC = () => {
   return (
     <div className='pb-20'>
       <div className='pb-4'>
-        <div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between py-2'>
-          <p className='text-grey text-sm mb-2 '>Found 1608 movies in total</p>
+        <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
+          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {films.length} movies in total</p>
           <div className='flex justify-between items-center'>
             <div className=' flex justify-between items-center wrap'>
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
