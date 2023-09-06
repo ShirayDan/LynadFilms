@@ -10,7 +10,9 @@ export default {
         red: '#dd003f',
         'dark-blue': '#233a50',
         card: '#091a2c',
-        yellow: '#dcf836'
+        yellow: '#dcf836',
+        'dark-grey': '#222',
+        'light-grey': '#e1e1e1'
       },
       borderWidth: {
         small: '1px'
@@ -39,7 +41,9 @@ export default {
         'slider-xl': '730px'
       },
       width: {
-        200: '200px'
+        200: '200px',
+        300: '300px',
+        430: '430px'
       }
     }
   },

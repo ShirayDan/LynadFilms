@@ -8,6 +8,7 @@ import logo from '../../i/logo1.png'
 import { FaSearch } from 'react-icons/fa'
 import { Modal } from '../../components/Modal'
 import { SignInModal } from '../SignInModal'
+import { SignUpModal } from '../SignUpModal'
 
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
@@ -75,6 +76,7 @@ export const Header: FC = () => {
       </div>
 
       {signInModal && <Modal children={<SignInModal />} handleClick={() => setSignInModal((state) => !state)} />}
+      {signUpModal && <Modal children={<SignUpModal />} handleClick={() => setSignUpModal((state) => !state)} />}
     </header>
   )
 }
