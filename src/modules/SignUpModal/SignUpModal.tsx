@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 export const SignUpModal: FC = () => {
   return (
-    <div className=' w-300 bg-white p-8 md:w-430 md:p-10'>
+    <div className=' w-300 bg-white p-7 md:w-430 md:p-10'>
       <h3 className=' text-4xl font-bold uppercase text-center text-dark-grey mb-4 md:mb-10'>Sign Up</h3>
       <form action='' className='flex flex-col'>
         <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='userName'>
