@@ -1,14 +1,10 @@
 import { FC } from 'react'
 
-import { TNews } from '../../../../data'
-
 import { news } from '../../../../data'
 
 export const NewsSide: FC = () => {
-  let hotNews = news
-  hotNews.length = 3
   return (
-    <aside className=''>
+    <aside className='lg:w-64'>
       <div className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
           Search
@@ -42,16 +38,18 @@ export const NewsSide: FC = () => {
           Most Popular
         </h4>
         <ul>
-          {hotNews.map((item) => {
-            return (
-              <li className='text-white flex mb-4 items-center'>
-                <img src={item.image} alt='' className='w-28' />
-                <a href='' className='ml-2 text-blue text-sm'>
-                  {' '}
-                  {item.title}
-                </a>
-              </li>
-            )
+          {news.map((item, i) => {
+            if (i < 3) {
+              return (
+                <li className='text-white flex mb-4 items-center'>
+                  <img src={item.image} alt='' className='w-28' />
+                  <a href='' className='ml-2 text-blue text-sm'>
+                    {' '}
+                    {item.title}
+                  </a>
+                </li>
+              )
+            }
           })}
         </ul>
       </div>
