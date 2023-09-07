@@ -14,7 +14,10 @@ export const AddComment: FC = () => {
           // cols={30}
           // rows={10}
         ></textarea>
-        <button type='submit' className='rounded-3xl text-white bg-red font-bold py-3.5 px-9 uppercase text-sm'>
+        <button
+          type='submit'
+          className='rounded-3xl text-white bg-red font-bold py-3.5 px-9 uppercase text-sm lg:hover:text-black lg:hover:bg-yellow ease-out duration-300 cursor-pointer'
+        >
           Send
         </button>
       </form>

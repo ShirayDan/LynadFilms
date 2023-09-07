@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import { TNews } from '../../data'
 
@@ -12,7 +13,9 @@ export const NewsCardGrid: FC<INewsCardGrid> = ({ data }) => {
       <div className='flex justify-center mb-7'>
         <img src={data.image} alt='' className='rounded' />
       </div>
-      <h3 className='text-blue text-lg font-bold mb-4'>{data.title}</h3>
+      <h3 className='text-blue text-lg font-bold mb-4 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <Link to={`/news/${data.id}`}> {data.title}</Link>
+      </h3>
       <p className='text-grey text-sm mb-4'>{data.date}</p>
       <p className='text-grey text-sm'>{data.desc.slice(0, 100) + ' ...'}</p>
     </div>

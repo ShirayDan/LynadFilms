@@ -22,7 +22,10 @@ export const Overview: FC<IOverview> = ({ data }) => {
         <div className='pt-10'>
           <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 '>
             <h4 className='text-white uppercase font-bold text-sm'>Videos and photos</h4>
-            <a href='' className='text-blue text-xs flex items-center'>
+            <a
+              href=''
+              className='text-blue text-xs flex items-center lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+            >
               View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
             </a>
           </div>
@@ -66,7 +69,10 @@ export const Overview: FC<IOverview> = ({ data }) => {
           <div className='mb-4'>
             <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 mb-4'>
               <h4 className='text-white uppercase font-bold text-sm'>Filmography</h4>
-              <a href='' className='text-blue text-xs flex items-center'>
+              <a
+                href=''
+                className='text-blue text-xs flex items-center lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+              >
                 View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
               </a>
             </div>

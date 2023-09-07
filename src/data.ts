@@ -1,4 +1,5 @@
 export type TCrew = {
+  id: number
   name: string
   role: string
   photo: string
@@ -38,6 +39,7 @@ export type TFilmSmall = {
 }
 
 export type TFilms = {
+  id: number
   name: string
   rating: number
   tags: Array<string>
@@ -58,6 +60,7 @@ export type TFilms = {
 }
 
 export type TNews = {
+  id: number
   title: string
   desc: string
   tags: Array<string>
@@ -91,12 +94,14 @@ import news1 from './i/news1.webp'
 
 export const films: TFilms[] = [
   {
+    id: 1,
     name: 'Interstellar',
     rating: 8.1,
     tags: ['Sci-Fi'],
     duration: '2:21',
     director: [
       {
+        id: 1,
         name: 'Joss Whedon',
         role: 'Director',
         photo: cast1,
@@ -118,6 +123,7 @@ export const films: TFilms[] = [
     ],
     stars: [
       {
+        id: 2,
         name: 'Robert Downey Jr.',
         role: 'Robert Downey Jr.',
         photo: cast1,
@@ -137,6 +143,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 3,
         name: 'Chris Evans',
         role: 'Steve Rogers/ Captain America',
         photo: cast1,
@@ -156,6 +163,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 4,
         name: 'Chris Hemsworth',
         role: 'Thor',
         photo: cast1,
@@ -183,6 +191,7 @@ export const films: TFilms[] = [
     photos: [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8],
     writer: [
       {
+        id: 5,
         name: 'Writer',
         photo: cast1,
         role: 'writer',
@@ -205,6 +214,7 @@ export const films: TFilms[] = [
     country: 'USA',
     filmCrew: [
       {
+        id: 6,
         name: 'Victoria Alonso',
         photo: cast1,
         role: 'executive producer',
@@ -224,6 +234,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 7,
         name: 'Mitchel Bell',
         photo: cast1,
         role: 'co-producer',
@@ -243,6 +254,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 8,
         name: 'Jamie Christopher',
         photo: cast1,
         role: 'associate producer',
@@ -289,6 +301,7 @@ export const films: TFilms[] = [
   },
 
   {
+    id: 2,
     name: 'Into the wild',
     rating: 7.8,
     tags: [],
@@ -296,6 +309,7 @@ export const films: TFilms[] = [
     duration: '2:21',
     director: [
       {
+        id: 10,
         name: 'Joe Russo',
         role: 'Director',
         photo: cast1,
@@ -315,6 +329,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 11,
         name: 'Anthony Russo',
         role: 'Director',
         photo: cast1,
@@ -336,6 +351,7 @@ export const films: TFilms[] = [
     ],
     stars: [
       {
+        id: 12,
         name: 'Robert Downey Jr.',
         role: 'Robert Downey Jr.',
         photo: cast1,
@@ -355,6 +371,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 13,
         name: 'Chris Evans',
         role: 'Steve Rogers/ Captain America',
         photo: cast1,
@@ -374,6 +391,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 14,
         name: 'Chris Hemsworth',
         role: 'Thor',
         photo: cast1,
@@ -400,6 +418,7 @@ export const films: TFilms[] = [
     photos: [photo1, photo2, photo3],
     writer: [
       {
+        id: 15,
         name: 'Writer',
         photo: cast1,
         role: 'writer',
@@ -422,6 +441,7 @@ export const films: TFilms[] = [
     country: 'USA',
     filmCrew: [
       {
+        id: 16,
         name: 'Victoria Alonso',
         photo: cast1,
         role: 'executive producer',
@@ -441,6 +461,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 17,
         name: 'Mitchel Bell',
         photo: cast1,
         role: 'co-producer',
@@ -460,6 +481,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 18,
         name: 'Jamie Christopher',
         photo: cast1,
         role: 'associate producer',
@@ -498,6 +520,7 @@ export const films: TFilms[] = [
     ]
   },
   {
+    id: 3,
     name: 'Blade runner',
     rating: 7.3,
     tags: [],
@@ -505,6 +528,7 @@ export const films: TFilms[] = [
     duration: '2:21',
     director: [
       {
+        id: 19,
         name: 'Peyton Reed',
         role: 'Director',
         photo: cast1,
@@ -526,6 +550,7 @@ export const films: TFilms[] = [
     ],
     stars: [
       {
+        id: 20,
         name: 'Robert Downey Jr.',
         role: 'Robert Downey Jr.',
         photo: cast1,
@@ -545,6 +570,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 21,
         name: 'Chris Evans',
         role: 'Steve Rogers/ Captain America',
         photo: cast1,
@@ -564,6 +590,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 22,
         name: 'Chris Hemsworth',
         role: 'Thor',
         photo: cast1,
@@ -590,6 +617,7 @@ export const films: TFilms[] = [
     photos: [photo1, photo2, photo3],
     writer: [
       {
+        id: 23,
         name: 'Writer',
         photo: cast1,
         role: 'writer',
@@ -612,6 +640,7 @@ export const films: TFilms[] = [
     country: 'USA',
     filmCrew: [
       {
+        id: 24,
         name: 'Victoria Alonso',
         photo: cast1,
         role: 'executive producer',
@@ -631,6 +660,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 25,
         name: 'Mitchel Bell',
         photo: cast1,
         role: 'co-producer',
@@ -650,6 +680,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 26,
         name: 'Jamie Christopher',
         photo: cast1,
         role: 'associate producer',
@@ -688,6 +719,7 @@ export const films: TFilms[] = [
     ]
   },
   {
+    id: 4,
     name: 'Mulholland pride',
     rating: 7.2,
     tags: [],
@@ -695,6 +727,7 @@ export const films: TFilms[] = [
     duration: '2:21',
     director: [
       {
+        id: 27,
         name: 'Shane Black',
         role: 'Director',
         photo: cast1,
@@ -716,6 +749,7 @@ export const films: TFilms[] = [
     ],
     stars: [
       {
+        id: 28,
         name: 'Robert Downey Jr.',
         role: 'Robert Downey Jr.',
         photo: cast1,
@@ -735,6 +769,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 29,
         name: 'Chris Evans',
         role: 'Steve Rogers/ Captain America',
         photo: cast1,
@@ -754,6 +789,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 30,
         name: 'Chris Hemsworth',
         role: 'Thor',
         photo: cast1,
@@ -780,6 +816,7 @@ export const films: TFilms[] = [
     photos: [photo1, photo2, photo3],
     writer: [
       {
+        id: 31,
         name: 'Writer',
         photo: cast1,
         role: 'writer',
@@ -802,6 +839,7 @@ export const films: TFilms[] = [
     country: 'USA',
     filmCrew: [
       {
+        id: 32,
         name: 'Victoria Alonso',
         photo: cast1,
         role: 'executive producer',
@@ -821,6 +859,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 33,
         name: 'Mitchel Bell',
         photo: cast1,
         role: 'co-producer',
@@ -840,6 +879,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 34,
         name: 'Jamie Christopher',
         photo: cast1,
         role: 'associate producer',
@@ -878,6 +918,7 @@ export const films: TFilms[] = [
     ]
   },
   {
+    id: 5,
     name: 'Skyfall: Evil of boss',
     rating: 7.0,
     tags: [],
@@ -885,6 +926,7 @@ export const films: TFilms[] = [
     duration: '2:21',
     director: [
       {
+        id: 36,
         name: 'Alan Taylor',
         role: 'Director',
         photo: cast1,
@@ -906,6 +948,7 @@ export const films: TFilms[] = [
     ],
     stars: [
       {
+        id: 37,
         name: 'Robert Downey Jr.',
         role: 'Robert Downey Jr.',
         photo: cast1,
@@ -925,6 +968,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 38,
         name: 'Chris Evans',
         role: 'Steve Rogers/ Captain America',
         photo: cast1,
@@ -944,6 +988,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 39,
         name: 'Chris Hemsworth',
         role: 'Thor',
         photo: cast1,
@@ -970,6 +1015,7 @@ export const films: TFilms[] = [
     photos: [photo1, photo2, photo3],
     writer: [
       {
+        id: 40,
         name: 'Writer',
         photo: cast1,
         role: 'writer',
@@ -992,6 +1038,7 @@ export const films: TFilms[] = [
     country: 'USA',
     filmCrew: [
       {
+        id: 41,
         name: 'Victoria Alonso',
         photo: cast1,
         role: 'executive producer',
@@ -1011,6 +1058,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 42,
         name: 'Mitchel Bell',
         photo: cast1,
         role: 'co-producer',
@@ -1030,6 +1078,7 @@ export const films: TFilms[] = [
         ]
       },
       {
+        id: 43,
         name: 'Jamie Christopher',
         photo: cast1,
         role: 'associate producer',
@@ -1087,6 +1136,7 @@ export const films: TFilms[] = [
 
 export const actors: TCrew[] = [
   {
+    id: 1,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1106,6 +1156,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 2,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1125,6 +1176,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 3,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1144,6 +1196,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 4,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1163,6 +1216,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 5,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1182,6 +1236,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 6,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1201,6 +1256,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 7,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1220,6 +1276,7 @@ export const actors: TCrew[] = [
     ]
   },
   {
+    id: 8,
     name: 'Jamie Christopher',
     photo: cast1,
     role: 'associate producer',
@@ -1242,6 +1299,7 @@ export const actors: TCrew[] = [
 
 export const news: TNews[] = [
   {
+    id: 1,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1273,6 +1331,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 2,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1304,6 +1363,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 3,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1335,6 +1395,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 4,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1366,6 +1427,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 5,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1397,6 +1459,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 6,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1428,6 +1491,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 7,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],
@@ -1459,6 +1523,7 @@ export const news: TNews[] = [
     ]
   },
   {
+    id: 8,
     title: 'The Equalizer 3’ Shoots Past ‘Barbie’ Atop U.K., Ireland Box Office',
     desc: 'Sony’s “The Equalizer 3” has finally toppled the six-week reign of “Barbie” atop the U.K. and Ireland box office. Antoine Fuqua’s action thriller, headlined by Denzel Washington and Dakota Fanning, debuted with £2.7 million ($3.4 million), per numbers from Comscore. In its seventh weekend, Warner Bros.’ “Barbie” slid down to second place with £1.6 million for a mighty total of £92.5 million. It is the highest grossing film of 2023 and occupies seventh position on the all-time charts for the territory behind “Spectre,” which has £95.2 million. Also in its seventh weekend, Universal’s “Oppenheimer” slid down a spot to third with £960,504. With £55.4 million, it is the second highest grossing film of 2023 and is level with “Bohemian Rhapsody” at No. 34 on the all-time chart. Angel’s “Sound of Freedom,” a massive success Stateside, debuted in fourth place with £760,060. Rounding off the top five was Paramount’s “Teenage Mutant Ninja Turtles: Mutant Mayhem,” which earned £618,912 in its fifth weekend for a total of £9.1 million. The only other debut in the top 10 was Lionsgate’s “Cobweb,” which debuted in 10th position with £325,904. The week ahead sees two releases on the Thursday. CinemaLive is bowing opera “Madama Butterfly On The Lake.” Yash Raj Films is opening Bollywood superstar Shah Rukh Khan’s “Jawan.” The star’s “Pathaan” is the highest grossing Indian film of 2023. On the Friday, the two wide releases are both sequels. Warner Bros. is opening “The Nun II” and Universal “My Big Fat Greek Wedding 3” across more than 300 locations each. Trinity CineAsia is opening Chinese blockbuster “No More Bets,” while Studiocanal is bowing the acclaimed “Past Lives.” Munro is releasing 1MDB saga documentary “Man on the Run,” while Bulldog is bowing another documentary, “A Life on the Farm,” about a filmmaking farmer and the inspiring legacy of his long-lost home movies. Meanwhile, the future of beloved London cinema Curzon Mayfair is under threat. The venue’s lease will expire in March 2024 and the landlord has threatened its residency at the site. To showcase the cinema this September and October it is hosting a program of films that previously played to great success there, from Fellini’s “La Dolce Vita” to Tarkovsky’s “Solaris.” Kicking off the efforts to save the cinema is a 4K restoration of Max Ophuls’ “La Ronde,” which played a 76-week unbroken run at Curzon Mayfair from April 1951 to October 1952.',
     tags: ['Sony', 'The Equalizer 3'],

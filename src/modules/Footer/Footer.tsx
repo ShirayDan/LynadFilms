@@ -64,7 +64,10 @@ export const Footer: FC = () => {
                   {item.items.map((item) => {
                     return (
                       <li className='mb-1.5'>
-                        <a className='text-grey text-sm' href={item.link}>
+                        <a
+                          className='text-grey text-sm lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                          href={item.link}
+                        >
                           {item.text}
                         </a>
                       </li>

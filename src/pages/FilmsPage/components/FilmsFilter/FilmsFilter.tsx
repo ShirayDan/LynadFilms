@@ -52,7 +52,10 @@ export const FilmsFilter: FC = () => {
 					<option value='type-4'>Type 4</option>
 					<option value='type-5'>Type 5</option>
 				</select> */}
-        <button type='submit' className='bg-red rounded py-3 uppercase text-sm font-bold text-white'>
+        <button
+          type='submit'
+          className='bg-red rounded py-3 uppercase text-sm font-bold text-white lg:hover:bg-yellow lg:hover:text-black ease-out duration-300 cursor-pointer'
+        >
           Submit
         </button>
       </form>

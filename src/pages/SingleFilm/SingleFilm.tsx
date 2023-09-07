@@ -24,11 +24,11 @@ export const SingleFilm: FC = () => {
             <img src={film.img} alt='' className='rounded' />
           </div>
           <div className='bg-[#07101a] border-3 border-solid border-[#0c1c2c] p-5 flex flex-col'>
-            <button className='bg-red text-white flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3'>
-              <FaPlay fill='white' className='mr-2' /> Watch trailer
+            <button className='bg-red text-white flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3 lg:hover:text-black lg:hover:bg-yellow ease-out duration-300 cursor-pointer'>
+              <FaPlay className='mr-2' /> Watch trailer
             </button>
-            <button className='bg-[#dcf836] flex justify-center items-center text-black uppercase py-4 px-6 text-sm font-bold rounded '>
-              <FaCreditCard fill='black' className='mr-2' /> Buy ticket
+            <button className='bg-[#dcf836] flex justify-center items-center text-black uppercase py-4 px-6 text-sm font-bold rounded lg:hover:text-white lg:hover:bg-red ease-out duration-300 cursor-pointer'>
+              <FaCreditCard className='mr-2' /> Buy ticket
             </button>
           </div>
         </div>

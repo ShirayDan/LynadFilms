@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import { TFilms } from '../../data'
 
@@ -14,8 +15,10 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
       <img src={data.img} alt='' className='rounded mb-4 sm:max-w-3xs' />
       <div className='sm:ml-5'>
         <div className=''>
-          <h3 className='mb-2.5 font-bold text-sm text-white uppercase'>
-            {data.name} <span className='text-grey'>{`(2012)`}</span>
+          <h3 className='mb-2.5 font-bold text-sm text-white uppercase lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+            <Link to={`/films/${data.id}`}>
+              {data.name} <span className='text-grey'>{`(2012)`}</span>
+            </Link>
           </h3>
           <p className='flex mb-2 text-grey'>
             <FaStar fill='#f5b50a' className='mr-0.5 text-lg' />

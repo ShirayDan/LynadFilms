@@ -21,18 +21,24 @@ export const Header: FC = () => {
           <div className='flex items-center'>
             <div className='header_img-container'>
               <Link to={'/'}>
-                <img src={logo} alt='logo' className={`mt-1 ${'header__logo'}`} />
+                <img src={logo} alt='logo' className='mt-1 header__logo' />
               </Link>
             </div>
             <ul className='hidden lg:flex'>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/films'}>Movies</Link>
+                <Link to={'/films'} className='lg:hover:text-yellow ease-out duration-300'>
+                  Movies
+                </Link>
               </li>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/stars'}>Celebrities</Link>
+                <Link to={'/stars'} className='lg:hover:text-yellow ease-out duration-300'>
+                  Celebrities
+                </Link>
               </li>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/news'}>News</Link>
+                <Link to={'/news'} className='lg:hover:text-yellow ease-out duration-300'>
+                  News
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,13 +51,13 @@ export const Header: FC = () => {
 
             <ul className='hidden lg:flex items-center '>
               <li
-                className='ml-3 text-grey font-bold uppercase text-sm'
+                className='ml-3 text-grey font-bold uppercase text-sm lg:hover:text-yellow lg:hover:text-yellow ease-out duration-300'
                 onClick={() => setSignInModal((state) => !state)}
               >
                 Log in
               </li>
               <li
-                className='ml-3 text-white font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5'
+                className='ml-3 text-white font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5 lg:hover:bg-yellow lg:hover:text-black ease-out duration-300 cursor-pointer'
                 onClick={() => setSignUpModal((state) => !state)}
               >
                 Sign up

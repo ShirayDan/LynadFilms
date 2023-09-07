@@ -18,7 +18,9 @@ export const SocialBlock: FC = () => {
       {data.map((item) => {
         return (
           <li className='mr-2'>
-            <a href={item.url}>{item.icon}</a>
+            <a href={item.url} className='lg:hover:text-yellow ease-out duration-300'>
+              {item.icon}
+            </a>
           </li>
         )
       })}

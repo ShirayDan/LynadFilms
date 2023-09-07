@@ -31,17 +31,17 @@ export const NewsBlock: FC = () => {
         <div>
           <ul className='flex '>
             <li className='mr-2'>
-              <a href='' className='text-white text-sm text-grey font-bold'>
+              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
                 #MOVIES
               </a>
             </li>
             <li className='mr-2'>
-              <a href='' className='text-white text-sm text-grey font-bold'>
+              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
                 #TV SHOWS
               </a>
             </li>
             <li>
-              <a href='' className='text-white text-sm text-grey font-bold'>
+              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
                 #CELEBS
               </a>
             </li>
@@ -62,13 +62,15 @@ export const NewsBlock: FC = () => {
 
           <div className='mt-10 lg:mt-0'>
             <div className='flex justify-between mb-6'>
-              <h3 className='text-white font-bold text-lg'>More news on Blockbuster</h3>
+              <h3 className='text-white font-bold text-lg '>More news on Blockbuster</h3>
               <ViewAll text='See all Movies news' link='/news' />
             </div>
             {news.map((item) => {
               return (
                 <div className='flex flex-col mb-7 pr-4'>
-                  <h6 className='text-blue text-sm font-bold'>{item.text}</h6>
+                  <h6 className='text-blue text-sm font-bold mb-1 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                    {item.text}
+                  </h6>
                   <span className='text-grey text-xs'>{item.data}</span>
                 </div>
               )

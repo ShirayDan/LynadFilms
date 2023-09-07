@@ -16,7 +16,7 @@ export const MainPageSlider: FC = () => {
     <div className='pt-36 bg-slider pb-10'>
       <div className='mx-auto px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl'>
         <div className='flex justify-end items-center font-bold text-sm text-white'>
-          Follow us: <SocialBlock />
+          <span className='mr-2'>Follow us:</span> <SocialBlock />
         </div>
         <div className='flex items-center justify-center mt-7'>
           <Swiper

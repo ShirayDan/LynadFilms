@@ -11,7 +11,10 @@ interface IViewAll {
 
 export const ViewAll: FC<IViewAll> = ({ link, text }) => {
   return (
-    <Link to={link} className='uppercase text-grey inline text-sm flex items-center'>
+    <Link
+      to={link}
+      className='uppercase text-grey inline text-sm flex items-center lg:hover:text-yellow ease-out duration-300'
+    >
       {text} <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
     </Link>
   )

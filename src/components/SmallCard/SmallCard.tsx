@@ -25,7 +25,10 @@ export const SmallCard: FC<ISmallCard> = ({ data, trailer }) => {
         )}
       </div>
       <div className='flex flex-col justify-center'>
-        <a href={data.link} className='text-white text-sm smallCard__title'>
+        <a
+          href={data.link}
+          className='text-white text-sm smallCard__title lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+        >
           {data.name}
         </a>
         <span className='text-grey uppercase text-xs'>{data.position || data.duration}</span>

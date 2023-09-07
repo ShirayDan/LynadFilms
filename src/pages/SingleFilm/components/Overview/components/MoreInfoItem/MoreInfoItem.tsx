@@ -15,9 +15,15 @@ export const MoreInfoItem: FC<IMoreInfoItem> = ({ data, text }) => {
         {' '}
         {data.map((item, i, arr) => {
           return arr.length - 1 === i ? (
-            <a href=''>{typeof item === 'object' ? item.name : item}</a>
+            <a href='' className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+              {typeof item === 'object' ? item.name : item}
+            </a>
           ) : (
-            <a href=''>{typeof item === 'object' ? item.name : item}</a> + ' '
+            (
+              <a href='' className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                {typeof item === 'object' ? item.name : item}
+              </a>
+            ) + ' '
           )
         })}
       </div>

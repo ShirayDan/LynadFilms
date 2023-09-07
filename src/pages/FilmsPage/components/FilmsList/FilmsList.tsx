@@ -28,8 +28,15 @@ export const FilmsList: FC = () => {
               </select>
             </div>
             <div className='flex px-2'>
-              <BsFillGrid3X3GapFill className='mr-2 text-grey cursor-pointer' onClick={() => setTypeCard('grid')} />
-              <BsListUl size={'18px'} className='text-grey cursor-pointer' onClick={() => setTypeCard('list')} />
+              <BsFillGrid3X3GapFill
+                className='mr-2 text-grey lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                onClick={() => setTypeCard('grid')}
+              />
+              <BsListUl
+                size={'18px'}
+                className='text-grey lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                onClick={() => setTypeCard('list')}
+              />
             </div>
           </div>
         </div>

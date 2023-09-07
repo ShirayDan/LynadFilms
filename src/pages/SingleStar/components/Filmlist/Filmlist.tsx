@@ -16,7 +16,10 @@ export const Filmlist: FC<IFilmlist> = ({ data }) => {
             <img src={item.image} alt='' className='rounded filmList__photo' />
             <div className='ml-4'>
               <h3 className='text-blue'>
-                <a href=''>{item.name}</a> <span className='text-grey'>({item.year})</span>
+                <a href='' className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                  {item.name}
+                </a>{' '}
+                <span className='text-grey'>({item.year})</span>
               </h3>
               <p>{item.role}</p>
             </div>
