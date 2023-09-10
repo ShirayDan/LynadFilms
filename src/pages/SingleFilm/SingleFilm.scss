@@ -3,5 +3,24 @@
     &__container {
       grid-template-columns: 300px 1fr;
     }
+    &__share-list {
+      display: none;
+    }
+    &__share:hover > &__share-list {
+      display: block;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: -9px;
+        top: calc(50% - 10px);
+        width: 0;
+        border-top: 10px solid transparent;
+        border-right: 10px solid #dd003f;
+        border-bottom: 10px solid transparent;
+      }
+    }
   }
 }

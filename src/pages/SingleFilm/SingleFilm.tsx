@@ -13,6 +13,7 @@ import { FaPlay, FaCreditCard, FaHeart, FaStar } from 'react-icons/fa'
 import { ImShare2 } from 'react-icons/im'
 
 import { films } from '../../data/films'
+import { SocialBlock } from '../../components/SocialBlock'
 
 export const SingleFilm: FC = () => {
   const { id } = useParams()
@@ -40,25 +41,28 @@ export const SingleFilm: FC = () => {
             {film.name} <span className='text-grey font-normal text-xl'>{film.date.split(',')[1].trim()}</span>
           </h1>
           <ul className='mb-10 md:flex items-center'>
-            <li className='uppercase text-red flex text-sm items-center font-bold mb-3 md:mb-0 md:mr-3'>
+            <li className='uppercase text-red flex text-sm items-center cursor-pointer font-bold mb-3 md:mb-0 md:mr-3'>
               <span className='block border border-solid rounded-full border-red p-2 mr-2'>
                 <FaHeart />
               </span>{' '}
               Add to favorite
             </li>
-            <li className='uppercase text-red flex text-sm items-center font-bold'>
+            <li className='uppercase text-red singleFilm__share cursor-pointer flex text-sm items-center font-bold h-10'>
               <span className='block border border-solid rounded-full border-red p-2 mr-2'>
                 <ImShare2 />
               </span>{' '}
               Share
+              <div className='relative singleFilm__share-list p-3 bg-red rounded ml-4 text-white'>
+                <SocialBlock />
+              </div>
             </li>
           </ul>
-          <div className='border-0 border-solid border-y border-grey mb-10'>
-            <p className='flex py-4 text-grey'>
+          <div className='border-0 border-solid border-y border-grey mb-10 flex items-start py-4 flex-col sm:flex-row sm:items-center sm:justify-between'>
+            <p className='flex text-grey mb-2 sm:mr-2 sm:mb-0'>
               <FaStar fill='#f5b50a' className='mr-0.5 text-lg' />
               {film.rating}
             </p>
-            <p className='flex pb-4'>
+            <p className='flex items-center'>
               Rate This Movie:{' '}
               <ul className='flex ml-1'>
                 {Array(10)
