@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { Link } from 'react-router-dom'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './MainPageSlider.scss'
@@ -51,9 +52,9 @@ export const MainPageSlider: FC = () => {
                   <div className='flex justify-center'>
                     <div className='relative top-0 left-0'>
                       {' '}
-                      <a href={item.link}>
+                      <Link to={`/films/${item.id}`}>
                         <img src={item.photo} alt='' className='rounded mainPage__img' />
-                      </a>
+                      </Link>
                       <div className='absolute bottom-3 left-3'>
                         <div className='flex mb-2'>
                           {item.tags.map((item) => {

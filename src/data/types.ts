@@ -13,6 +13,7 @@ export type TCrew = {
 }
 
 export type TFilmUser = {
+  id: number
   name: string
   role: string
   year: number

@@ -37,7 +37,9 @@ export default {
         '2xs': '250px',
         '3xs': '165px',
         'slider-lg': '520px',
-        'slider-xl': '730px'
+        'slider-xl': '726px',
+        'slider-2xl': '836px',
+        'slider-3xl': '866px'
       },
       width: {
         200: '200px',

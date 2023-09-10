@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 import { TCrew } from '../../data/types'
 
@@ -14,9 +15,9 @@ export const PersonList: FC<IPersonList> = ({ data }) => {
           <li className='flex items-center justify-between py-3'>
             <div className='flex items-center justify-center text-sm text-blue'>
               <img src={item.photo} alt='' className='rounded w-16' />
-              <a href='' className='ml-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+              <Link to={`/stars/${item.id}`} className='ml-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
                 {item.name}
-              </a>
+              </Link>
             </div>
             <p className='text-sm'>{item.role}</p>
           </li>

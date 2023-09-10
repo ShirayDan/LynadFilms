@@ -10,6 +10,8 @@ interface IFilmCard {
 }
 
 export const FilmCard: FC<IFilmCard> = ({ data }) => {
+  console.log(data)
+
   return (
     <div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'>
       <img src={data.photo} alt='' className='rounded mb-4 sm:max-w-3xs' />
@@ -34,14 +36,22 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
             {' '}
             Director:{' '}
             {data.director.map((item) => {
-              return <span className='text-blue'>{item.name} </span>
+              return (
+                <Link to={`/stars/${item.id}`} className='text-blue'>
+                  {item.name}{' '}
+                </Link>
+              )
             })}
           </li>
           <li>
             {' '}
             Stars:{' '}
             {data.stars.map((item) => {
-              return <span className='text-blue'>{item.name} </span>
+              return (
+                <Link to={`/stars/${item.id}`} className='text-blue'>
+                  {item.name}{' '}
+                </Link>
+              )
             })}
           </li>
         </ul>

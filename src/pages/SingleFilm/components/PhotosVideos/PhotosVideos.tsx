@@ -4,7 +4,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { TFilms } from '../../../../data'
+import { TFilms } from '../../../../data/types'
 
 interface IOverview {
   data: TFilms
@@ -20,7 +20,7 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
         <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 my-7'>
           <h4 className='text-white uppercase font-bold text-sm'>Photos ({data.photos.length})</h4>
         </div>
-        <div className='lg:max-w-slider-lg xl:max-w-slider-xl'>
+        <div className='lg:max-w-slider-lg xl:max-w-slider-2xl'>
           <Swiper
             pagination={{
               clickable: true
@@ -40,11 +40,10 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
                 slidesPerView: 4
               }
             }}
-            // autoplay={{
-            // 	delay: 2500,
-            // 	disableOnInteraction: false,
-            // }}
-
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >
@@ -65,7 +64,7 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
         <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 my-7'>
           <h4 className='text-white uppercase font-bold text-sm'>Videos ({data.photos.length})</h4>
         </div>
-        <div className='lg:max-w-slider-lg xl:max-w-slider-xl'>
+        <div className='lg:max-w-slider-lg xl:max-w-slider-2xl'>
           <Swiper
             pagination={{
               clickable: true
@@ -85,11 +84,10 @@ export const PhotosVideos: FC<IOverview> = ({ data }) => {
                 slidesPerView: 4
               }
             }}
-            // autoplay={{
-            // 	delay: 2500,
-            // 	disableOnInteraction: false,
-            // }}
-
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >

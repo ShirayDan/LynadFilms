@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { Link } from 'react-router-dom'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './PlaceItem.scss'
@@ -68,7 +69,9 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
           return (
             <SwiperSlide>
               <div className='flex item-center justify-center mt-7'>
-                <img src={item.photo} alt='' className='rounded mainPage__img placeItem__img' />
+                <Link to={`/films/${item.id}`}>
+                  <img src={item.photo} alt='' className='rounded mainPage__img placeItem__img' />
+                </Link>
               </div>
             </SwiperSlide>
           )

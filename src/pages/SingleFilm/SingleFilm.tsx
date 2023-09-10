@@ -37,7 +37,7 @@ export const SingleFilm: FC = () => {
         </div>
         <div className='px-4'>
           <h1 className='text-white font-bold text-3xl mb-4'>
-            {film.name} <span className='text-grey font-normal text-xl'>2015</span>
+            {film.name} <span className='text-grey font-normal text-xl'>{film.date.split(',')[1].trim()}</span>
           </h1>
           <ul className='mb-10 md:flex items-center'>
             <li className='uppercase text-red flex text-sm items-center font-bold mb-3 md:mb-0 md:mr-3'>

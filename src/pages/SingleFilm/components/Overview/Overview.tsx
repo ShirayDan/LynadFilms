@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { Link } from 'react-router-dom'
 
 import { PersonList } from '../../../../components/PersonList'
 import { MoreInfoItem } from './components/MoreInfoItem'
@@ -16,8 +17,6 @@ interface IOverview {
 }
 
 export const Overview: FC<IOverview> = ({ data }) => {
-  console.log(data)
-
   return (
     <>
       <p className='mb-3'>
@@ -35,7 +34,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
             View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
           </a>
         </div>
-        <div className='mt-5 lg:max-w-slider-lg xl:max-w-slider-xl'>
+        <div className='mt-5 lg:max-w-slider-lg xl:max-w-slider-2xl'>
           <Swiper
             pagination={{
               clickable: true
@@ -55,11 +54,10 @@ export const Overview: FC<IOverview> = ({ data }) => {
                 slidesPerView: 4
               }
             }}
-            // autoplay={{
-            // 	delay: 2500,
-            // 	disableOnInteraction: false,
-            // }}
-
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >
@@ -91,9 +89,20 @@ export const Overview: FC<IOverview> = ({ data }) => {
           <h4 className='text-white uppercase font-bold text-sm'>More Information</h4>
         </div>
         <ul className='pl-4'>
-          {/* <MoreInfoItem text={'Director:'} data={data.director} />
-          <MoreInfoItem text={'Writer:'} data={data.writer} /> */}
-          <MoreInfoItem text={'Genres:'} data={data.tags} />
+          <MoreInfoItem text={'Director:'} data={data.director} />
+          <MoreInfoItem text={'Writer:'} data={data.writer} />
+          <li className='flex justify-between font-bold text-sm py-3'>
+            Genres:
+            <div className='text-blue font-normal'>
+              {data.tags.map((item, i, arr) => {
+                return (
+                  <Link to={``} className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                    {arr.length - 1 === i ? item : item + ' '}
+                  </Link>
+                )
+              })}
+            </div>
+          </li>
           <li className='flex justify-between font-bold text-sm py-3'>
             Release Date:{' '}
             <span className='font-normal'>
