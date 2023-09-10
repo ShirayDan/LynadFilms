@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import './Filmlist.scss'
 
-import { TFilmFake } from '../../../../data'
+import { TFilmUser } from '../../../../data/types'
 
 interface IFilmlist {
-  data: TFilmFake[]
+  data: TFilmUser[]
 }
 
 export const Filmlist: FC<IFilmlist> = ({ data }) => {
@@ -13,7 +13,7 @@ export const Filmlist: FC<IFilmlist> = ({ data }) => {
       {data.map((item) => {
         return (
           <li className='flex items-center py-3'>
-            <img src={item.image} alt='' className='rounded filmList__photo' />
+            <img src={item.photo} alt='' className='rounded filmList__photo' />
             <div className='ml-4'>
               <h3 className='text-blue'>
                 <a href='' className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>

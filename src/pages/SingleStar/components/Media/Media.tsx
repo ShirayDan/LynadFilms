@@ -4,7 +4,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { TCrew } from '../../../../data'
+import { TCrew } from '../../../../data/types'
 
 interface IMedia {
   data: TCrew

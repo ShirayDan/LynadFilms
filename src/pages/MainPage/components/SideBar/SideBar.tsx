@@ -5,37 +5,8 @@ import { ViewAll } from '../../../../components/ViewAll'
 import { SmallCard } from '../../../../components/SmallCard'
 
 import img from '../../../../i/ads1.png'
-import ava1 from '../../../../i/ava1.jpg'
-import ava2 from '../../../../i/ava2.jpg'
-import ava3 from '../../../../i/ava3.jpg'
-import ava4 from '../../../../i/ava4.jpg'
 
-const actors = [
-  {
-    image: ava1,
-    name: 'Samuel N. Jack',
-    position: 'Actor',
-    link: ''
-  },
-  {
-    image: ava2,
-    name: 'Benjamin Carroll',
-    position: 'Actor',
-    link: ''
-  },
-  {
-    image: ava3,
-    name: 'Beverly Griffin',
-    position: 'Actor',
-    link: ''
-  },
-  {
-    image: ava4,
-    name: 'Justin Weaver',
-    position: 'Actor',
-    link: ''
-  }
-]
+import { crew } from '../../../../data/crew'
 
 export const SideBar: FC = () => {
   return (
@@ -46,7 +17,10 @@ export const SideBar: FC = () => {
         </div>
 
         <h4 className='text-lg text-white uppercase font-bold mb-7 actor__title '>Spotlight celebrities</h4>
-        {actors.map((item) => {
+        {crew.map((item, i) => {
+          if (i > 3) {
+            return
+          }
           return <SmallCard data={item} />
         })}
         <ViewAll link='/stars' text='See all celebrities' />

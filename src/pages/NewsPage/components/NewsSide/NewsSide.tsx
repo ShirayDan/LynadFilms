@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { news } from '../../../../data'
+import { news } from '../../../../data/news'
 
 export const NewsSide: FC = () => {
   return (

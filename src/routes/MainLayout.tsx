@@ -10,10 +10,12 @@ import { SingleStar } from '../pages/SingleStar'
 import { StarPage } from '../pages/StarPage'
 import { NewsPage } from '../pages/NewsPage'
 import { SingleNews } from '../pages/SingleNews'
+import { ScrollToTop } from '../components/ScrollToTop'
 
 export const MainLayout: FC = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<MainPage />} />

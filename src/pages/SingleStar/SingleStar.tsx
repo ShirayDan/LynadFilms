@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useParams } from 'react-router'
 import './SingleStar.scss'
 
 import { Tab } from '../../components/Tab'
@@ -8,10 +9,12 @@ import { Filmography } from './components/Filmography'
 import { Media } from './components/Media'
 import { Overview } from './components/Overview'
 
-import { actors } from '../../data'
+import { crew } from '../../data/crew'
 
 export const SingleStar: FC = () => {
-  const actor = actors[0]
+  const { id } = useParams()
+
+  const actor = crew[Number(id) - 1]
   return (
     <div className='pt-32 bg-[#020d18] text-grey'>
       <div className='container px-4 mx-auto lg:grid singleStar__container'>

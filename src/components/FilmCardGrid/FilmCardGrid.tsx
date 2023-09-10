@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { TFilms } from '../../data'
+import { TFilms } from '../../data/types'
 
 import { FaStar } from 'react-icons/fa'
 
@@ -12,7 +12,7 @@ interface IFilmCard {
 export const FilmCardGrid: FC<IFilmCard> = ({ data }) => {
   return (
     <div className='flex justify-center py-4 flex-col items-center sm:py-2'>
-      <img src={data.img} alt='' className='max-w-3xs rounded' />
+      <img src={data.photo} alt='' className='max-w-3xs rounded' />
       <h3 className='text-grey mt-3 text-center font-bold lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
         <Link to={`/films/${data.id}`}> {data.name}</Link>
 

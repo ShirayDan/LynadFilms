@@ -5,7 +5,7 @@ import { FilmCardGrid } from '../../../../components/FilmCardGrid'
 
 import { BsFillGrid3X3GapFill, BsListUl } from 'react-icons/bs'
 
-import { films } from '../../../../data'
+import { films } from '../../../../data/films'
 
 export const FilmsList: FC = () => {
   const [typeCard, setTypeCard] = useState('grid')

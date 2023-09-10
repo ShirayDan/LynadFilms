@@ -9,7 +9,7 @@ import { SocialBlock } from '../../../../components/SocialBlock'
 
 import { FaStar } from 'react-icons/fa'
 
-import { films } from '../../../../data'
+import { films } from '../../../../data/films'
 
 export const MainPageSlider: FC = () => {
   return (
@@ -53,13 +53,15 @@ export const MainPageSlider: FC = () => {
                     <div className='relative top-0 left-0'>
                       {' '}
                       <a href={item.link}>
-                        <img src={item.img} alt='' className='rounded mainPage__img' />
+                        <img src={item.photo} alt='' className='rounded mainPage__img' />
                       </a>
                       <div className='absolute bottom-3 left-3'>
                         <div className='flex mb-2'>
                           {item.tags.map((item) => {
                             return (
-                              <div className=' uppercase rounded bg-blue text-white text-xs p-1 font-bold'>{item}</div>
+                              <div className=' uppercase rounded bg-blue text-white text-xs p-1 font-bold mr-1'>
+                                {item}
+                              </div>
                             )
                           })}
                         </div>

@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Filmlist } from '../Filmlist'
 
-import { TCrew } from '../../../../data'
+import { TCrew } from '../../../../data/types'
 
 interface IFilmography {
   data: TCrew

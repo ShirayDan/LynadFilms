@@ -5,7 +5,7 @@ import { NewsCardGrid } from '../../../../components/NewsCardGrid'
 
 import { BsFillGrid3X3GapFill, BsListUl } from 'react-icons/bs'
 
-import { news } from '../../../../data'
+import { news } from '../../../../data/news'
 
 export const NewsList: FC = () => {
   const [typeCard, setTypeCard] = useState('list')

@@ -7,7 +7,7 @@ import './PlaceItem.scss'
 
 import { ViewAll } from '../../../../../../components/ViewAll'
 
-import { TFilms } from '../../../../../../data'
+import { TFilms } from '../../../../../../data/types'
 
 interface IPlaceItem {
   data: {
@@ -69,7 +69,7 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
           return (
             <SwiperSlide>
               <div className='flex item-center justify-center mt-7'>
-                <img src={item.img} alt='' className='rounded mainPage__img placeItem__img' />
+                <img src={item.photo} alt='' className='rounded mainPage__img placeItem__img' />
               </div>
             </SwiperSlide>
           )

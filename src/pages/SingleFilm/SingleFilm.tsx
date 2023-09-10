@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useParams } from 'react-router'
 import './SingleFilm.scss'
 
 import { Overview } from './components/Overview'
@@ -11,17 +12,19 @@ import { Tab } from '../../components/Tab'
 import { FaPlay, FaCreditCard, FaHeart, FaStar } from 'react-icons/fa'
 import { ImShare2 } from 'react-icons/im'
 
-import { films } from '../../data'
+import { films } from '../../data/films'
 
 export const SingleFilm: FC = () => {
-  const film = films[0]
+  const { id } = useParams()
+
+  const film = films[Number(id) - 1]
 
   return (
     <div className='pt-32 bg-[#020d18] text-grey'>
       <div className='container px-4 mx-auto lg:grid singleFilm__container'>
         <div className='px-4 mb-10 lg:px-0'>
           <div className='flex justify-center mb-4'>
-            <img src={film.img} alt='' className='rounded' />
+            <img src={film.photo} alt='' className='rounded' />
           </div>
           <div className='bg-[#07101a] border-3 border-solid border-[#0c1c2c] p-5 flex flex-col'>
             <button className='bg-red text-white flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3 lg:hover:text-black lg:hover:bg-yellow ease-out duration-300 cursor-pointer'>

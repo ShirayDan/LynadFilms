@@ -6,7 +6,7 @@ import 'swiper/css/pagination'
 
 import { Filmlist } from '../Filmlist'
 
-import { TCrew } from '../../../../data'
+import { TCrew } from '../../../../data/types'
 
 import { FaChevronDown } from 'react-icons/fa'
 

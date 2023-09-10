@@ -9,13 +9,15 @@ import { MoreInfoItem } from './components/MoreInfoItem'
 
 import { FaChevronDown } from 'react-icons/fa'
 
-import { TFilms } from '../../../../data'
+import { TFilms } from '../../../../data/types'
 
 interface IOverview {
   data: TFilms
 }
 
 export const Overview: FC<IOverview> = ({ data }) => {
+  console.log(data)
+
   return (
     <>
       <p className='mb-3'>
@@ -89,8 +91,8 @@ export const Overview: FC<IOverview> = ({ data }) => {
           <h4 className='text-white uppercase font-bold text-sm'>More Information</h4>
         </div>
         <ul className='pl-4'>
-          <MoreInfoItem text={'Director:'} data={data.director} />
-          <MoreInfoItem text={'Writer:'} data={data.writer} />
+          {/* <MoreInfoItem text={'Director:'} data={data.director} />
+          <MoreInfoItem text={'Writer:'} data={data.writer} /> */}
           <MoreInfoItem text={'Genres:'} data={data.tags} />
           <li className='flex justify-between font-bold text-sm py-3'>
             Release Date:{' '}

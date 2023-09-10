@@ -4,7 +4,7 @@ import { SocialBlock } from '../../components/SocialBlock'
 import { Comment } from './components/Comment'
 import { AddComment } from './components/AddComment'
 
-import { news } from '../../data'
+import { news } from '../../data/news'
 
 export const SingleNews: FC = () => {
   const newsOne = news[0]

@@ -5,7 +5,7 @@ import { StarCard } from '../../../../components/StarCard'
 
 import { BsFillGrid3X3GapFill, BsListUl } from 'react-icons/bs'
 
-import { actors } from '../../../../data'
+import { crew } from '../../../../data/crew'
 
 export const StarList: FC = () => {
   const [typeCard, setTypeCard] = useState('grid')
@@ -14,7 +14,7 @@ export const StarList: FC = () => {
     <div className='pb-20'>
       <div className='pb-4'>
         <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
-          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {actors.length} stars in total</p>
+          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {crew.length} stars in total</p>
           <div className='flex justify-between items-center'>
             <div className=' flex justify-between items-center wrap'>
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
@@ -44,13 +44,13 @@ export const StarList: FC = () => {
       </div>
 
       {typeCard === 'list' &&
-        actors.map((item) => {
+        crew.map((item) => {
           return <StarCard data={item} />
         })}
 
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          {actors.map((item) => {
+          {crew.map((item) => {
             return <StarCardGrid data={item} />
           })}
         </div>
