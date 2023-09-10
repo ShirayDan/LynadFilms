@@ -1,5 +1,3 @@
-import './App.scss'
-
 import { MainLayout } from './routes'
 
 function App() {

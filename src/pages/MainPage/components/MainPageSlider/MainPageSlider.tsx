@@ -38,11 +38,10 @@ export const MainPageSlider: FC = () => {
                 slidesPerView: 4
               }
             }}
-            // autoplay={{
-            // 	delay: 2500,
-            // 	disableOnInteraction: false,
-            // }}
-
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >

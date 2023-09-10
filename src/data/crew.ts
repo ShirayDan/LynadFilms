@@ -1,14 +1,5 @@
 import { TCrew } from './types'
 
-// import { F_Oppenheimer } from './films'
-// import { F_Spider_Man_Across_the_Spider_Verse } from './films'
-// import { F_Meg_2 } from './films'
-// import { F_Gran_Turismo } from './films'
-// import { F_Fast_X } from './films'
-// import { F_Transformers_Rise_of_the_Beasts } from './films'
-// import { F_John_Wick_4 } from './films'
-// import { F_Mission_Impossible } from './films'
-
 // films
 import Oppenheimer from '../i/film1.jpg'
 import Spider_Man from '../i/film2.jpg'

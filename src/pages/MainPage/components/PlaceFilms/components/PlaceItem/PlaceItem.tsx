@@ -56,11 +56,10 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
             slidesPerView: 4
           }
         }}
-        // autoplay={{
-        // 	delay: 2500,
-        // 	disableOnInteraction: false,
-        // }}
-
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
         spaceBetween={10}
         modules={[Pagination, Autoplay]}
         className='mySwiper'
