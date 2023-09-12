@@ -45,6 +45,9 @@ export default {
         200: '200px',
         300: '300px',
         430: '430px'
+      },
+      height: {
+        112: '26rem'
       }
     }
   },

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -12,6 +12,8 @@ import img from '../../../../i/ads1.png'
 import { films } from '../../../../data/films'
 
 export const TrailerBlock: FC = () => {
+  const [video, setVideo] = useState(0)
+
   return (
     <div className='py-20 px-4 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'>
       <div className='px-4'>
@@ -21,9 +23,9 @@ export const TrailerBlock: FC = () => {
         </div>
         <div className='lg:grid lg:grid-cols-trailer'>
           <div className='flex justify-center xl:max-w-4xl'>
-            <img src={img} alt='' />
+            <iframe src={`//www.youtube.com/embed/${films[video].link}`} className='h-112 w-full' />
           </div>
-          <div className='bg-[#0b1a2a] mt-2'>
+          <div className='bg-[#0b1a2a] mt-2 lg:mt-0'>
             <Swiper
               direction={'vertical'}
               navigation={true}
@@ -34,11 +36,11 @@ export const TrailerBlock: FC = () => {
                 delay: 2500,
                 disableOnInteraction: false
               }}
-              className='mySwiper h-96'
+              className='mySwiper h-112'
             >
               {films.map((item) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide className='cursor-pointer' onClick={() => setVideo(item.id - 1)}>
                     <SmallCard data={item} trailer={true} />
                   </SwiperSlide>
                 )
