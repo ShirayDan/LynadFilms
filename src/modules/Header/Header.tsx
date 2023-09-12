@@ -9,6 +9,8 @@ import { FaSearch } from 'react-icons/fa'
 import { Modal } from '../../components/Modal'
 import { SignInModal } from '../SignInModal'
 import { SignUpModal } from '../SignUpModal'
+import { Burger } from './components/Burger'
+import { Language } from '../../components/Language'
 
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
@@ -40,14 +42,13 @@ export const Header: FC = () => {
                   News
                 </Link>
               </li>
+              <li className='ml-2 block flex items-center relative'>
+                <Language textStyle='text-grey font-bold mr-2 uppercase text-sm' />
+              </li>
             </ul>
           </div>
           <div className='flex items-center justify-center'>
-            <div className='flex flex-col border-solid border-small w-9 h-9 p-2 border-white lg:hidden'>
-              <span className={'header__line'}></span>
-              <span className={'header__line header__line_two'}></span>
-              <span className={'header__line header__line_three'}></span>
-            </div>
+            <Burger />
 
             <ul className='hidden lg:flex items-center '>
               <li
