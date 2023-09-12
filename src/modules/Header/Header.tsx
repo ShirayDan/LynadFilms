@@ -11,6 +11,7 @@ import { SignInModal } from '../SignInModal'
 import { SignUpModal } from '../SignUpModal'
 import { Burger } from './components/Burger'
 import { Language } from '../../components/Language'
+import { Theme } from '../../components/Theme'
 
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
@@ -42,8 +43,11 @@ export const Header: FC = () => {
                   News
                 </Link>
               </li>
-              <li className='ml-2 block flex items-center relative'>
+              <li className='ml-3 block flex items-center relative'>
                 <Language textStyle='text-grey font-bold mr-2 uppercase text-sm' />
+              </li>
+              <li className='ml-1 block flex items-center relative'>
+                <Theme textStyle='text-grey font-bold mr-2 uppercase text-sm' />
               </li>
             </ul>
           </div>

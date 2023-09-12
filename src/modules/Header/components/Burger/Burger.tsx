@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { SocialBlock } from '../../../../components/SocialBlock'
 import { Language } from '../../../../components/Language'
+import { Theme } from '../../../../components/Theme'
 
 import logo from '../../../../i/logo1.png'
 
@@ -60,8 +61,13 @@ export const Burger: FC = () => {
               </li>
             )
           })}
-          <li className='relative'>
-            <Language textStyle={'text-white'} />
+          <li className='flex justify-between'>
+            <div className='relative'>
+              <Language textStyle={'text-white'} />
+            </div>
+            <div className='relative'>
+              <Theme textStyle={'text-white'} burger={true} />
+            </div>
           </li>
         </ul>
 

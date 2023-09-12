@@ -14,11 +14,11 @@ export const Language: FC<ILanguage> = ({ textStyle }) => {
     <>
       <div className={`select-none ${textStyle}`} onClick={() => setOpenLang((state) => !state)}>
         <span className='flex items-center'>
-          Language <FaChevronDown className={`ml-3 ${openLang && 'rotate-180'}`} />
+          Language <FaChevronDown className={`ml-1 ${openLang && 'rotate-180'}`} />
         </span>
       </div>
       {openLang && (
-        <ul className='w-24 top-6 text-white absolute bg-grey p-2.5 rounded'>
+        <ul className='w-24 top-6 text-white absolute bg-dark-blue p-2.5 rounded'>
           <li className='flex mb-2'>
             {' '}
             <img src={ua} alt='' className='w-5 mr-2' />
