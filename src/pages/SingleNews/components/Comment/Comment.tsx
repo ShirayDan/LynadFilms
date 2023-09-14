@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { TComment } from '../../../../data'
+import { TComment } from '../../../../data/types'
 
 interface IComment {
   data: TComment
@@ -8,7 +8,7 @@ interface IComment {
 
 export const Comment: FC<IComment> = ({ data }) => {
   return (
-    <div className='p-6 mt-7 bg-[#071829] flex flex-col sm:flex-row sm:justify-between items-center'>
+    <div className='p-6 mt-7 bg-news-card flex flex-col sm:flex-row sm:justify-between items-center'>
       <img src={data.user.userPhoto} alt='' className='rounded-full mb-8 w-20 h-20' />
       <div className='flex items-start flex-col sm:ml-3'>
         <h6 className='text-white my-4'>

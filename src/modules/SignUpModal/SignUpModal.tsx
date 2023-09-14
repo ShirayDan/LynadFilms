@@ -11,7 +11,7 @@ export const SignUpModal: FC = () => {
         <input
           type='text'
           id='userName'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
         />
         <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='email'>
           Your Email:
@@ -19,7 +19,7 @@ export const SignUpModal: FC = () => {
         <input
           type='email'
           id='email'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
         />
         <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='password'>
           Your Password
@@ -27,7 +27,7 @@ export const SignUpModal: FC = () => {
         <input
           type='password'
           id='password'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
         />
         <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='passwordRepeat'>
           Repeat Your Password
@@ -35,10 +35,13 @@ export const SignUpModal: FC = () => {
         <input
           type='password'
           id='passwordRepeat'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
         />
 
-        <button type='submit' className='bg-red text-white uppercase text-sm font-bold py-2 px-10'>
+        <button
+          type='submit'
+          className='bg-red text-[#fff] uppercase text-sm font-bold py-2 px-10 lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
+        >
           Sign up
         </button>
       </form>

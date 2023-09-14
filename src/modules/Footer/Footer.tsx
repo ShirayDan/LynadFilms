@@ -37,7 +37,7 @@ const data = [
 
 export const Footer: FC = () => {
   return (
-    <footer className='bg-slider px-5 py-20'>
+    <footer className='dark:bg-slider bg-main-trailer px-5 py-20'>
       <div className='mx-auto max-w-screen-sm lg:max-w-screen-lg lg:px-5 xl:max-w-screen-xl'>
         <div className='sm:grid grid-cols-2 lg:grid-cols-4'>
           <div className='mb-4 flex flex-col items-center lg:items-start'>
@@ -50,7 +50,7 @@ export const Footer: FC = () => {
 
             <p className='text-grey'>
               Call us:{' '}
-              <a className='text-white' href='tel:(+01) 202 342 6789'>
+              <a className='text-white lg:hover:text-[purple] dark:lg:hover:text-yellow' href='tel:(+01) 202 342 6789'>
                 (+01) 202 342 6789
               </a>
             </p>
@@ -65,7 +65,7 @@ export const Footer: FC = () => {
                     return (
                       <li className='mb-1.5'>
                         <a
-                          className='text-grey text-sm lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                          className='text-grey text-sm lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                           href={item.link}
                         >
                           {item.text}
@@ -88,7 +88,10 @@ export const Footer: FC = () => {
               className='bg-transparent border-solid border-grey border text-xs text-grey rounded px-3 py-1.5  w-full'
               placeholder='Enter your email...'
             />
-            <button type='submit' className='text-red uppercase text-sm flex items-center w-full'>
+            <button
+              type='submit'
+              className='text-red uppercase text-sm flex items-center w-full lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+            >
               Subscribe now <FaChevronDown size='12px' className='-rotate-90 ml-1.5' />
             </button>
           </form>

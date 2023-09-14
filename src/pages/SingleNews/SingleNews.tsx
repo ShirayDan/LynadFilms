@@ -10,7 +10,7 @@ export const SingleNews: FC = () => {
   const newsOne = news[0]
 
   return (
-    <div className='py-32 bg-[#020d18] text-grey '>
+    <div className='py-32 bg-main-bg text-grey '>
       <div className='container px-4 mx-auto'>
         <h1 className='text-3xl font-bold text-white mb-6 '>{newsOne.title}</h1>
         <p className='text-grey text-sm text-grey'>{newsOne.date}</p>

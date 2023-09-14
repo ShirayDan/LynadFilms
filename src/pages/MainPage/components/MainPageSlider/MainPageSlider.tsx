@@ -14,8 +14,8 @@ import { films } from '../../../../data/films'
 
 export const MainPageSlider: FC = () => {
   return (
-    <div className='pt-36 bg-slider pb-10'>
-      <div className='mx-auto px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl'>
+    <div className='pt-36 bg-main-trailer dark:bg-slider pb-10'>
+      <div className='mx-auto px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl '>
         <div className='flex justify-end items-center font-bold text-sm text-white'>
           <span className='mr-2'>Follow us:</span> <SocialBlock />
         </div>
@@ -59,16 +59,16 @@ export const MainPageSlider: FC = () => {
                         <div className='flex mb-2'>
                           {item.tags.map((item) => {
                             return (
-                              <div className=' uppercase rounded bg-blue text-white text-xs p-1 font-bold mr-1'>
+                              <div className='uppercase rounded bg-blue text-[#fff] text-xs p-1 font-bold mr-1'>
                                 {item}
                               </div>
                             )
                           })}
                         </div>
-                        <a href='' className='uppercase text-white font-bold'>
+                        <Link to={`/films/${item.id}`} className='uppercase text-[#fff] font-bold'>
                           {item.name}
-                        </a>
-                        <p className='flex text-xs items-end text-white leading-4'>
+                        </Link>
+                        <p className='flex text-xs items-end text-[#fff] leading-4'>
                           <FaStar fill='#f5b50a' className='mr-0.5 text-lg' />{' '}
                           <span className='text-lg leading-4 mr-1'>{item.rating}</span>
                         </p>

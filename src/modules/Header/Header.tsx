@@ -18,7 +18,7 @@ export const Header: FC = () => {
   const [signUpModal, setSignUpModal] = useState(false)
 
   return (
-    <header className='header bg-[#0f2133] absolute w-full lg:bg-transparent'>
+    <header className='header dark:bg-header-border  bg-[#aed2f6] absolute w-full dark:lg:bg-transparent'>
       <div className='container px-4 mx-auto'>
         <nav className='py-3 flex justify-between md:py-5'>
           <div className='flex items-center'>
@@ -29,17 +29,17 @@ export const Header: FC = () => {
             </div>
             <ul className='hidden lg:flex'>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/films'} className='lg:hover:text-yellow ease-out duration-300'>
+                <Link to={'/films'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
                   Movies
                 </Link>
               </li>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/stars'} className='lg:hover:text-yellow ease-out duration-300'>
+                <Link to={'/stars'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
                   Celebrities
                 </Link>
               </li>
               <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/news'} className='lg:hover:text-yellow ease-out duration-300'>
+                <Link to={'/news'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
                   News
                 </Link>
               </li>
@@ -56,13 +56,13 @@ export const Header: FC = () => {
 
             <ul className='hidden lg:flex items-center '>
               <li
-                className='ml-3 text-grey font-bold uppercase text-sm lg:hover:text-yellow lg:hover:text-yellow ease-out duration-300'
+                className='ml-3 text-grey font-bold uppercase text-sm lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 onClick={() => setSignInModal((state) => !state)}
               >
                 Log in
               </li>
               <li
-                className='ml-3 text-white font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5 lg:hover:bg-yellow lg:hover:text-black ease-out duration-300 cursor-pointer'
+                className='ml-3 text-[#fff] font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5 lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
                 onClick={() => setSignUpModal((state) => !state)}
               >
                 Sign up

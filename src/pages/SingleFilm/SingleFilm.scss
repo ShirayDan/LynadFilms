@@ -18,7 +18,7 @@
         top: calc(50% - 10px);
         width: 0;
         border-top: 10px solid transparent;
-        border-right: 10px solid #dd003f;
+        border-right: 10px solid var(--color-red);
         border-bottom: 10px solid transparent;
       }
     }

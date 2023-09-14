@@ -4,6 +4,54 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap');
 
+@layer base {
+  :root {
+    --color-white: #4b71c1;
+    --color-black: white;
+    --color-grey: #4b71c1;
+    --color-blue: #4280bf;
+
+    --color-red: #dd003f;
+    --color-dark-blue: #c4d7e0;
+    --color-card: #c4d7e0;
+
+    --color-yellow: #dcf836;
+    --color-dark-grey: #e7e7e7;
+    --color-light-grey: #ededed;
+
+    --color-news-card: #c4dff9;
+    --color-header-border: #4b71c1;
+    --color-main-bg: #aed2f6;
+    --color-main-bg: #dfefff;
+
+    --color-selects-bg: #c6e0f3;
+    --color-filters-bg: #9ec0f0;
+    --color-main-trailer: #cfe4f9;
+  }
+  .dark {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-grey: #abb7c4;
+    --color-blue: #4280bf;
+
+    --color-red: #dd003f;
+    --color-dark-blue: #1b2c3c;
+    --color-card: #091a2c;
+
+    --color-yellow: #dcf836;
+    --color-dark-grey: #222;
+    --color-light-grey: #e1e1e1;
+
+    --color-news-card: #071829;
+    --color-header-border: #0f2133;
+    --color-main-bg: #020d18;
+
+    --color-selects-bg: #233a50;
+    --color-filters-bg: #0b1a2a;
+    --color-main-trailer: #06121e;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;

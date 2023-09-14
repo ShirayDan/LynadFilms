@@ -25,7 +25,7 @@ export const SmallCard: FC<ISmallCard> = ({ data, trailer }) => {
       <div className='flex flex-col justify-center flex-wrap'>
         <Link
           to={`${trailer ? 'films' : 'stars'}/${data.id}`}
-          className='text-white text-sm smallCard__title lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+          className='text-white text-sm smallCard__title lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
         >
           {data.name}
         </Link>

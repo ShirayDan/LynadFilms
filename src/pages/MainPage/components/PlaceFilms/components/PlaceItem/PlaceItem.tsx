@@ -26,16 +26,16 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
         <ViewAll link={data.link} text={'View All'} />
       </div>
       <ul className='md:flex'>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
           #Popular
         </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
           #Coming soon
         </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
           #Top rated
         </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <li className='text-grey uppercase mb-4 text-sm font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
           #Most reviewed
         </li>
       </ul>

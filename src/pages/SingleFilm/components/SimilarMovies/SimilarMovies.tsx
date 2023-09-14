@@ -42,11 +42,10 @@ export const SimilarMovies: FC<ISimilarMovies> = ({ data }) => {
                 slidesPerView: 4
               }
             }}
-            // autoplay={{
-            // 	delay: 2500,
-            // 	disableOnInteraction: false,
-            // }}
-
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >

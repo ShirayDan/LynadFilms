@@ -5,7 +5,7 @@ import { NewsSide } from './components/NewsSide'
 
 export const NewsPage: FC = () => {
   return (
-    <div className='pt-32 pb-10 bg-[#020d18]'>
+    <div className='pt-32 pb-10 bg-main-bg'>
       <div className='container lg:flex mx-auto flex-row lg:justify-center'>
         <div className='px-4 w-full'>
           {' '}

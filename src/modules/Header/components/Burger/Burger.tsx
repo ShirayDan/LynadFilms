@@ -22,7 +22,6 @@ export const Burger: FC = () => {
       burgerBtn.current.classList.toggle('burger__active')
     }
     if (burger.current) {
-      // open ? burger.current.classList.remove('burger__active') : burger.current.classList.add('burger__active')
       burger.current.classList.toggle('burger__active')
     }
 
@@ -47,7 +46,7 @@ export const Burger: FC = () => {
         <span className={'burger__line burger__line_three'}></span>
       </div>
 
-      <div className='burger flex flex-col px-3 bg-[#0f2133] fixed h-full' ref={burger}>
+      <div className='burger flex flex-col px-3 bg-selects-bg fixed h-full' ref={burger}>
         <div className='flex justify-center '>
           <img src={logo} alt='logo' className='w-2/6 mb-10' />
         </div>

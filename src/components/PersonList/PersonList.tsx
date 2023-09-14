@@ -15,7 +15,10 @@ export const PersonList: FC<IPersonList> = ({ data }) => {
           <li className='flex items-center justify-between py-3'>
             <div className='flex items-center justify-center text-sm text-blue'>
               <img src={item.photo} alt='' className='rounded w-16' />
-              <Link to={`/stars/${item.id}`} className='ml-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+              <Link
+                to={`/stars/${item.id}`}
+                className='ml-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+              >
                 {item.name}
               </Link>
             </div>

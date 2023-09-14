@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import { useAppSelector } from '../redux/hook'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { ErrorPage } from '../pages/ErrorPage'
@@ -13,6 +14,38 @@ import { SingleNews } from '../pages/SingleNews'
 import { ScrollToTop } from '../components/ScrollToTop'
 
 export const MainLayout: FC = () => {
+  const theme = useAppSelector((store) => store.theme)
+  const element = document.documentElement
+
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+  function onWindowMatch() {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
+      element.classList.add('dark')
+    } else {
+      element.classList.remove('dark')
+    }
+  }
+
+  onWindowMatch()
+
+  useEffect(() => {
+    switch (theme.theme) {
+      case 'dark':
+        element.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+        break
+      case 'light':
+        element.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+        break
+      default:
+        localStorage.removeItem('theme')
+        onWindowMatch()
+        break
+    }
+  }, [theme])
+
   return (
     <BrowserRouter>
       <ScrollToTop />

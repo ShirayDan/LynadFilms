@@ -16,7 +16,7 @@ export const SingleStar: FC = () => {
 
   const actor = crew[Number(id) - 1]
   return (
-    <div className='pt-32 bg-[#020d18] text-grey'>
+    <div className='pt-32 bg-main-bg text-grey'>
       <div className='container px-4 mx-auto lg:grid singleStar__container'>
         <div className='px-4 mb-10 lg:px-0'>
           <div className='flex justify-center mb-4 lg:justify-start '>

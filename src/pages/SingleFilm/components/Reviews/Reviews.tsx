@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Comment } from './components/Comment'
 
-import { TFilms } from '../../../../data'
+import { TFilms } from '../../../../data/types'
 
 interface IReviews {
   data: TFilms
@@ -15,7 +15,7 @@ export const Reviews: FC<IReviews> = ({ data }) => {
       <div className='md:flex justify-between items-center'>
         <h2 className='text-2xl text-blue font-bold mb-8'>{data.name}</h2>
 
-        <button className='rounded-3xl text-white bg-red py-4 px-6 uppercase font-bold mb-7 text-sm'>
+        <button className='rounded-3xl text-[#fff] bg-red py-4 px-6 uppercase font-bold mb-7 text-sm lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'>
           Write review
         </button>
       </div>
@@ -26,7 +26,7 @@ export const Reviews: FC<IReviews> = ({ data }) => {
             <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
               Sort by:
             </label>
-            <select name='filmSorting' id='' className='text-grey bg-[#233a50] text-sm font-light py-1.5 px-3'>
+            <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
               <option value=''>Rating Descending</option>
               <option value=''>Rating Ascending</option>
               <option value=''>Release date Descending</option>
@@ -46,7 +46,7 @@ export const Reviews: FC<IReviews> = ({ data }) => {
             <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
               Reviews per page:
             </label>
-            <select name='filmSorting' id='' className='text-grey bg-[#233a50] text-sm font-light py-1.5 px-3'>
+            <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
               <option value=''>5 comments</option>
               <option value=''>10 comments</option>
             </select>

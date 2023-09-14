@@ -1,12 +1,13 @@
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 import { MainLayout } from './routes'
 
-function App() {
+export const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <MainLayout />
-    </>
+    </Provider>
   )
 }
-
-export default App
 

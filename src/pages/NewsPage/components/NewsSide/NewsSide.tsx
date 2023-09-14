@@ -14,11 +14,11 @@ export const NewsSide: FC = () => {
             type='text'
             id='starName'
             placeholder='Enter keywords'
-            className='bg-[#233a50] py-1.5 px-3 h-10 text-sm mb-4 rounded'
+            className='bg-selects-bg py-1.5 px-3 h-10 text-sm mb-4 rounded'
           />
           <button
             type='submit'
-            className='bg-red rounded py-3 uppercase text-sm font-bold text-white lg:hover:bg-yellow lg:hover:text-black ease-out duration-300 cursor-pointer'
+            className='bg-red rounded py-3 uppercase text-sm font-bold text-[#fff] lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
           >
             Submit
           </button>

@@ -7,8 +7,6 @@ import 'swiper/css/pagination'
 import { SmallCard } from '../../../../components/SmallCard'
 import { ViewAll } from '../../../../components/ViewAll'
 
-import img from '../../../../i/ads1.png'
-
 import { films } from '../../../../data/films'
 
 export const TrailerBlock: FC = () => {
@@ -25,7 +23,7 @@ export const TrailerBlock: FC = () => {
           <div className='flex justify-center xl:max-w-4xl'>
             <iframe src={`//www.youtube.com/embed/${films[video].link}`} className='h-112 w-full' />
           </div>
-          <div className='bg-[#0b1a2a] mt-2 lg:mt-0'>
+          <div className='bg-filters-bg mt-2 lg:mt-0'>
             <Swiper
               direction={'vertical'}
               navigation={true}

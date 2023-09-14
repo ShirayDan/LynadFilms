@@ -26,23 +26,28 @@ export const SignInModal: FC = () => {
           className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
         />
         <div className='flex justify-between mb-4 md:mb-6 font-medium'>
-          <label htmlFor='remember' className='flex items-center'>
+          <label htmlFor='remember' className='flex items-center text-black'>
             <input type='checkbox' id='remember' className='mr-2 w-5 h-5' />
             Remember me
           </label>
 
-          <a href=''>Forger password ?</a>
+          <a href='' className='text-black'>
+            Forger password ?
+          </a>
         </div>
-        <button type='submit' className='bg-red text-white uppercase text-sm font-bold py-2 px-10'>
+        <button
+          type='submit'
+          className='bg-red text-[#fff] uppercase text-sm font-bold py-2 px-10 lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
+        >
           Login
         </button>
         <p className='my-4 text-dark-grey text-sm'>Or via social</p>
         <div className='flex justify-between'>
-          <button className='uppercase text-white font-bold py-3 px-3 md:px-8 bg-[#3a5a9a] flex rounded items-center'>
+          <button className='uppercase text-[#fff] font-bold py-3 px-3 md:px-8 bg-[#3a5a9a] flex rounded items-center'>
             <FaFacebookF className='mr-1.5' size='16px' />
             Facebook
           </button>
-          <button className='uppercase text-white font-bold py-3 px-3 md:px-8 bg-[#00b9ef] flex rounded items-center'>
+          <button className='uppercase text-[#fff] font-bold py-3 px-3 md:px-8 bg-[#00b9ef] flex rounded items-center'>
             <FaTwitter className='mr-1.5' size='16px' />
             Twitter
           </button>

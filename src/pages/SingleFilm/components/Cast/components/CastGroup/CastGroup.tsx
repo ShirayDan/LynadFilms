@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { PersonList } from '../../../../../../components/PersonList'
 
-import { TCrew } from '../../../../../../data'
+import { TCrew } from '../../../../../../data/types'
 
 interface ICastGroup {
   text: string

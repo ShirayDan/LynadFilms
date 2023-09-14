@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { CastGroup } from './components/CastGroup'
 
-import { TFilms } from '../../../../data'
+import { TFilms } from '../../../../data/types'
 
 interface IOverview {
   data: TFilms

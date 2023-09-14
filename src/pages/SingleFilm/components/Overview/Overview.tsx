@@ -29,7 +29,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
           <h4 className='text-white uppercase font-bold text-sm'>Videos and photos</h4>
           <a
             href=''
-            className='text-blue text-xs flex items-center lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+            className='text-blue text-xs flex items-center lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
           >
             View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
           </a>
@@ -76,7 +76,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
           <h4 className='text-white uppercase font-bold text-sm'>Cast</h4>
           <a
             href=''
-            className='text-blue text-xs flex items-center lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+            className='text-blue text-xs flex items-center lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
           >
             Full Cast and Crew
             <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />

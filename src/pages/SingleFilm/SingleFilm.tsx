@@ -21,17 +21,17 @@ export const SingleFilm: FC = () => {
   const film = films[Number(id) - 1]
 
   return (
-    <div className='pt-32 bg-[#020d18] text-grey'>
+    <div className='pt-32 bg-main-bg text-grey'>
       <div className='container px-4 mx-auto lg:grid singleFilm__container'>
         <div className='px-4 mb-10 lg:px-0'>
           <div className='flex justify-center mb-4'>
             <img src={film.photo} alt='' className='rounded' />
           </div>
-          <div className='bg-[#07101a] border-3 border-solid border-[#0c1c2c] p-5 flex flex-col'>
-            <button className='bg-red text-white flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3 lg:hover:text-black lg:hover:bg-yellow ease-out duration-300 cursor-pointer'>
+          <div className='border-3 border-solid border-filters-bg p-5 flex flex-col'>
+            <button className='bg-red text-[#fff] flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3 lg:hover:text-[#000] lg:hover:bg-yellow ease-out duration-300 cursor-pointer'>
               <FaPlay className='mr-2' /> Watch trailer
             </button>
-            <button className='bg-[#dcf836] flex justify-center items-center text-black uppercase py-4 px-6 text-sm font-bold rounded lg:hover:text-white lg:hover:bg-red ease-out duration-300 cursor-pointer'>
+            <button className='bg-yellow flex justify-center items-center text-[#000] uppercase py-4 px-6 text-sm font-bold rounded lg:hover:text-[#fff] lg:hover:bg-red ease-out duration-300 cursor-pointer'>
               <FaCreditCard className='mr-2' /> Buy ticket
             </button>
           </div>
@@ -52,7 +52,7 @@ export const SingleFilm: FC = () => {
                 <ImShare2 />
               </span>{' '}
               Share
-              <div className='relative singleFilm__share-list p-3 bg-red rounded ml-4 text-white'>
+              <div className='relative singleFilm__share-list p-3 bg-red rounded ml-4 text-[#fff]'>
                 <SocialBlock />
               </div>
             </li>

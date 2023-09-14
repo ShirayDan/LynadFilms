@@ -14,8 +14,8 @@ export const Tab: FC<ITab> = ({ buttons, components }) => {
           return (
             <button
               onClick={() => setPage(i)}
-              className={`text-lg border-0 border-solid border-b-2 mb-2 font-bold border-transparent md:mr-5 md:pb-2 lg:hover:text-yellow ease-out duration-300 cursor-pointer ${
-                page === i && 'border-yellow text-yellow'
+              className={`text-lg border-0 border-solid border-b-2 mb-2 font-bold border-transparent md:mr-5 md:pb-2 dark:lg:hover:text-yellow lg:hover:text-[purple] ease-out duration-300 cursor-pointer ${
+                page === i && 'border-[purple] text-[purple] dark:border-yellow dark:text-yellow'
               }  `}
             >
               {item}

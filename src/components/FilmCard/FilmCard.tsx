@@ -17,9 +17,9 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
       <img src={data.photo} alt='' className='rounded mb-4 sm:max-w-3xs' />
       <div className='sm:ml-5'>
         <div className=''>
-          <h3 className='mb-2.5 font-bold text-sm text-white uppercase lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+          <h3 className='mb-2.5 font-bold text-sm text-white uppercase lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
             <Link to={`/films/${data.id}`}>
-              {data.name} <span className='text-grey'>{`(2012)`}</span>
+              {data.name} {` (2012)`}
             </Link>
           </h3>
           <p className='flex mb-2 text-grey'>
@@ -37,7 +37,7 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
             Director:{' '}
             {data.director.map((item) => {
               return (
-                <Link to={`/stars/${item.id}`} className='text-blue'>
+                <Link to={`/stars/${item.id}`} className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'>
                   {item.name}{' '}
                 </Link>
               )
@@ -48,7 +48,7 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
             Stars:{' '}
             {data.stars.map((item) => {
               return (
-                <Link to={`/stars/${item.id}`} className='text-blue'>
+                <Link to={`/stars/${item.id}`} className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'>
                   {item.name}{' '}
                 </Link>
               )

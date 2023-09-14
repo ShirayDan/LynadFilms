@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import './StarCard.scss'
 
-import { TCrew } from '../../data'
+import { TCrew } from '../../data/types'
 
 interface IStarCard {
   data: TCrew
@@ -13,7 +13,7 @@ export const StarCard: FC<IStarCard> = ({ data }) => {
     <div className='my-8 flex items-center flex-col bg-card sm:flex-row'>
       <img src={data.photo} alt='' className='star-card__photo' />
       <div className='p-4 flex items-center flex-col sm:py-2 sm:items-start'>
-        <h2 className='font-bold text-lg text-white lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+        <h2 className='font-bold text-lg text-white lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
           <Link to={`/stars/${data.id}`}> {data.name}</Link>
         </h2>
         <h3 className='text-sm text-grey mb-3 capitalize'>

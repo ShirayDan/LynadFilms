@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { ViewAll } from '../../../../components/ViewAll'
 
 import img from '../../../../i/blog-it1.jpg'
+import { Link } from 'react-router-dom'
 
 const news = [
   {
@@ -31,17 +32,26 @@ export const NewsBlock: FC = () => {
         <div>
           <ul className='flex '>
             <li className='mr-2'>
-              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
+              <a
+                href=''
+                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+              >
                 #MOVIES
               </a>
             </li>
             <li className='mr-2'>
-              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
+              <a
+                href=''
+                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+              >
                 #TV SHOWS
               </a>
             </li>
             <li>
-              <a href='' className='text-white text-sm text-grey font-bold lg:hover:text-yellow ease-out duration-300'>
+              <a
+                href=''
+                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+              >
                 #CELEBS
               </a>
             </li>
@@ -68,8 +78,8 @@ export const NewsBlock: FC = () => {
             {news.map((item) => {
               return (
                 <div className='flex flex-col mb-7 pr-4'>
-                  <h6 className='text-blue text-sm font-bold mb-1 lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-                    {item.text}
+                  <h6 className='text-blue text-sm font-bold mb-1 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                    <Link to={''}>{item.text}</Link>
                   </h6>
                   <span className='text-grey text-xs'>{item.data}</span>
                 </div>

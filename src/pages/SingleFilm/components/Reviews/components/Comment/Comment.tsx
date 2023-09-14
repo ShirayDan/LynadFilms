@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { TComment } from '../../../../../../data'
+import { TComment } from '../../../../../../data/types'
 
 import { FaStar } from 'react-icons/fa'
 

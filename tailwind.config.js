@@ -1,23 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        white: '#fff',
-        grey: '#abb7c4',
-        blue: '#4280bf',
-        red: '#dd003f',
-        'dark-blue': '#233a50',
-        card: '#091a2c',
-        yellow: '#dcf836',
-        'dark-grey': '#222',
-        'light-grey': '#e1e1e1'
+        white: 'var(--color-white)',
+        grey: 'var(--color-grey)',
+        black: 'var(--color-black)',
+        blue: 'var(--color-blue)',
+        red: 'var(--color-red)',
+        'dark-blue': 'var(--color-dark-blue)',
+        card: 'var(--color-card)',
+        yellow: 'var(--color-yellow)',
+        'dark-grey': 'var(--color-dark-grey)',
+        'light-grey': 'var(--color-light-grey)',
+        'news-card': 'var(--color-news-card)',
+        'header-border': 'var(--color-header-border)',
+        'main-bg': 'var(--color-main-bg)',
+        'selects-bg': 'var(--color-selects-bg)',
+        'filters-border': 'var(--color-filters-border)',
+        'filters-bg': 'var(--color-filters-bg)',
+        'main-trailer': 'var(--color-main-trailer)'
       },
       borderWidth: {
         small: '1px'
       },
-
       backgroundImage: {
         slider: "url('./src/i/slider-bg.jpg')"
       },

@@ -20,7 +20,7 @@ export const NewsList: FC = () => {
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
                 Sort by:
               </label>
-              <select name='filmSorting' id='' className='text-grey bg-[#233a50] text-sm font-light py-1.5 px-3'>
+              <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
                 <option value=''>Rating Descending</option>
                 <option value=''>Rating Ascending</option>
                 <option value=''>Release date Descending</option>
@@ -29,12 +29,12 @@ export const NewsList: FC = () => {
             </div>
             <div className='flex px-2'>
               <BsFillGrid3X3GapFill
-                className='mr-2 text-grey lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                className='mr-2 text-grey lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 onClick={() => setTypeCard('grid')}
               />
               <BsListUl
                 size={'18px'}
-                className='text-grey lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+                className='text-grey lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 onClick={() => setTypeCard('list')}
               />
             </div>
