@@ -12,6 +12,7 @@ import { StarPage } from '../pages/StarPage'
 import { NewsPage } from '../pages/NewsPage'
 import { SingleNews } from '../pages/SingleNews'
 import { ScrollToTop } from '../components/ScrollToTop'
+import { ProfilePage } from '../pages/ProfilePage'
 
 export const MainLayout: FC = () => {
   const theme = useAppSelector((store) => store.theme)
@@ -58,6 +59,7 @@ export const MainLayout: FC = () => {
           <Route path='films/:id' element={<SingleFilm />} />
           <Route path='news' element={<NewsPage />} />
           <Route path='news/:id' element={<SingleNews />} />
+          <Route path='profile/:id' element={<ProfilePage />} />
 
           <Route path='*' element={<ErrorPage />} />
         </Route>
