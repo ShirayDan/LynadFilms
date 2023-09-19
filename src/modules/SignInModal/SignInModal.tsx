@@ -19,7 +19,7 @@ export const SignInModal: FC = () => {
         <input
           type='email'
           id='userEmail'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
           {...register('userEmail')}
         />
 
@@ -29,16 +29,16 @@ export const SignInModal: FC = () => {
         <input
           type='password'
           id='userPassword'
-          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-[#000] font-bold px-3 py-1.5'
           {...register('userPassword')}
         />
         <div className='flex justify-between mb-4 md:mb-6 font-medium'>
-          <label htmlFor='remember' className='flex items-center text-black'>
+          <label htmlFor='remember' className='flex items-center text-black cursor-pointer'>
             <input type='checkbox' id='remember' className='mr-2 w-5 h-5' />
             Remember me
           </label>
 
-          <a href='' className='text-black'>
+          <a href='' className='text-black lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
             Forger password ?
           </a>
         </div>
