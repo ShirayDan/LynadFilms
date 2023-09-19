@@ -38,7 +38,7 @@ export const TrailerBlock: FC = () => {
             >
               {films.map((item) => {
                 return (
-                  <SwiperSlide className='cursor-pointer' onClick={() => setVideo(item.id - 1)}>
+                  <SwiperSlide key={item.name} className='cursor-pointer' onClick={() => setVideo(item.id - 1)}>
                     <SmallCard data={item} trailer={true} />
                   </SwiperSlide>
                 )

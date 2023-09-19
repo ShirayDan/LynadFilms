@@ -10,8 +10,6 @@ interface IFilmCard {
 }
 
 export const FilmCard: FC<IFilmCard> = ({ data }) => {
-  console.log(data)
-
   return (
     <div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'>
       <img src={data.photo} alt='' className='rounded mb-4 sm:max-w-3xs' />
@@ -37,7 +35,11 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
             Director:{' '}
             {data.director.map((item) => {
               return (
-                <Link to={`/stars/${item.id}`} className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'>
+                <Link
+                  key={item.name}
+                  to={`/stars/${item.id}`}
+                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'
+                >
                   {item.name}{' '}
                 </Link>
               )
@@ -48,7 +50,11 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
             Stars:{' '}
             {data.stars.map((item) => {
               return (
-                <Link to={`/stars/${item.id}`} className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'>
+                <Link
+                  key={item.name}
+                  to={`/stars/${item.id}`}
+                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'
+                >
                   {item.name}{' '}
                 </Link>
               )

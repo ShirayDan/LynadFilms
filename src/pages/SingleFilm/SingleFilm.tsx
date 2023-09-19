@@ -62,20 +62,20 @@ export const SingleFilm: FC = () => {
               <FaStar fill='#f5b50a' className='mr-0.5 text-lg' />
               {film.rating}
             </p>
-            <p className='flex items-center'>
+            <div className='flex items-center'>
               Rate This Movie:{' '}
               <ul className='flex ml-1'>
                 {Array(10)
                   .fill(1)
                   .map((_, i) => {
                     return (
-                      <li>
-                        <FaStar key={i} fill='#f5b50a' className='mr-0.5 text-lg' />
+                      <li key={i}>
+                        <FaStar fill='#f5b50a' className='mr-0.5 text-lg' />
                       </li>
                     )
                   })}
               </ul>
-            </p>
+            </div>
           </div>
           <Tab
             buttons={['Overview', 'Reviews', 'Cast and Crew', 'Media', 'Related movies']}

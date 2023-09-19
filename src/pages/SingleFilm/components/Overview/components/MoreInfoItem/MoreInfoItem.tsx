@@ -15,7 +15,11 @@ export const MoreInfoItem: FC<IMoreInfoItem> = ({ data, text }) => {
       <div className='text-blue font-normal'>
         {data.map((item, i, arr) => {
           return (
-            <Link to={`/stars/${item.id}`} className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+            <Link
+              key={item.name}
+              to={`/stars/${item.id}`}
+              className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+            >
               {arr.length - 1 === i ? item.name : item.name + ' '}
             </Link>
           )

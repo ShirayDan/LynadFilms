@@ -53,7 +53,7 @@ export const Burger: FC = () => {
         <ul>
           {links.map((item) => {
             return (
-              <li className='border-0 border-b border-solid border-grey pb-2 mb-3'>
+              <li key={item.title} className='border-0 border-b border-solid border-grey pb-2 mb-3'>
                 <Link to={item.href} className='text-white'>
                   {item.title}
                 </Link>

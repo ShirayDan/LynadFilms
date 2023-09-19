@@ -77,7 +77,7 @@ export const NewsBlock: FC = () => {
             </div>
             {news.map((item) => {
               return (
-                <div className='flex flex-col mb-7 pr-4'>
+                <div key={item.text} className='flex flex-col mb-7 pr-4'>
                   <h6 className='text-blue text-sm font-bold mb-1 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
                     <Link to={''}>{item.text}</Link>
                   </h6>

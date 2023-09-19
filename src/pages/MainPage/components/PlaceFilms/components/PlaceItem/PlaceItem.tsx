@@ -67,7 +67,7 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
       >
         {data.items.map((item: TFilms) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.name}>
               <div className='flex item-center justify-center mt-7'>
                 <Link to={`/films/${item.id}`}>
                   <img src={item.photo} alt='' className='rounded mainPage__img placeItem__img' />

@@ -33,6 +33,7 @@ export const Theme: FC<ITheme> = ({ textStyle, burger }) => {
           {options.map((item) => {
             return (
               <li
+                key={item.text}
                 className={`flex mb-1 select-none items-center cursor-pointer capitalize lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 ${
                   currTheme === item.text && 'text-[purple] dark:text-yellow'
                 }`}

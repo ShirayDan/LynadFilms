@@ -23,13 +23,13 @@ export const SingleNews: FC = () => {
           <div className='flex items-center'>
             <p className='mr-2 font-bold text-lg'>Tags</p>{' '}
             {newsOne.tags.map((item, i, arr) => {
-              return arr.length - 1 > i ? <span>{item + ', '}</span> : <span>{item}</span>
+              return arr.length - 1 > i ? <span key={item}>{item + ', '}</span> : <span key={item}>{item}</span>
             })}
           </div>
         </div>
         <div>
           {newsOne.comments.map((item) => {
-            return <Comment data={item} />
+            return <Comment key={item.title} data={item} />
           })}
         </div>
         <div className='mt-10 pb-10'>

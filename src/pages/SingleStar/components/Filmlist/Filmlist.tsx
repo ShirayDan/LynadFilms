@@ -13,7 +13,7 @@ export const Filmlist: FC<IFilmlist> = ({ data }) => {
     <ul>
       {data.map((item) => {
         return (
-          <li className='flex items-center py-3'>
+          <li key={item.name} className='flex items-center py-3'>
             <img src={item.photo} alt='' className='rounded filmList__photo' />
             <div className='ml-4'>
               <h3 className='text-blue'>

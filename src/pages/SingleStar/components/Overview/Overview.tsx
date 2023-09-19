@@ -56,9 +56,9 @@ export const Overview: FC<IOverview> = ({ data }) => {
               modules={[Pagination, Autoplay]}
               className='mySwiper'
             >
-              {data.photos.map((item) => {
+              {data.photos.map((item, i) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide key={i}>
                     <img src={item} alt='' />
                   </SwiperSlide>
                 )

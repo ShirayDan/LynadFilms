@@ -47,9 +47,9 @@ export const Media: FC<IMedia> = ({ data }) => {
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >
-            {data.photos.map((item) => {
+            {data.photos.map((item, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <div>
                     <img src={item} alt='' />
                   </div>
@@ -91,9 +91,9 @@ export const Media: FC<IMedia> = ({ data }) => {
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >
-            {data.photos.map((item) => {
+            {data.photos.map((item, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <img src={item} alt='' />
                 </SwiperSlide>
               )

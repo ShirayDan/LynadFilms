@@ -54,7 +54,7 @@ export const NewsSide: FC = () => {
           {news.map((item, i) => {
             if (i < 3) {
               return (
-                <li className='text-white flex mb-4 items-center'>
+                <li key={item.title} className='text-white flex mb-4 items-center'>
                   <img src={item.image} alt='' className='w-28' />
                   <a href='' className='ml-2 text-blue text-sm'>
                     {' '}

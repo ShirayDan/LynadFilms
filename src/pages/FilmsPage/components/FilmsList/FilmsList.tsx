@@ -20,7 +20,7 @@ export const FilmsList: FC = () => {
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
                 Sort by:
               </label>
-              <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
+              <select id='filmSorting' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
                 <option value=''>Rating Descending</option>
                 <option value=''>Rating Ascending</option>
                 <option value=''>Release date Descending</option>
@@ -44,13 +44,13 @@ export const FilmsList: FC = () => {
 
       {typeCard === 'list' &&
         films.map((item) => {
-          return <FilmCard data={item} />
+          return <FilmCard key={item.name} data={item} />
         })}
 
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5'>
           {films.map((item) => {
-            return <FilmCardGrid data={item} />
+            return <FilmCardGrid key={item.name} data={item} />
           })}
         </div>
       )}

@@ -37,7 +37,7 @@ export const Reviews: FC<IReviews> = ({ data }) => {
       </div>
       <div>
         {data.comments.map((item) => {
-          return <Comment data={item} />
+          return <Comment key={item.text} data={item} />
         })}
       </div>
       <div className='pb-4'>
@@ -58,7 +58,11 @@ export const Reviews: FC<IReviews> = ({ data }) => {
               {Array(6)
                 .fill(0)
                 .map((_, i) => {
-                  return <li className='text-blue px-1'>{++i}</li>
+                  return (
+                    <li key={i} className='text-blue px-1'>
+                      {++i}
+                    </li>
+                  )
                 })}
             </ul>
           </div>

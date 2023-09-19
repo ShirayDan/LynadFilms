@@ -58,12 +58,12 @@ export const Footer: FC = () => {
 
           {data.map((item) => {
             return (
-              <div className='flex flex-col items-center'>
+              <div key={item.title} className='flex flex-col items-center'>
                 <h4 className='mb-7 text-white font-bold'>{item.title}</h4>
                 <ul className='mb-6'>
                   {item.items.map((item) => {
                     return (
-                      <li className='mb-1.5'>
+                      <li key={item.text} className='mb-1.5'>
                         <a
                           className='text-grey text-sm lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                           href={item.link}

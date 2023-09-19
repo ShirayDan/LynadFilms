@@ -15,9 +15,9 @@ const data = [
 export const SocialBlock: FC = () => {
   return (
     <ul className='flex flex-row'>
-      {data.map((item) => {
+      {data.map((item, i) => {
         return (
-          <li className='mr-2'>
+          <li key={i} className='mr-2'>
             <a href={item.url} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
               {item.icon}
             </a>

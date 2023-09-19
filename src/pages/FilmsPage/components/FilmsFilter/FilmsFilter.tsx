@@ -32,7 +32,11 @@ export const FilmsFilter: FC = () => {
           className='bg-selects-bg text-grey text-sm font-light py-1.5 px-3 h-10 mb-4'
         >
           {genresOptions.map((item) => {
-            return <option value={item}>{item}</option>
+            return (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            )
           })}
         </select>
         <label htmlFor='filmYear' className='font-bold text-sm text-grey mb-2.5'>
@@ -44,7 +48,11 @@ export const FilmsFilter: FC = () => {
           className='bg-selects-bg text-sm font-light text-grey font-light py-1.5 px-3 h-10 mb-4'
         >
           {yearsOptions.map((item) => {
-            return <option value={item}>{item}</option>
+            return (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            )
           })}
         </select>
         <label htmlFor='filmCountry' className='font-bold text-sm text-grey mb-2.5'>

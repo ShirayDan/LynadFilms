@@ -20,7 +20,7 @@ export const NewsList: FC = () => {
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
                 Sort by:
               </label>
-              <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
+              <select id='filmSorting' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
                 <option value=''>Rating Descending</option>
                 <option value=''>Rating Ascending</option>
                 <option value=''>Release date Descending</option>
@@ -43,12 +43,12 @@ export const NewsList: FC = () => {
       </div>
       {typeCard === 'list' &&
         news.map((item) => {
-          return <NewsCard data={item} />
+          return <NewsCard key={item.title} data={item} />
         })}
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 '>
           {news.map((item) => {
-            return <NewsCardGrid data={item} />
+            return <NewsCardGrid key={item.title} data={item} />
           })}
         </div>
       )}

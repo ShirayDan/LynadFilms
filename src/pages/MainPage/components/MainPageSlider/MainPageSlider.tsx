@@ -48,7 +48,7 @@ export const MainPageSlider: FC = () => {
           >
             {films.map((item) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={item.name}>
                   <div className='flex justify-center'>
                     <div className='relative top-0 left-0'>
                       {' '}
@@ -59,7 +59,10 @@ export const MainPageSlider: FC = () => {
                         <div className='flex mb-2'>
                           {item.tags.map((item) => {
                             return (
-                              <div className='uppercase rounded bg-blue text-[#fff] text-xs p-1 font-bold mr-1'>
+                              <div
+                                key={item}
+                                className='uppercase rounded bg-blue text-[#fff] text-xs p-1 font-bold mr-1'
+                              >
                                 {item}
                               </div>
                             )

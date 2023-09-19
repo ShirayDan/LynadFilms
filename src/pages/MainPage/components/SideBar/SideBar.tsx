@@ -21,7 +21,7 @@ export const SideBar: FC = () => {
           if (i > 3) {
             return
           }
-          return <SmallCard data={item} />
+          return <SmallCard key={item.name} data={item} />
         })}
         <ViewAll link='/stars' text='See all celebrities' />
       </div>

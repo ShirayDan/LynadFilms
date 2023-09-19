@@ -30,7 +30,11 @@ export const StarFilter: FC = () => {
           className='bg-selects-bg text-sm font-light text-grey font-light py-1.5 px-3 h-10 mb-4'
         >
           {starsYears.map((item) => {
-            return <option value={item}>{item}</option>
+            return (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            )
           })}
         </select>
         <label htmlFor='starCountry' className='font-bold text-sm text-grey mb-2.5'>

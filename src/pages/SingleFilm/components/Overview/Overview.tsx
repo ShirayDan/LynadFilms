@@ -61,9 +61,9 @@ export const Overview: FC<IOverview> = ({ data }) => {
             modules={[Pagination, Autoplay]}
             className='mySwiper'
           >
-            {data.photos.map((item) => {
+            {data.photos.map((item, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <img src={item} alt='' />
                 </SwiperSlide>
               )
@@ -96,7 +96,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
             <div className='text-blue font-normal'>
               {data.tags.map((item, i, arr) => {
                 return (
-                  <Link to={``} className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
+                  <Link key={item} to={``} className='lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
                     {arr.length - 1 === i ? item : item + ' '}
                   </Link>
                 )

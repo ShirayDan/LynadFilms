@@ -13,6 +13,12 @@ import { Burger } from './components/Burger'
 import { Language } from '../../components/Language'
 import { Theme } from '../../components/Theme'
 
+const links = [
+  { link: '/films', text: 'Movies' },
+  { link: '/stars', text: 'Celebrities' },
+  { link: '/news', text: 'News' }
+]
+
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
   const [signUpModal, setSignUpModal] = useState(false)
@@ -28,21 +34,18 @@ export const Header: FC = () => {
               </Link>
             </div>
             <ul className='hidden lg:flex'>
-              <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/films'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
-                  Movies
-                </Link>
-              </li>
-              <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/stars'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
-                  Celebrities
-                </Link>
-              </li>
-              <li className='ml-3 text-grey font-bold uppercase text-sm'>
-                <Link to={'/news'} className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'>
-                  News
-                </Link>
-              </li>
+              {links.map((item) => {
+                return (
+                  <li key={item.text} className='ml-3 text-grey font-bold uppercase text-sm'>
+                    <Link
+                      to={item.link}
+                      className='lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+                    >
+                      {item.text}
+                    </Link>
+                  </li>
+                )
+              })}
               <li className='ml-3 block flex items-center relative'>
                 <Language textStyle='text-grey font-bold mr-2 uppercase text-sm' />
               </li>
