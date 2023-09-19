@@ -1,20 +1,30 @@
 import { FC } from 'react'
+import { useForm } from 'react-hook-form'
+
+import { TNewsSearch } from '../../../../redux/types'
 
 import { news } from '../../../../data/news'
 
 export const NewsSide: FC = () => {
+  const { register, handleSubmit } = useForm<TNewsSearch>()
+
   return (
     <aside className='lg:w-64'>
       <div className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
           Search
         </h4>
-        <form action='' className='flex flex-col'>
+        <form onSubmit={handleSubmit((data) => console.log(data))} className='flex flex-col'>
+          <label htmlFor='newsTitle' className='font-bold text-sm text-grey mb-2.5'>
+            News title
+          </label>
+
           <input
             type='text'
-            id='starName'
+            id='newsTitle'
             placeholder='Enter keywords'
             className='bg-selects-bg py-1.5 px-3 h-10 text-sm mb-4 rounded'
+            {...register('newsTitle')}
           />
           <button
             type='submit'

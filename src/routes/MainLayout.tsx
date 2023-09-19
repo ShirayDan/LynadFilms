@@ -59,7 +59,7 @@ export const MainLayout: FC = () => {
           <Route path='films/:id' element={<SingleFilm />} />
           <Route path='news' element={<NewsPage />} />
           <Route path='news/:id' element={<SingleNews />} />
-          <Route path='profile/:id' element={<ProfilePage />} />
+          <Route path='profile' element={<ProfilePage />} />
 
           <Route path='*' element={<ErrorPage />} />
         </Route>

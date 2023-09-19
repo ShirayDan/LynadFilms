@@ -1,29 +1,36 @@
 import { FC } from 'react'
+import { useForm } from 'react-hook-form'
+
+import { TSignIn } from '../../redux/types'
 
 import { FaTwitter } from 'react-icons/fa'
 import { FaFacebookF } from 'react-icons/fa'
 
 export const SignInModal: FC = () => {
+  const { register, handleSubmit } = useForm<TSignIn>()
+
   return (
     <div className='w-300 bg-white p-7 md:w-430 md:p-10'>
       <h3 className=' text-4xl font-bold uppercase text-center text-dark-grey mb-4'>Log In</h3>
-      <form action='' className='flex flex-col'>
-        <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='userName'>
-          Your Name:
+      <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
+        <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='userEmail'>
+          Your Email:
         </label>
         <input
-          type='text'
-          id='userName'
+          type='email'
+          id='userEmail'
           className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          {...register('userEmail')}
         />
 
-        <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='password'>
+        <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='userPassword'>
           Your Password
         </label>
         <input
           type='password'
-          id='password'
+          id='userPassword'
           className='text-sm border border-solid border-light-grey mb-3 md:mb-6 text-dark-grey font-bold px-3 py-1.5'
+          {...register('userPassword')}
         />
         <div className='flex justify-between mb-4 md:mb-6 font-medium'>
           <label htmlFor='remember' className='flex items-center text-black'>
