@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { SocialBlock } from '../../../../components/SocialBlock'
 import { Language } from '../../../../components/Language'
 import { Theme } from '../../../../components/Theme'
+import { changeOverflow } from '../../../../helpers/helpers'
 
 import logo from '../../../../i/logo1.png'
 
@@ -25,7 +26,7 @@ export const Burger: FC = () => {
       burger.current.classList.toggle('burger__active')
     }
 
-    // changeOverflow(open)
+    changeOverflow(open)
   }
 
   const links = [
@@ -36,11 +37,7 @@ export const Burger: FC = () => {
 
   return (
     <>
-      <div
-        onClick={burgerClick}
-        ref={burgerBtn}
-        className='flex flex-col border-solid border-small w-9 h-9 p-2 border-white lg:hidden'
-      >
+      <div onClick={burgerClick} ref={burgerBtn} className='flex flex-col w-9 h-9 p-2 lg:hidden cursor-pointer'>
         <span className={'burger__line'}></span>
         <span className={'burger__line burger__line_two'}></span>
         <span className={'burger__line burger__line_three'}></span>

@@ -12,6 +12,7 @@ import { SignUpModal } from '../SignUpModal'
 import { Burger } from './components/Burger'
 import { Language } from '../../components/Language'
 import { Theme } from '../../components/Theme'
+import { changeOverflow } from '../../helpers/helpers'
 
 const links = [
   { link: '/films', text: 'Movies' },
@@ -22,6 +23,16 @@ const links = [
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
   const [signUpModal, setSignUpModal] = useState(false)
+
+  const handleOpenSignIn = () => {
+    setSignInModal((state) => !state)
+    changeOverflow(signInModal)
+  }
+
+  const handleOpenSignUp = () => {
+    setSignUpModal((state) => !state)
+    changeOverflow(signUpModal)
+  }
 
   return (
     <header className='header dark:bg-header-border  bg-[#aed2f6] absolute w-full dark:lg:bg-transparent'>
@@ -60,13 +71,13 @@ export const Header: FC = () => {
             <ul className='hidden lg:flex items-center '>
               <li
                 className='ml-3 text-grey font-bold uppercase text-sm lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
-                onClick={() => setSignInModal((state) => !state)}
+                onClick={() => handleOpenSignIn()}
               >
                 Log in
               </li>
               <li
                 className='ml-3 text-[#fff] font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5 lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
-                onClick={() => setSignUpModal((state) => !state)}
+                onClick={() => handleOpenSignUp()}
               >
                 Sign up
               </li>
@@ -89,8 +100,8 @@ export const Header: FC = () => {
         </div>
       </div>
 
-      {signInModal && <Modal children={<SignInModal />} handleClick={() => setSignInModal((state) => !state)} />}
-      {signUpModal && <Modal children={<SignUpModal />} handleClick={() => setSignUpModal((state) => !state)} />}
+      {signInModal && <Modal children={<SignInModal />} handleClick={() => handleOpenSignIn()} />}
+      {signUpModal && <Modal children={<SignUpModal />} handleClick={() => handleOpenSignUp()} />}
     </header>
   )
 }
