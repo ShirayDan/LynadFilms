@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import { TFilms } from '../../data/types'
 
@@ -10,6 +11,7 @@ interface IFilmCard {
 }
 
 export const FilmCard: FC<IFilmCard> = ({ data }) => {
+  const { t } = useTranslation()
   return (
     <div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'>
       <img src={data.photo} alt='' className='rounded mb-4 sm:max-w-3xs' />
@@ -27,12 +29,15 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
           <p className='pb-6 mb-6 border-0 border-solid border-b border-grey text-grey text-sm'>{data.desc}</p>
         </div>
         <ul className='text-sm text-grey'>
-          <li className='mb'>Duration: {data.duration}</li>
+          <li className='mb'>
+            {t('singleFilm.run time')} {data.duration}
+          </li>
           <li>MMPA: {data.mmpa}</li>
-          <li>Release: {data.date}</li>
           <li>
-            {' '}
-            Director:{' '}
+            {t('filters.release date')}: {data.date}
+          </li>
+          <li>
+            {t('singleFilm.director')}{' '}
             {data.director.map((item) => {
               return (
                 <Link
@@ -45,17 +50,16 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
               )
             })}
           </li>
-          <li>
-            {' '}
-            Stars:{' '}
-            {data.stars.map((item) => {
+          <li className='capitalize'>
+            {t('filters.stars')}:{' '}
+            {data.stars.map((item, i, arr) => {
               return (
                 <Link
                   key={item.name}
                   to={`/stars/${item.id}`}
                   className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'
                 >
-                  {item.name}{' '}
+                  {arr.length - 1 === i ? item.name : `${item.name},`}{' '}
                 </Link>
               )
             })}

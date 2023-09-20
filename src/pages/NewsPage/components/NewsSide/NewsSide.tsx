@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 import { TNewsSearch } from '../../../../redux/types'
 
@@ -7,22 +8,23 @@ import { news } from '../../../../data/news'
 
 export const NewsSide: FC = () => {
   const { register, handleSubmit } = useForm<TNewsSearch>()
+  const { t } = useTranslation()
 
   return (
     <aside className='lg:w-64'>
       <div className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
-          Search
+          {t('newsPage.search')}
         </h4>
         <form onSubmit={handleSubmit((data) => console.log(data))} className='flex flex-col'>
           <label htmlFor='newsTitle' className='font-bold text-sm text-grey mb-2.5'>
-            News title
+            {t('sorting.news title')}
           </label>
 
           <input
             type='text'
             id='newsTitle'
-            placeholder='Enter keywords'
+            placeholder={t('sorting.enter keywords')}
             className='bg-selects-bg py-1.5 px-3 h-10 text-sm mb-4 rounded'
             {...register('newsTitle')}
           />
@@ -30,13 +32,13 @@ export const NewsSide: FC = () => {
             type='submit'
             className='bg-red rounded py-3 uppercase text-sm font-bold text-[#fff] lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
           >
-            Submit
+            {t('sorting.submit')}
           </button>
         </form>
       </div>
       <div className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
-          Categories
+          {t('newsPage.categories')}
         </h4>
         <ul>
           <li className='text-grey text-sm mb-4'>Awards (50)</li>
@@ -48,7 +50,7 @@ export const NewsSide: FC = () => {
       </div>
       <div className='pb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
-          Most Popular
+          {t('newsPage.most popular')}
         </h4>
         <ul>
           {news.map((item, i) => {

@@ -22,7 +22,12 @@ export const PersonList: FC<IPersonList> = ({ data }) => {
                 {item.name}
               </Link>
             </div>
-            <p className='text-sm'>{item.role}</p>
+            <p className='text-sm'>
+              {' '}
+              {item.role.map((item, i, arr) => {
+                return arr.length - 1 === i ? item : `${item}, `
+              })}
+            </p>
           </li>
         )
       })}

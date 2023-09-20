@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Comment } from './components/Comment'
 
@@ -9,9 +10,13 @@ interface IReviews {
 }
 
 export const Reviews: FC<IReviews> = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <div className='pb-10'>
-      <h3 className='text-grey text-lg font-bold mb-1'>Reviews of </h3>
+      <h3 className='text-grey text-lg font-bold mb-1'>
+        {t('singleFilm.reviews')} {t('singleFilm.of')}
+      </h3>
       <div className='md:flex justify-between items-center'>
         <h2 className='text-2xl text-blue font-bold mb-8'>{data.name}</h2>
 
@@ -21,16 +26,26 @@ export const Reviews: FC<IReviews> = ({ data }) => {
       </div>
       <div className='pb-4'>
         <div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between pt-2'>
-          <p className='text-grey text-sm mb-2 '>Found 1608 reviews in total</p>
+          <p className='text-grey text-sm mb-2 '>
+            {t('filters.found')} 1608 {t('singleFilm.reviews')} {t('filters.total')}
+          </p>
           <div className=' flex justify-between items-center wrap pb-2'>
             <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
-              Sort by:
+              {t('filters.sort')}
             </label>
             <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
-              <option value=''>Rating Descending</option>
-              <option value=''>Rating Ascending</option>
-              <option value=''>Release date Descending</option>
-              <option value=''>Release date Ascending</option>
+              <option value=''>
+                {t('filters.rating')} {t('filters.descending')}
+              </option>
+              <option value=''>
+                {t('filters.rating')} {t('filters.ascending')}
+              </option>
+              <option value=''>
+                {t('filters.release date')} {t('filters.descending')}
+              </option>
+              <option value=''>
+                {t('filters.release date')} {t('filters.ascending')}
+              </option>
             </select>
           </div>
         </div>
@@ -44,16 +59,16 @@ export const Reviews: FC<IReviews> = ({ data }) => {
         <div className='border-0 border-b border-grey border-solid sm:flex items-center justify-between py-2'>
           <div className=' flex justify-between items-center wrap pb-2'>
             <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
-              Reviews per page:
+              {t('singleFilm.reviews')} {t('singleFilm.per page')}:
             </label>
             <select name='filmSorting' id='' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
-              <option value=''>5 comments</option>
-              <option value=''>10 comments</option>
+              <option value=''>5 {t('singleFilm.comments')}</option>
+              <option value=''>10 {t('singleFilm.comments')}</option>
             </select>
           </div>
 
           <div className='flex '>
-            Page 1 of 6:
+            {t('singleFilm.page')} 1 {t('singleFilm.of2')} 6:
             <ul className='flex ml-3'>
               {Array(6)
                 .fill(0)

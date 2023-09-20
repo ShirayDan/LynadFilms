@@ -1,9 +1,7 @@
 import { FC, useState } from 'react'
 import './Header.scss'
-
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-
-import logo from '../../i/logo1.png'
 
 import { FaSearch } from 'react-icons/fa'
 import { Modal } from '../../components/Modal'
@@ -14,15 +12,13 @@ import { Language } from '../../components/Language'
 import { Theme } from '../../components/Theme'
 import { changeOverflow } from '../../helpers/helpers'
 
-const links = [
-  { link: '/films', text: 'Movies' },
-  { link: '/stars', text: 'Celebrities' },
-  { link: '/news', text: 'News' }
-]
+import logo from '../../i/logo1.png'
 
 export const Header: FC = () => {
   const [signInModal, setSignInModal] = useState(false)
   const [signUpModal, setSignUpModal] = useState(false)
+
+  const { t } = useTranslation()
 
   const handleOpenSignIn = () => {
     setSignInModal((state) => !state)
@@ -33,6 +29,12 @@ export const Header: FC = () => {
     setSignUpModal((state) => !state)
     changeOverflow(signUpModal)
   }
+
+  const links = [
+    { link: '/films', text: t('header.movies') },
+    { link: '/stars', text: t('header.celebrities') },
+    { link: '/news', text: t('header.news') }
+  ]
 
   return (
     <header className='header dark:bg-header-border  bg-[#aed2f6] absolute w-full dark:lg:bg-transparent'>
@@ -73,13 +75,13 @@ export const Header: FC = () => {
                 className='ml-3 text-grey font-bold uppercase text-sm lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 onClick={() => handleOpenSignIn()}
               >
-                Log in
+                {t('header.in')}
               </li>
               <li
                 className='ml-3 text-[#fff] font-bold uppercase text-sm rounded-3xl bg-red py-3 px-5 lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
                 onClick={() => handleOpenSignUp()}
               >
-                Sign up
+                {t('header.up')}
               </li>
             </ul>
           </div>

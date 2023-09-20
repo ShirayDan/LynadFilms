@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './MainPageSlider.scss'
@@ -13,11 +14,13 @@ import { FaStar } from 'react-icons/fa'
 import { films } from '../../../../data/films'
 
 export const MainPageSlider: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <div className='pt-36 bg-main-trailer dark:bg-slider pb-10'>
       <div className='mx-auto px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl '>
         <div className='flex justify-end items-center font-bold text-sm text-white'>
-          <span className='mr-2'>Follow us:</span> <SocialBlock />
+          <span className='mr-2'>{t('mainPage.follow us')}</span> <SocialBlock />
         </div>
         <div className='flex items-center justify-center mt-7'>
           <Swiper

@@ -1,6 +1,7 @@
 import { FC, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules'
+import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -11,13 +12,13 @@ import { films } from '../../../../data/films'
 
 export const TrailerBlock: FC = () => {
   const [video, setVideo] = useState(0)
-
+  const { t } = useTranslation()
   return (
     <div className='py-20 px-4 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'>
       <div className='px-4'>
         <div className='flex justify-between mb-7'>
-          <h2 className='text-white uppercase text-2xl font-bold'>Trailers</h2>
-          <ViewAll link='' text='VIEW ALL' />
+          <h2 className='text-white uppercase text-2xl font-bold'>{t('mainPage.trailers')}</h2>
+          <ViewAll link='' text={t('mainPage.view all')} />
         </div>
         <div className='lg:grid lg:grid-cols-trailer'>
           <div className='flex justify-center xl:max-w-4xl'>

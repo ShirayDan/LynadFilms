@@ -1,21 +1,23 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 import { TProfileEdit } from '../../../../redux/types'
 
 export const Profile: FC = () => {
   const { register, handleSubmit } = useForm<TProfileEdit>()
+  const { t } = useTranslation()
 
   return (
     <div className='px-3'>
       <div className='border-3 border-solid border-header-border bg-filters-bg mb-10 text-white'>
         <div className='p-7 border-0 border-solid border-b-2 border-header-border'>
-          <h3 className='mb-7 uppercase text-white font-bold text-sm'>Profile Details</h3>
+          <h3 className='mb-7 uppercase text-white font-bold text-sm'>{t('profilePage.profile details')}</h3>
           <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
             <div className='lg:grid grid-cols-2 gap-4 lg:mb-7'>
               <div className='flex flex-col'>
                 <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='userName'>
-                  Username
+                  {t('profilePage.username')}
                 </label>
                 <input
                   placeholder={'edwardkennedy'}
@@ -27,7 +29,7 @@ export const Profile: FC = () => {
               </div>
               <div className='flex flex-col'>
                 <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='email'>
-                  Email Address
+                  {t('profilePage.email')}
                 </label>
                 <input
                   placeholder={'edward@kennedy.com'}
@@ -39,7 +41,7 @@ export const Profile: FC = () => {
               </div>
               <div className='flex flex-col'>
                 <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='firstName'>
-                  First Name
+                  {t('profilePage.firstName')}
                 </label>
                 <input
                   placeholder={'Edward'}
@@ -51,7 +53,7 @@ export const Profile: FC = () => {
               </div>
               <div className='flex flex-col'>
                 <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='userName'>
-                  Last Name
+                  {t('profilePage.lastName')}
                 </label>
                 <input
                   placeholder={'Kennedy'}
@@ -63,7 +65,7 @@ export const Profile: FC = () => {
               </div>
               <div className='flex flex-col'>
                 <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='country'>
-                  Country
+                  {t('profilePage.country')}
                 </label>
                 <input
                   placeholder={'Country'}
@@ -78,39 +80,39 @@ export const Profile: FC = () => {
               className='rounded-3xl text-[#fff] bg-red font-bold py-2.5 px-9 uppercase text-sm lg:hover:text-[#000] lg:hover:bg-yellow ease-out duration-300 cursor-pointer'
               type='submit'
             >
-              Save
+              {t('profilePage.save')}
             </button>
           </form>
         </div>
         <div className='p-7'>
-          <h3 className='mb-7 uppercase text-white font-bold text-sm'>Change Password</h3>
+          <h3 className='mb-7 uppercase text-white font-bold text-sm'>{t('profilePage.change password')}</h3>
 
           <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
             <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='oldPassword'>
-              Old Password
+              {t('profilePage.old')}
             </label>
             <input
-              placeholder={'Enter old password'}
+              placeholder={t('profilePage.enter old')}
               className='mb-7 bg-selects-bg py-1.5 px-3 h-10 text-sm rounded'
               type='password'
               id='oldPassword'
               {...register('oldPassword')}
             />
             <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='newPassword'>
-              New Password
+              {t('profilePage.new')}
             </label>
             <input
-              placeholder={'Enter new password'}
+              placeholder={t('profilePage.enter new')}
               className='mb-7 bg-selects-bg py-1.5 px-3 h-10 text-sm rounded'
               type='password'
               id='newPassword'
               {...register('newPassword')}
             />
             <label className='mb-2.5 font-bold text-sm text-grey' htmlFor='confirmNewPassword'>
-              Confirm New Password
+              {t('profilePage.confirm')}
             </label>
             <input
-              placeholder={'Confirm new password'}
+              placeholder={t('profilePage.confirm new')}
               className='mb-7 bg-selects-bg py-1.5 px-3 h-10 text-sm rounded'
               type='password'
               id='confirmNewPassword'
@@ -121,7 +123,7 @@ export const Profile: FC = () => {
               className='rounded-3xl text-[#fff] bg-red font-bold py-2.5 px-9 uppercase text-sm lg:hover:text-[#000] lg:hover:bg-yellow ease-out duration-300 cursor-pointer'
               type='submit'
             >
-              Change
+              {t('profilePage.change')}
             </button>
           </form>
         </div>

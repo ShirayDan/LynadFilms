@@ -8,6 +8,7 @@ import { PhotosVideos } from './components/PhotosVideos'
 import { Reviews } from './components/Reviews'
 import { SimilarMovies } from './components/SimilarMovies'
 import { Tab } from '../../components/Tab'
+import { useTranslation } from 'react-i18next'
 
 import { FaPlay, FaCreditCard, FaHeart, FaStar } from 'react-icons/fa'
 import { ImShare2 } from 'react-icons/im'
@@ -17,6 +18,7 @@ import { SocialBlock } from '../../components/SocialBlock'
 
 export const SingleFilm: FC = () => {
   const { id } = useParams()
+  const { t } = useTranslation()
 
   const film = films[Number(id) - 1]
 
@@ -29,10 +31,10 @@ export const SingleFilm: FC = () => {
           </div>
           <div className='border-3 border-solid border-filters-bg p-5 flex flex-col'>
             <button className='bg-red text-[#fff] flex justify-center items-center uppercase py-4 px-6 text-sm font-bold rounded mb-3 lg:hover:text-[#000] lg:hover:bg-yellow ease-out duration-300 cursor-pointer'>
-              <FaPlay className='mr-2' /> Watch trailer
+              <FaPlay className='mr-2' /> {t('singleFilm.watch trailer')}
             </button>
             <button className='bg-yellow flex justify-center items-center text-[#000] uppercase py-4 px-6 text-sm font-bold rounded lg:hover:text-[#fff] lg:hover:bg-red ease-out duration-300 cursor-pointer'>
-              <FaCreditCard className='mr-2' /> Buy ticket
+              <FaCreditCard className='mr-2' /> {t('singleFilm.buy ticket')}
             </button>
           </div>
         </div>
@@ -45,13 +47,13 @@ export const SingleFilm: FC = () => {
               <span className='block border border-solid rounded-full border-red p-2 mr-2'>
                 <FaHeart />
               </span>{' '}
-              Add to favorite
+              {t('singleFilm.favorite')}
             </li>
             <li className='uppercase text-red singleFilm__share cursor-pointer flex text-sm items-center font-bold h-10'>
               <span className='block border border-solid rounded-full border-red p-2 mr-2'>
                 <ImShare2 />
               </span>{' '}
-              Share
+              {t('singleFilm.share')}
               <div className='relative singleFilm__share-list p-3 bg-red rounded ml-4 text-[#fff]'>
                 <SocialBlock />
               </div>
@@ -63,7 +65,7 @@ export const SingleFilm: FC = () => {
               {film.rating}
             </p>
             <div className='flex items-center'>
-              Rate This Movie:{' '}
+              {t('singleFilm.rate this movie')}
               <ul className='flex ml-1'>
                 {Array(10)
                   .fill(1)
@@ -78,7 +80,13 @@ export const SingleFilm: FC = () => {
             </div>
           </div>
           <Tab
-            buttons={['Overview', 'Reviews', 'Cast and Crew', 'Media', 'Related movies']}
+            buttons={[
+              t('singleFilm.overview'),
+              t('singleFilm.reviews'),
+              t('singleFilm.cast and crew'),
+              t('singleFilm.media'),
+              t('singleFilm.related movies')
+            ]}
             components={[
               <Overview data={film} />,
               <Reviews data={film} />,

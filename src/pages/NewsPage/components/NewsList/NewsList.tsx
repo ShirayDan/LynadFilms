@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { NewsCard } from '../../../../components/NewsCard'
 import { NewsCardGrid } from '../../../../components/NewsCardGrid'
@@ -9,22 +10,33 @@ import { news } from '../../../../data/news'
 
 export const NewsList: FC = () => {
   const [typeCard, setTypeCard] = useState('list')
+  const { t } = useTranslation()
 
   return (
     <div className='text-white'>
       <div className='pb-4'>
         <div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between py-2'>
-          <p className='text-grey text-sm mb-2 sm:mb-0'>Found {news.length} news in total</p>
+          <p className='text-grey text-sm mb-2 sm:mb-0'>
+            {t('filters.found')} {news.length} {t('filters.news')} {t('filters.total')}
+          </p>
           <div className='flex justify-between items-center'>
             <div className=' flex justify-between items-center wrap'>
               <label htmlFor='filmSorting' className='text-grey text-sm mr-2'>
-                Sort by:
+                {t('filters.sort')}
               </label>
               <select id='filmSorting' className='text-grey bg-selects-bg text-sm font-light py-1.5 px-3'>
-                <option value=''>Rating Descending</option>
-                <option value=''>Rating Ascending</option>
-                <option value=''>Release date Descending</option>
-                <option value=''>Release date Ascending</option>
+                <option value=''>
+                  {t('filters.rating')} {t('filters.descending')}
+                </option>
+                <option value=''>
+                  {t('filters.rating')} {t('filters.ascending')}
+                </option>
+                <option value=''>
+                  {t('filters.release date')} {t('filters.descending')}
+                </option>
+                <option value=''>
+                  {t('filters.release date')} {t('filters.ascending')}
+                </option>
               </select>
             </div>
             <div className='flex px-2'>

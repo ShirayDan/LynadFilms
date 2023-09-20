@@ -1,30 +1,38 @@
 import { FC } from 'react'
-import './FilmsFilter.scss'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
+import './FilmsFilter.scss'
 
 import { TFilmsFilter } from '../../../../redux/types'
 
-const genresOptions = ['Comedies', 'Musicals', 'Adventures', 'Fiction', 'Sci-Fi']
 const yearsOptions = [2020, 2010, 2000, 1990, 1980, 1970]
 
 export const FilmsFilter: FC = () => {
   const { handleSubmit, register } = useForm<TFilmsFilter>()
+  const { t } = useTranslation()
 
+  const genresOptions = [
+    t('sorting.comedies'),
+    t('sorting.musicals'),
+    t('sorting.adventures'),
+    t('sorting.fiction'),
+    t('sorting.sci')
+  ]
   return (
     <div className='border-3 border-solid border-header-border bg-filters-bg p-4 mb-10 lg:w-64'>
       <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
         <label htmlFor='filmName' className='font-bold text-sm text-grey mb-2.5'>
-          Movie name
+          {t('sorting.movie name')}
         </label>
         <input
           type='text'
           id='filmName'
-          placeholder='Enter keywords'
+          placeholder={t('sorting.enter keywords')}
           className='bg-selects-bg py-1.5 px-3 h-10 text-sm mb-4'
           {...register('filmName')}
         />
         <label htmlFor='filmGenre' className='font-bold text-sm text-grey mb-2.5'>
-          Genres
+          {t('sorting.genres')}
         </label>
         <select
           id='filmGenre'
@@ -40,7 +48,7 @@ export const FilmsFilter: FC = () => {
           })}
         </select>
         <label htmlFor='filmYear' className='font-bold text-sm text-grey mb-2.5'>
-          Year
+          {t('time.year')}
         </label>
         <select
           id='filmYear'
@@ -56,12 +64,12 @@ export const FilmsFilter: FC = () => {
           })}
         </select>
         <label htmlFor='filmCountry' className='font-bold text-sm text-grey mb-2.5'>
-          Country
+          {t('sorting.country')}
         </label>
         <input
           type='text'
           id='filmCountry'
-          placeholder='Enter keywords'
+          placeholder={t('sorting.enter country')}
           className='bg-selects-bg py-1.5 px-3 h-10 text-sm mb-4'
           {...register('starCountry')}
         />
@@ -69,7 +77,7 @@ export const FilmsFilter: FC = () => {
           type='submit'
           className='bg-red rounded py-3 uppercase text-sm font-bold text-[#fff] lg:hover:bg-yellow lg:hover:text-[#000] ease-out duration-300 cursor-pointer'
         >
-          Submit
+          {t('sorting.submit')}
         </button>
       </form>
     </div>

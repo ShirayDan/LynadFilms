@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { ViewAll } from '../../../../components/ViewAll'
 
@@ -25,34 +26,35 @@ const news = [
 ]
 
 export const NewsBlock: FC = () => {
+  const { t } = useTranslation()
   return (
     <div className='px-4 py-10 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'>
       <div className='px-4'>
-        <h2 className='text-xl mb-6 text-white font-bold uppercase'>Latest News</h2>
+        <h2 className='text-xl mb-6 text-white font-bold uppercase'>{t('mainPage.latest news')}</h2>
         <div>
           <ul className='flex '>
             <li className='mr-2'>
               <a
                 href=''
-                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
               >
-                #MOVIES
+                #{t('header.movies')}
               </a>
             </li>
             <li className='mr-2'>
               <a
                 href=''
-                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
               >
-                #TV SHOWS
+                #{t('mainPage.show')}
               </a>
             </li>
             <li>
               <a
                 href=''
-                className='text-white text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
               >
-                #CELEBS
+                #{t('mainPage.celebs')}
               </a>
             </li>
           </ul>
@@ -72,8 +74,8 @@ export const NewsBlock: FC = () => {
 
           <div className='mt-10 lg:mt-0'>
             <div className='flex justify-between mb-6'>
-              <h3 className='text-white font-bold text-lg '>More news on Blockbuster</h3>
-              <ViewAll text='See all Movies news' link='/news' />
+              <h3 className='text-white font-bold text-lg '>{t('mainPage.More news')} Blockbuster</h3>
+              <ViewAll text={t('mainPage.all news')} link='/news' />
             </div>
             {news.map((item) => {
               return (

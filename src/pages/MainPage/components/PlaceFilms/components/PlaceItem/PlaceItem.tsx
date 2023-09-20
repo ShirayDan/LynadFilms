@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './PlaceItem.scss'
@@ -19,24 +20,26 @@ interface IPlaceItem {
 }
 
 export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <div className='mb-10'>
       <div className='flex justify-between items-center mb-6'>
         <h2 className='text-white text-2xl uppercase font-bold'>{data.title}</h2>
-        <ViewAll link={data.link} text={'View All'} />
+        <ViewAll link={data.link} text={t('mainPage.view all')} />
       </div>
       <ul className='md:flex'>
         <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #Popular
+          #{t('mainPage.popular')}
         </li>
         <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #Coming soon
+          #{t('mainPage.coming soon')}
         </li>
         <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #Top rated
+          #{t('mainPage.top rated')}
         </li>
         <li className='text-grey uppercase mb-4 text-sm font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #Most reviewed
+          #{t('mainPage.most reviewed')}
         </li>
       </ul>
 

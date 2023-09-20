@@ -8,11 +8,13 @@ import { Biography } from './components/Biography'
 import { Filmography } from './components/Filmography'
 import { Media } from './components/Media'
 import { Overview } from './components/Overview'
+import { useTranslation } from 'react-i18next'
 
 import { crew } from '../../data/crew'
 
 export const SingleStar: FC = () => {
   const { id } = useParams()
+  const { t } = useTranslation()
 
   const actor = crew[Number(id) - 1]
   return (
@@ -31,7 +33,12 @@ export const SingleStar: FC = () => {
           </div>
 
           <Tab
-            buttons={['Overview', 'Biography', 'Media', 'Filmography']}
+            buttons={[
+              t('singleStar.overview'),
+              t('singleStar.biography'),
+              t('singleStar.media'),
+              t('singleStar.filmography')
+            ]}
             components={[
               <Overview data={actor} />,
               <Biography data={actor} />,

@@ -32,11 +32,13 @@ export const MainLayout: FC = () => {
 
   useEffect(() => {
     switch (theme.theme) {
-      case 'dark':
+      case 'Темна':
+      case 'Dark':
         element.classList.add('dark')
         localStorage.setItem('theme', 'dark')
         break
-      case 'light':
+      case 'Світла':
+      case 'Light':
         element.classList.remove('dark')
         localStorage.setItem('theme', 'light')
         break

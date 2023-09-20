@@ -4,6 +4,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import { PersonList } from '../../../../components/PersonList'
 import { MoreInfoItem } from './components/MoreInfoItem'
@@ -17,6 +18,8 @@ interface IOverview {
 }
 
 export const Overview: FC<IOverview> = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <>
       <p className='mb-3'>
@@ -26,12 +29,12 @@ export const Overview: FC<IOverview> = ({ data }) => {
       </p>
       <div className='my-10'>
         <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 '>
-          <h4 className='text-white uppercase font-bold text-sm'>Videos and photos</h4>
+          <h4 className='text-white uppercase font-bold text-sm'>{t('singleFilm.videos and photos')}</h4>
           <a
             href=''
             className='text-blue text-xs flex items-center lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
           >
-            View all <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
+            {t('mainPage.view all')} <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
           </a>
         </div>
         <div className='mt-5 lg:max-w-slider-lg xl:max-w-slider-2xl'>
@@ -73,12 +76,12 @@ export const Overview: FC<IOverview> = ({ data }) => {
       </div>
       <div className='mb-4'>
         <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 '>
-          <h4 className='text-white uppercase font-bold text-sm'>Cast</h4>
+          <h4 className='text-white uppercase font-bold text-sm'>{t('singleFilm.actors')}</h4>
           <a
             href=''
             className='text-blue text-xs flex items-center lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
           >
-            Full Cast and Crew
+            {t('singleFilm.full cast and crew')}
             <FaChevronDown size='12px' className='ml-1.5 -rotate-90' />
           </a>
         </div>
@@ -86,13 +89,13 @@ export const Overview: FC<IOverview> = ({ data }) => {
       </div>
       <div className='pb-4'>
         <div className='flex justify-between items-center border-0 border-solid border-b border-grey pb-3 '>
-          <h4 className='text-white uppercase font-bold text-sm'>More Information</h4>
+          <h4 className='text-white uppercase font-bold text-sm'>{t('singleFilm.more info')}</h4>
         </div>
         <ul className='pl-4'>
-          <MoreInfoItem text={'Director:'} data={data.director} />
-          <MoreInfoItem text={'Writer:'} data={data.writer} />
+          <MoreInfoItem text={t('singleFilm.director')} data={data.director} />
+          <MoreInfoItem text={t('singleFilm.writer')} data={data.writer} />
           <li className='flex justify-between font-bold text-sm py-3'>
-            Genres:
+            {t('singleFilm.genres')}
             <div className='text-blue font-normal'>
               {data.tags.map((item, i, arr) => {
                 return (
@@ -104,16 +107,16 @@ export const Overview: FC<IOverview> = ({ data }) => {
             </div>
           </li>
           <li className='flex justify-between font-bold text-sm py-3'>
-            Release Date:{' '}
+            {t('singleFilm.release date')}
             <span className='font-normal'>
               {data.date} ({data.country})
             </span>
           </li>
           <li className='flex justify-between font-bold text-sm py-3'>
-            Run Time: <span className='font-normal'>{data.duration}</span>
+            {t('singleFilm.run time')} <span className='font-normal'>{data.duration}</span>
           </li>
           <li className='flex justify-between font-bold text-sm py-3'>
-            MMPA Rating: <span className='font-normal'>{data.mmpa}</span>
+            MMPA {t('singleFilm.rating')}: <span className='font-normal'>{data.mmpa}</span>
           </li>
         </ul>
       </div>
