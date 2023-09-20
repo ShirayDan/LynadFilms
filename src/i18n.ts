@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: 'ua',
+    lng: 'en',
     resources: {
       en: {
         translation: {

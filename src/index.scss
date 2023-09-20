@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
 @layer base {
@@ -60,7 +59,6 @@
   list-style: none;
   text-decoration: none;
   border: none;
-  // font-family: 'Dosis', sans-serif;
   font-family: 'Oswald', sans-serif;
   line-height: 120%;
 }

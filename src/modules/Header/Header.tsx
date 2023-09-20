@@ -37,7 +37,7 @@ export const Header: FC = () => {
   ]
 
   return (
-    <header className='header dark:bg-header-border  bg-[#aed2f6] absolute w-full dark:lg:bg-transparent'>
+    <header className='header fixed top-0 left-0 dark:bg-header-border bg-[#aed2f6] z-10 w-full dark:lg:bg-header-border'>
       <div className='container px-4 mx-auto'>
         <nav className='py-3 flex justify-between md:py-5'>
           <div className='flex items-center'>
