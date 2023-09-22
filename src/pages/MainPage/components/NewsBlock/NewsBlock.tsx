@@ -1,10 +1,13 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { ViewAll } from '../../../../components/ViewAll'
 
 import img from '../../../../i/blog-it1.jpg'
-import { Link } from 'react-router-dom'
 
 const news = [
   {
@@ -27,36 +30,33 @@ const news = [
 
 export const NewsBlock: FC = () => {
   const { t } = useTranslation()
+
+  const hastags = [t('header.movies'), t('mainPage.show'), t('mainPage.celebs')]
+
   return (
-    <div className='px-4 py-10 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      variants={textAnimation}
+      className='px-4 py-10 mx-auto max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl'
+    >
       <div className='px-4'>
         <h2 className='text-xl mb-6 text-white font-bold uppercase'>{t('mainPage.latest news')}</h2>
         <div>
           <ul className='flex '>
-            <li className='mr-2'>
-              <a
-                href=''
-                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
-              >
-                #{t('header.movies')}
-              </a>
-            </li>
-            <li className='mr-2'>
-              <a
-                href=''
-                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
-              >
-                #{t('mainPage.show')}
-              </a>
-            </li>
-            <li>
-              <a
-                href=''
-                className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
-              >
-                #{t('mainPage.celebs')}
-              </a>
-            </li>
+            {hastags.map((item, i) => {
+              return (
+                <motion.li key={item} custom={i + 3} variants={textAnimation} className='mr-2'>
+                  <a
+                    href=''
+                    className='text-white uppercase text-sm text-grey font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300'
+                  >
+                    #{item}
+                  </a>
+                </motion.li>
+              )
+            })}
           </ul>
         </div>
         <div className='lg:grid lg:grid-cols-trailer '>
@@ -72,24 +72,24 @@ export const NewsBlock: FC = () => {
             </p>
           </div>
 
-          <div className='mt-10 lg:mt-0'>
+          <motion.div custom={2} variants={textAnimation} className='mt-10 lg:mt-0'>
             <div className='flex justify-between mb-6'>
               <h3 className='text-white font-bold text-lg '>{t('mainPage.More news')} Blockbuster</h3>
               <ViewAll text={t('mainPage.all news')} link='/news' />
             </div>
-            {news.map((item) => {
+            {news.map((item, i) => {
               return (
-                <div key={item.text} className='flex flex-col mb-7 pr-4'>
+                <motion.div custom={i + 3} variants={textAnimation} key={item.text} className='flex flex-col mb-7 pr-4'>
                   <h6 className='text-blue text-sm font-bold mb-1 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
                     <Link to={''}>{item.text}</Link>
                   </h6>
                   <span className='text-grey text-xs'>{item.data}</span>
-                </div>
+                </motion.div>
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

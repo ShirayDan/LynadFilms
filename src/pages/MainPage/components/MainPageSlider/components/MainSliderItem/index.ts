@@ -1,0 +1,1 @@
+export { MainSliderItem } from './MainSliderItem'

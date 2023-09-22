@@ -43,7 +43,7 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
                 <Link
                   key={item.name}
                   to={`/stars/${item.id}`}
-                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'
+                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 >
                   {item.name}{' '}
                 </Link>
@@ -57,7 +57,7 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
                 <Link
                   key={item.name}
                   to={`/stars/${item.id}`}
-                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow'
+                  className='text-blue lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
                 >
                   {arr.length - 1 === i ? item.name : `${item.name},`}{' '}
                 </Link>

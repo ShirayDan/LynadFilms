@@ -1,7 +1,10 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import './FilmsFilter.scss'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { TFilmsFilter } from '../../../../redux/types'
 
@@ -19,7 +22,11 @@ export const FilmsFilter: FC = () => {
     t('sorting.sci')
   ]
   return (
-    <div className='border-3 border-solid border-header-border bg-filters-bg p-4 mb-10 lg:w-64'>
+    <motion.div
+      custom={2}
+      variants={textAnimation}
+      className='border-3 border-solid border-header-border bg-filters-bg p-4 mb-10 lg:w-64'
+    >
       <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
         <label htmlFor='filmName' className='font-bold text-sm text-grey mb-2.5'>
           {t('sorting.movie name')}
@@ -80,6 +87,6 @@ export const FilmsFilter: FC = () => {
           {t('sorting.submit')}
         </button>
       </form>
-    </div>
+    </motion.div>
   )
 }

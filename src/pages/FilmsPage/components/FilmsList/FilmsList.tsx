@@ -1,5 +1,8 @@
 import { FC, useState } from 'react'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { FilmCard } from '../../../../components/FilmCard'
 import { FilmCardGrid } from '../../../../components/FilmCardGrid'
@@ -13,7 +16,7 @@ export const FilmsList: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='pb-20'>
+    <motion.div custom={1} variants={textAnimation} className='pb-20'>
       <div className='pb-4'>
         <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
           <p className='text-grey text-sm mb-2 sm:mb-0'>
@@ -55,7 +58,7 @@ export const FilmsList: FC = () => {
       </div>
 
       {typeCard === 'list' &&
-        films.map((item) => {
+        films.map((item, i) => {
           return <FilmCard key={item.name} data={item} />
         })}
 
@@ -66,6 +69,6 @@ export const FilmsList: FC = () => {
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

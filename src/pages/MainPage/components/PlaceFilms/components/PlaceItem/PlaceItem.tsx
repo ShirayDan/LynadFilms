@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { Link } from 'react-router-dom'
@@ -6,6 +7,8 @@ import { useTranslation } from 'react-i18next'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './PlaceItem.scss'
+
+import { textAnimation } from '../../../../../../helpers/animations'
 
 import { ViewAll } from '../../../../../../components/ViewAll'
 
@@ -22,25 +25,42 @@ interface IPlaceItem {
 export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
   const { t } = useTranslation()
 
+  const hashtags = [
+    t('mainPage.popular'),
+    t('mainPage.coming soon'),
+    t('mainPage.top rated'),
+    t('mainPage.most reviewed')
+  ]
+
   return (
-    <div className='mb-10'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      custom={1}
+      variants={textAnimation}
+      className='mb-10'
+    >
       <div className='flex justify-between items-center mb-6'>
         <h2 className='text-white text-2xl uppercase font-bold'>{data.title}</h2>
         <ViewAll link={data.link} text={t('mainPage.view all')} />
       </div>
       <ul className='md:flex'>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #{t('mainPage.popular')}
-        </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #{t('mainPage.coming soon')}
-        </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #{t('mainPage.top rated')}
-        </li>
-        <li className='text-grey uppercase mb-4 text-sm font-bold lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'>
-          #{t('mainPage.most reviewed')}
-        </li>
+        {hashtags.map((item, i) => {
+          return (
+            <motion.li
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              custom={i + 2}
+              variants={textAnimation}
+              key={item}
+              className='text-grey uppercase mb-4 text-sm font-bold md:mr-2 lg:hover:text-[purple] dark:lg:hover:text-yellow ease-out duration-300 cursor-pointer'
+            >
+              #{item}
+            </motion.li>
+          )
+        })}
       </ul>
 
       <Swiper
@@ -68,18 +88,25 @@ export const PlaceItem: FC<IPlaceItem> = ({ data }) => {
         modules={[Pagination, Autoplay]}
         className='mySwiper'
       >
-        {data.items.map((item: TFilms) => {
+        {data.items.map((item: TFilms, i) => {
           return (
             <SwiperSlide key={item.name}>
-              <div className='flex item-center justify-center mt-7'>
+              <motion.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                custom={i + 2}
+                variants={i + 1 <= 4 ? textAnimation : {}}
+                className='flex item-center justify-center mt-7'
+              >
                 <Link to={`/films/${item.id}`}>
                   <img src={item.photo} alt='' className='rounded mainPage__img placeItem__img' />
                 </Link>
-              </div>
+              </motion.div>
             </SwiperSlide>
           )
         })}{' '}
       </Swiper>
-    </div>
+    </motion.div>
   )
 }
