@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
+import { motion } from 'framer-motion'
 
 import { TSignUp } from '../../redux/types'
 
@@ -7,7 +8,12 @@ export const SignUpModal: FC = () => {
   const { register, handleSubmit } = useForm<TSignUp>()
 
   return (
-    <div className=' w-300 bg-white p-7 md:w-430 md:p-10'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className=' w-300 bg-white p-7 md:w-430 md:p-10'
+    >
       <h3 className=' text-4xl font-bold uppercase text-center text-dark-grey mb-4 md:mb-10'>Sign Up</h3>
       <form className='flex flex-col' onSubmit={handleSubmit((data) => console.log(data))}>
         <label className='uppercase text-sm text-dark-grey font-bold mb-2' htmlFor='userName'>
@@ -54,6 +60,6 @@ export const SignUpModal: FC = () => {
           Sign up
         </button>
       </form>
-    </div>
+    </motion.div>
   )
 }

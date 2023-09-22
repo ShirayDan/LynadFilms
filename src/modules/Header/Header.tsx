@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import './Header.scss'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
 import { FaSearch } from 'react-icons/fa'
 import { Modal } from '../../components/Modal'
@@ -101,9 +102,12 @@ export const Header: FC = () => {
           </form>
         </div>
       </div>
-
-      {signInModal && <Modal children={<SignInModal />} handleClick={() => handleOpenSignIn()} />}
-      {signUpModal && <Modal children={<SignUpModal />} handleClick={() => handleOpenSignUp()} />}
+      <AnimatePresence initial={false}>
+        {signInModal && <Modal children={<SignInModal />} handleClick={() => handleOpenSignIn()} />}
+      </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {signUpModal && <Modal children={<SignUpModal />} handleClick={() => handleOpenSignUp()} />}
+      </AnimatePresence>
     </header>
   )
 }
