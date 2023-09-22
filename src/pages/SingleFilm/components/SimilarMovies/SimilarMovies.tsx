@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './SimilarMovies.scss'
@@ -18,7 +19,7 @@ export const SimilarMovies: FC<ISimilarMovies> = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='pb-10 '>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='pb-10'>
       <h3 className='text-grey text-lg font-bold mb-1 capitalize'>
         {t('singleFilm.related movies')} {t('singleFilm.to')}
       </h3>
@@ -76,6 +77,6 @@ export const SimilarMovies: FC<ISimilarMovies> = ({ data }) => {
           </Swiper>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

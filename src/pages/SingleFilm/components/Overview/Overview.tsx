@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { motion } from 'framer-motion'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Link } from 'react-router-dom'
@@ -21,7 +22,7 @@ export const Overview: FC<IOverview> = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <p className='mb-3'>
         Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile,
         The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes
@@ -120,6 +121,6 @@ export const Overview: FC<IOverview> = ({ data }) => {
           </li>
         </ul>
       </div>
-    </>
+    </motion.div>
   )
 }

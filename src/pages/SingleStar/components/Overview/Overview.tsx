@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -19,7 +20,12 @@ export const Overview: FC<IOverview> = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='lg:grid grid-cols-tabs'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className='lg:grid grid-cols-tabs'
+    >
       <div className=''>
         <p className='text-grey mb-3'>{data.bio.slice(0, 150) + ' ...'}</p>
         <div className='pt-10'>
@@ -101,6 +107,6 @@ export const Overview: FC<IOverview> = ({ data }) => {
           {t('singleStar.height')}: <span className='font-normal  whitespace-nowrap'>{data.height} cm</span>
         </li>
       </ul>
-    </div>
+    </motion.div>
   )
 }
