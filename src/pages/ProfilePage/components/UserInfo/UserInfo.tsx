@@ -1,6 +1,9 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import img from '../../../../i/crew1-1.jpg'
 
@@ -15,7 +18,7 @@ export const UserInfo: FC<IUserInfo> = ({ page, changePage }) => {
   const buttons = [t('profilePage.profile'), t('profilePage.favorite movies')]
 
   return (
-    <div className='px-3 lg:pl-0'>
+    <motion.div custom={1} variants={textAnimation} className='px-3 lg:pl-0'>
       <div className='border-3 border-solid border-header-border bg-transparent mb-10 text-white'>
         <div className='p-6 flex items-center flex-col border-0 border-solid border-b-2 border-header-border'>
           <img src={img} alt='' className='w-28 h-28 rounded-full mb-4' />
@@ -53,6 +56,6 @@ export const UserInfo: FC<IUserInfo> = ({ page, changePage }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

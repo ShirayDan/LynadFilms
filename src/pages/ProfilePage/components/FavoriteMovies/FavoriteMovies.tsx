@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 
 import { FilmCard } from '../../../../components/FilmCard'
 import { FilmCardGrid } from '../../../../components/FilmCardGrid'
@@ -13,7 +14,7 @@ export const FavoriteMovies: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='pb-20'>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='pb-20'>
       <div className='pb-4'>
         <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
           <p className='text-grey text-sm mb-2 sm:mb-0'>
@@ -55,17 +56,17 @@ export const FavoriteMovies: FC = () => {
       </div>
 
       {typeCard === 'list' &&
-        films.map((item) => {
-          return <FilmCard key={item.name} data={item} />
+        films.map((item, i) => {
+          return <FilmCard key={item.name} data={item} i={i} />
         })}
 
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5'>
-          {films.map((item) => {
-            return <FilmCardGrid key={item.name} data={item} />
+          {films.map((item, i) => {
+            return <FilmCardGrid key={item.name} data={item} i={i} />
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

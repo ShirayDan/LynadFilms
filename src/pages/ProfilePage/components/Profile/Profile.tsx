@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 
 import { TProfileEdit } from '../../../../redux/types'
 
@@ -9,7 +10,7 @@ export const Profile: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='px-3'>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='px-3'>
       <div className='border-3 border-solid border-header-border bg-filters-bg mb-10 text-white'>
         <div className='p-7 border-0 border-solid border-b-2 border-header-border'>
           <h3 className='mb-7 uppercase text-white font-bold text-sm'>{t('profilePage.profile details')}</h3>
@@ -128,6 +129,6 @@ export const Profile: FC = () => {
           </form>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
