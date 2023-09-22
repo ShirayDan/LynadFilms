@@ -59,13 +59,13 @@ export const FilmsList: FC = () => {
 
       {typeCard === 'list' &&
         films.map((item, i) => {
-          return <FilmCard key={item.name} data={item} />
+          return <FilmCard key={item.name} data={item} i={i} />
         })}
 
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5'>
-          {films.map((item) => {
-            return <FilmCardGrid key={item.name} data={item} />
+          {films.map((item, i) => {
+            return <FilmCardGrid key={item.name} data={item} i={i} />
           })}
         </div>
       )}

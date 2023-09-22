@@ -1,7 +1,10 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { TStarsFilter } from '../../../../redux/types'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 const starsYears = [2020, 2010, 2000, 1990, 1980]
 
@@ -10,7 +13,11 @@ export const StarFilter: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='border-3 border-solid border-header-border bg-filters-bg p-4 mb-10 lg:w-64'>
+    <motion.div
+      custom={2}
+      variants={textAnimation}
+      className='border-3 border-solid border-header-border bg-filters-bg p-4 mb-10 lg:w-64'
+    >
       <form onSubmit={handleSubmit((data) => console.log(data))} className='flex flex-col'>
         <label htmlFor='starName' className='font-bold text-sm text-grey mb-2.5'>
           {t('sorting.celebrity name')}
@@ -56,6 +63,6 @@ export const StarFilter: FC = () => {
           {t('sorting.submit')}
         </button>
       </form>
-    </div>
+    </motion.div>
   )
 }

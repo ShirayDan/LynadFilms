@@ -1,6 +1,9 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../helpers/animations'
 
 import { TFilms } from '../../data/types'
 
@@ -8,12 +11,20 @@ import { FaStar } from 'react-icons/fa'
 
 interface IFilmCard {
   data: TFilms
+  i: number
 }
 
-export const FilmCard: FC<IFilmCard> = ({ data }) => {
+export const FilmCard: FC<IFilmCard> = ({ data, i }) => {
   const { t } = useTranslation()
   return (
-    <div className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      custom={i < 3 ? i : 3}
+      variants={textAnimation}
+      className='mb-10 max-w-2xs mx-auto py-3 sm:flex sm:mb-0 sm:max-w-none'
+    >
       <img src={data.photo} alt='' className='rounded mb-4 sm:max-w-3xs' />
       <div className='sm:ml-5'>
         <div className=''>
@@ -66,6 +77,6 @@ export const FilmCard: FC<IFilmCard> = ({ data }) => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }

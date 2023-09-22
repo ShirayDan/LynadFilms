@@ -1,5 +1,8 @@
 import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { StarCardGrid } from '../../../../components/StarCardGrid'
 import { StarCard } from '../../../../components/StarCard'
@@ -13,7 +16,7 @@ export const StarList: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='pb-20'>
+    <motion.div custom={1} variants={textAnimation} className='pb-20'>
       <div className='pb-4'>
         <div className='border-0 border-y border-grey border-solid sm:flex items-center justify-between py-2'>
           <p className='text-grey text-sm mb-2 sm:mb-0'>
@@ -56,17 +59,17 @@ export const StarList: FC = () => {
       </div>
 
       {typeCard === 'list' &&
-        crew.map((item) => {
-          return <StarCard key={item.name} data={item} />
+        crew.map((item, i) => {
+          return <StarCard key={item.name} data={item} i={i} />
         })}
 
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          {crew.map((item) => {
-            return <StarCardGrid key={item.name} data={item} />
+          {crew.map((item, i) => {
+            return <StarCardGrid key={item.name} data={item} i={i} />
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }
