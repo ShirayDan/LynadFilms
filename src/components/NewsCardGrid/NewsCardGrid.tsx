@@ -1,15 +1,26 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../helpers/animations'
 
 import { TNews } from '../../data/types'
 
 interface INewsCardGrid {
   data: TNews
+  i: number
 }
 
-export const NewsCardGrid: FC<INewsCardGrid> = ({ data }) => {
+export const NewsCardGrid: FC<INewsCardGrid> = ({ data, i }) => {
   return (
-    <div className='flex flex-col mb-7 p-3 bg-news-card'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      custom={i < 6 ? i : 2}
+      variants={textAnimation}
+      className='flex flex-col mb-7 p-3 bg-news-card'
+    >
       <div className='flex justify-center mb-7'>
         <img src={data.image} alt='' className='rounded' />
       </div>
@@ -18,6 +29,6 @@ export const NewsCardGrid: FC<INewsCardGrid> = ({ data }) => {
       </h3>
       <p className='text-grey text-sm mb-4'>{data.date}</p>
       <p className='text-grey text-sm'>{data.desc.slice(0, 100) + ' ...'}</p>
-    </div>
+    </motion.div>
   )
 }

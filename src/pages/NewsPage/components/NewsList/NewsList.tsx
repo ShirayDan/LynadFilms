@@ -1,5 +1,8 @@
 import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { NewsCard } from '../../../../components/NewsCard'
 import { NewsCardGrid } from '../../../../components/NewsCardGrid'
@@ -13,7 +16,7 @@ export const NewsList: FC = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='text-white'>
+    <motion.div custom={1} variants={textAnimation} className='text-white'>
       <div className='pb-4'>
         <div className='border-0  border-y border-grey border-solid sm:flex items-center justify-between py-2'>
           <p className='text-grey text-sm mb-2 sm:mb-0'>
@@ -54,16 +57,16 @@ export const NewsList: FC = () => {
         </div>
       </div>
       {typeCard === 'list' &&
-        news.map((item) => {
-          return <NewsCard key={item.title} data={item} />
+        news.map((item, i) => {
+          return <NewsCard key={item.title} data={item} i={i} />
         })}
       {typeCard === 'grid' && (
         <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 '>
-          {news.map((item) => {
-            return <NewsCardGrid key={item.title} data={item} />
+          {news.map((item, i) => {
+            return <NewsCardGrid key={item.title} data={item} i={i} />
           })}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

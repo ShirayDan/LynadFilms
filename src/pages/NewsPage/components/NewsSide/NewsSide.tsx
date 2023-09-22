@@ -1,6 +1,9 @@
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+
+import { textAnimation } from '../../../../helpers/animations'
 
 import { TNewsSearch } from '../../../../redux/types'
 
@@ -12,7 +15,7 @@ export const NewsSide: FC = () => {
 
   return (
     <aside className='lg:w-64'>
-      <div className='mb-10'>
+      <motion.div custom={2} variants={textAnimation} className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
           {t('newsPage.search')}
         </h4>
@@ -35,8 +38,8 @@ export const NewsSide: FC = () => {
             {t('sorting.submit')}
           </button>
         </form>
-      </div>
-      <div className='mb-10'>
+      </motion.div>
+      <motion.div custom={3} variants={textAnimation} className='mb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
           {t('newsPage.categories')}
         </h4>
@@ -47,8 +50,8 @@ export const NewsSide: FC = () => {
           <li className='text-grey text-sm mb-4'>News (45)</li>
           <li className='text-grey text-sm mb-4'>Global (06)</li>
         </ul>
-      </div>
-      <div className='pb-10'>
+      </motion.div>
+      <motion.div custom={4} variants={textAnimation} className='pb-10'>
         <h4 className='border-0 border-b border-solid border-grey uppercase text-white font-bold pb-4 mb-7 text-lg'>
           {t('newsPage.most popular')}
         </h4>
@@ -67,7 +70,7 @@ export const NewsSide: FC = () => {
             }
           })}
         </ul>
-      </div>
+      </motion.div>
     </aside>
   )
 }
